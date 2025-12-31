@@ -1,0 +1,424 @@
+/* BLOG POST PREMIUM */
+
+.blog-post-premium {
+    background: #fff;
+    color: #334155;
+    padding-bottom: 5rem;
+}
+
+.post-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* -------------------------------------------
+   PREMIUM HEADER (SPLIT HERO)
+------------------------------------------- */
+.premium-post-header {
+    padding: 140px 0 80px;
+    /* Increased top padding to clear fixed navbar */
+    background: #fff;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 60px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    /* Wider text column (approx 62% / 38%) */
+    gap: 80px;
+    align-items: center;
+    /* Center align vertically for balanced look */
+}
+
+.blog-hero-content {
+    padding-right: 20px;
+}
+
+.premium-cat-badge {
+    color: var(--accent, #4f46e5);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.premium-post-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+}
+
+.premium-post-meta {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    padding: 0;
+    font-size: 0.95rem;
+    color: #64748b;
+}
+
+.meta-text strong {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.meta-dot {
+    color: #cbd5e1;
+}
+
+/* -------------------------------------------
+   HERO IMAGE
+------------------------------------------- */
+.hero-image-wrapper {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+    /* Remove fixed aspect ratio to let it fit natural height or cover */
+    /* aspect-ratio: 4/3; */
+    height: auto;
+}
+
+.premium-hero-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.author-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+}
+
+.author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #0f172a;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 1rem;
+}
+
+.author-role {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.meta-details {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* -------------------------------------------
+   BANNER
+------------------------------------------- */
+.premium-banner-wrapper {
+    width: 100%;
+    margin-bottom: 4rem;
+    border-radius: 12px;
+    /* Slightly softer */
+    overflow: hidden;
+    max-height: 500px;
+    /* Limit height */
+    box-shadow: none;
+    /* Flatter design */
+}
+
+.premium-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* -------------------------------------------
+   LAYOUT (Sidebar + Content)
+------------------------------------------- */
+.premium-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    /* Slightly wider sidebar */
+    gap: 80px;
+    /* More breathing room */
+    align-items: start;
+    position: relative;
+    /* Context */
+}
+
+/* Sidebar */
+.premium-sidebar {
+    /* Sticky logic: Needs specific height reference? No, grid cell handles it. */
+    /* If sticky isn't working, check parents for overflow:hidden */
+    position: sticky;
+    top: 140px;
+    /* Below navbar */
+    align-self: start;
+    /* Critical for grid item sticky */
+    height: auto;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+    /* Scroll internally if too tall */
+    padding-bottom: 2rem;
+}
+
+/* Hide scrollbar for sidebar */
+.premium-sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.premium-sidebar::-webkit-scrollbar-thumb {
+    background-color: #e2e8f0;
+}
+
+.toc-widget {
+    margin-bottom: 3rem;
+}
+
+.widget-title {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.premium-toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-left: 1px solid #e2e8f0;
+}
+
+.premium-toc-list li {
+    margin-bottom: 0;
+}
+
+.premium-toc-list a {
+    display: block;
+    padding: 8px 0 8px 16px;
+    color: #64748b;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-left: 2px solid transparent;
+    margin-left: -1px;
+    transition: all 0.2s;
+}
+
+.premium-toc-list a:hover {
+    color: var(--accent);
+    border-left-color: var(--accent);
+    background: linear-gradient(to right, #f8fafc, transparent);
+}
+
+.share-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.share-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 700;
+    transition: all 0.2s;
+}
+
+.share-btn:hover {
+    border-color: #0f172a;
+    color: #0f172a;
+}
+
+/* Prose Content */
+.premium-content-col {
+    max-width: 720px;
+    /* Optimal reading width */
+    margin: 0 auto;
+    /* Center if grid collapses */
+}
+
+.premium-prose {
+    font-size: 1.2rem;
+    /* Larger font for premium feel */
+    line-height: 1.8;
+    color: #334155;
+    font-family: system-ui, -apple-system, sans-serif;
+    /* Clean sans */
+}
+
+.premium-prose h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.premium-prose h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.premium-prose p {
+    margin-bottom: 1.5rem;
+}
+
+.premium-prose ul {
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+}
+
+.premium-prose li {
+    margin-bottom: 0.75rem;
+    position: relative;
+}
+
+.premium-prose li::marker {
+    color: var(--accent);
+}
+
+.premium-prose img {
+    border-radius: 12px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* Ensures no inline spacing issues */
+}
+
+/* Newsletter CTA */
+.newsletter-cta {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 3rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.newsletter-cta h3 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+}
+
+.newsletter-cta p {
+    color: #64748b;
+    margin-bottom: 1.5rem;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.newsletter-form input {
+    flex-grow: 1;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 1rem;
+}
+
+.btn-subscribe {
+    background: #0f172a;
+    color: #fff;
+    border: none;
+    padding: 0 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-subscribe:hover {
+    opacity: 0.9;
+}
+
+/* -------------------------------------------
+   BACK NAVIGATION
+------------------------------------------- */
+.back-nav {
+    margin-bottom: 32px;
+    /* Explicit spacing */
+}
+
+.back-link {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #64748b;
+    /* Muted text color */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: #0f172a;
+    /* Darker on hover */
+    text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .premium-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .premium-sidebar {
+        display: none;
+    }
+
+    .premium-post-title {
+        font-size: 2.5rem;
+    }
+}

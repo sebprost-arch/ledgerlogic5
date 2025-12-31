@@ -1,0 +1,42 @@
+.hero-background-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #F7FAFC;
+    /* Light background base */
+    z-index: -1;
+}
+
+.hero-bg-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    /* Ensure the image blends nicely */
+    mix-blend-mode: multiply;
+    opacity: 0.6;
+    /* Soften the image so it's not too distracting */
+}
+
+/* Gradient overlay to ensure text readability and white fade at bottom */
+.hero-overlay-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(255, 255, 255, 0.1) 50%,
+            rgba(247, 250, 252, 1) 100%
+            /* Fade to solid background color at bottom */
+        );
+    pointer-events: none;
+}
+
+.hero-svg-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
