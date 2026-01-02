@@ -2642,7 +2642,7 @@ export const blogPosts: BlogPost[] = [
             "Personal Tax"
         ],
         "category": "Tax",
-        "image": "/images/blog-heroes/hero_tax_canada.png"
+        "image": "/images/blog-heroes/hero_ledgerlogic_t1135_reporting.png"
     },
     {
         "id": "e-commerce-gst-hst-collection-for-online-sales-in-canada",
@@ -2701,7 +2701,7 @@ export const blogPosts: BlogPost[] = [
             "Sales Tax"
         ],
         "category": "Tax",
-        "image": "/images/blog-heroes/logo_shopify.png"
+        "image": "/images/blog-heroes/hero_ledgerlogic_ecommerce_gst_hst.png"
     },
     {
         "id": "how-to-file-ontario-annual-return",
@@ -2746,7 +2746,7 @@ export const blogPosts: BlogPost[] = [
             "Corporate Tax"
         ],
         "category": "Tax",
-        "image": "/images/blog-heroes/hero_tax_canada.png"
+        "image": "/images/blog-heroes/hero_ledgerlogic_ontario_annual_return.png"
     },
     {
         "id": "how-to-calculate-vacation-pay-for-salaried-employees",
@@ -2799,7 +2799,7 @@ export const blogPosts: BlogPost[] = [
             "Payroll"
         ],
         "category": "Tax",
-        "image": "/images/blog-heroes/hero_general_accounting.png"
+        "image": "/images/blog-heroes/hero_ledgerlogic_vacation_pay_calculator.png"
     },
     {
         "id": "bc-interactive-digital-media-tax-credit-guide-bc-idmtc",
@@ -2869,7 +2869,7 @@ export const blogPosts: BlogPost[] = [
             "Startups"
         ],
         "category": "Tax",
-        "image": "/images/blog-heroes/logo_float.svg"
+        "image": "/images/blog-heroes/hero_ledgerlogic_bc_idmtc.png"
     },
     {
         "id": "the-importance-of-accounting-for-startups-in-canada",
