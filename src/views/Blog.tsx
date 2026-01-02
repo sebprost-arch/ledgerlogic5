@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Calendar, Clock } from 'lucide-react';
@@ -145,7 +146,15 @@ const Blog: React.FC = () => {
                                 href={`/blog/${featuredPost.slug}?${searchParams?.toString()}`}
                                 className="hero-main-img-link"
                             >
-                                <img src={featuredPost.image} alt={featuredPost.title} className="hero-main-img" />
+                                <Image
+                                    src={featuredPost.image}
+                                    alt={featuredPost.title}
+                                    width={1000}
+                                    height={563}
+                                    priority
+                                    className="hero-main-img"
+                                    style={{ width: '100%', height: 'auto' }}
+                                />
                             </Link>
                             <div className="hero-main-content">
                                 <div className="hero-badges mb-3">
@@ -234,7 +243,13 @@ const Blog: React.FC = () => {
                                     <div className="magazine-card">
                                         <Link href={`/blog/${post.slug}?${searchParams?.toString()}`} className="card-media">
                                             <span className="card-category-absolute">{post.category}</span>
-                                            <img src={post.image} alt={post.title} />
+                                            <Image
+                                                src={post.image}
+                                                alt={post.title}
+                                                fill
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
+                                                className="object-cover"
+                                            />
                                         </Link>
                                         <div className="card-body">
                                             <Link href={`/blog/${post.slug}?${searchParams?.toString()}`} className="card-title-link">

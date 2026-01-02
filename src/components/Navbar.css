@@ -68,6 +68,7 @@
     font-family: var(--font-heading);
     /* Switch to Heading font for more distinct look? User said 'change to something different' */
     letter-spacing: 0.02em;
+    font-size: 1rem;
 }
 
 .nav-link:hover {
@@ -129,4 +130,66 @@
     .mobile-toggle {
         display: block;
     }
+}
+
+/* DROPDOWN STYLES */
+.nav-dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-trigger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: -10px;
+    background: #fff;
+    min-width: 200px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    border: 1px solid #f1f5f9;
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s ease;
+    z-index: 1100;
+}
+
+.nav-dropdown-container:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #334155;
+    transition: background 0.2s;
+}
+
+.dropdown-item:hover {
+    background: #f8fafc;
+}
+
+.mobile-sublink {
+    font-size: 1rem;
+    color: #cbd5e1;
+    padding: 6px 0;
+    display: block;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.mobile-sublink:hover {
+    color: #fff;
 }

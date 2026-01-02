@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 // import { Menu, X, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 import OnboardingModal from './OnboardingModal';
 import './Navbar.css';
 
@@ -12,6 +13,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false); // Modal State
+  const [resourcesOpen, setResourcesOpen] = useState(false); // Mobile dropdown state
   const pathname = usePathname();
   const isBlogPage = pathname?.startsWith('/blog');
 
@@ -25,14 +27,14 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     setIsOpen(false);
+    setResourcesOpen(false);
   }, [pathname]);
 
   const navLinks = [
     { name: 'Services', path: '/#services' },
     { name: 'Pricing', path: '/pricing' },
     { name: 'About', path: '/#about' },
-    { name: 'FAQs', path: '/#faq' },
-    { name: 'Blog', path: '/blog' },
+    // { name: 'FAQs', path: '/#faq' }, // Replaced or removed per previous instructions, keeping cleaner.
   ];
 
   return (
@@ -49,14 +51,31 @@ const Navbar: React.FC = () => {
                 {link.name}
               </Link>
             ))}
+
+            {/* Resources Dropdown */}
+            <div className="nav-dropdown-container">
+              <button className="nav-link dropdown-trigger">
+                Resources <ChevronDown size={14} className="ml-1 inline" />
+              </button>
+              <div className="dropdown-menu">
+                <Link href="/tools" className="dropdown-item">
+                  <span className="font-bold block">Tools & Offers</span>
+                  <span className="text-xs text-slate-500">Curated tech stack</span>
+                </Link>
+                <Link href="/blog" className="dropdown-item">
+                  <span className="font-bold block">Blog</span>
+                  <span className="text-xs text-slate-500">Insights & guides</span>
+                </Link>
+              </div>
+            </div>
+
             <a
               href="https://clientlogin-ca2.karbonhq.com/247Pxw6ZlPBD/Identity/Account/Login?token="
-              className="btn btn-outline"
-              style={{
-                marginRight: '1rem',
-                border: '2px solid #38B2AC',
-                color: '#38B2AC'
-              }}
+              className={`btn btn-sm mr-4 transition-all border-2 font-bold text-sm ${scrolled
+                  ? 'border-white/30 text-white hover:bg-white/10 hover:border-white'
+                  : 'border-slate-300 text-slate-600 hover:border-slate-800 hover:text-slate-900'
+                }`}
+              style={{ padding: '0.5rem 1rem' }}
             >
               Client Login
             </a>
@@ -90,6 +109,27 @@ const Navbar: React.FC = () => {
                     {link.name}
                   </Link>
                 ))}
+
+                {/* Mobile Resources Dropdown */}
+                <div className="mobile-dropdown-section">
+                  <button
+                    className="mobile-link w-full text-left flex justify-between items-center"
+                    onClick={() => setResourcesOpen(!resourcesOpen)}
+                  >
+                    Resources <ChevronDown size={16} className={`transition-transform ${resourcesOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  {resourcesOpen && (
+                    <div className="pl-4 flex flex-col gap-2 mt-2 mb-2">
+                      <Link href="/tools" className="mobile-sublink" onClick={() => setIsOpen(false)}>
+                        Tools & Offers
+                      </Link>
+                      <Link href="/blog" className="mobile-sublink" onClick={() => setIsOpen(false)}>
+                        Blog
+                      </Link>
+                    </div>
+                  )}
+                </div>
+
                 <a
                   href="https://clientlogin-ca2.karbonhq.com/247Pxw6ZlPBD/Identity/Account/Login?token="
                   className="btn btn-outline mobile-cta"

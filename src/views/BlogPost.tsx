@@ -3,8 +3,41 @@
 import React, { useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { blogPosts } from '../data/blogData';
+import { ConsultationCTA, LeadMagnetCTA, QuickSummary } from '../components/BlogCTAs';
+import AuthorBox from '../components/AuthorBox';
 import './BlogPost.css';
+
+// Shortcode Parser Component
+const BlogPostContent = ({ content }: { content: string }) => {
+    // Regex to find shortcodes
+    // We split the content by specific known shortcodes based on strings
+
+    // 1. Split by Consult CTA
+    const parts = content.split('[[CTA_CONSULT]]');
+
+    return (
+        <div>
+            {parts.map((part, index) => {
+                // Now split each part by Lead Magnet CTA
+                const subParts = part.split('[[CTA_LEAD_MAGNET]]');
+
+                return (
+                    <React.Fragment key={index}>
+                        {subParts.map((subPart, subIndex) => (
+                            <React.Fragment key={subIndex}>
+                                <div dangerouslySetInnerHTML={{ __html: subPart }} />
+                                {subIndex < subParts.length - 1 && <LeadMagnetCTA />}
+                            </React.Fragment>
+                        ))}
+                        {index < parts.length - 1 && <ConsultationCTA />}
+                    </React.Fragment>
+                );
+            })}
+        </div>
+    );
+};
 
 interface BlogPostProps {
     slug: string;
@@ -58,6 +91,26 @@ const BlogPost: React.FC<BlogPostProps> = ({ slug }) => {
     return (
         <>
             <article className="blog-post-premium">
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "Article",
+                            "headline": post.title,
+                            "image": [
+                                `https://ledgerlogic.ca${post.image}`
+                            ],
+                            "datePublished": post.date,
+                            "dateModified": post.date,
+                            "author": [{
+                                "@type": "Person",
+                                "name": post.author,
+                                "url": "https://ledgerlogic.ca/about" // Placeholder or actual link if available
+                            }]
+                        })
+                    }}
+                />
                 {/* 1. SPLIT HERO HEADER */}
                 <header className="premium-post-header">
                     <div className="post-container">
@@ -85,7 +138,15 @@ const BlogPost: React.FC<BlogPostProps> = ({ slug }) => {
                             </div>
 
                             <div className="hero-image-wrapper">
-                                <img src={post.image} alt={post.title} className="premium-hero-img" />
+                                <Image
+                                    src={post.image}
+                                    alt={post.title}
+                                    width={1200}
+                                    height={675}
+                                    priority
+                                    className="premium-hero-img"
+                                    style={{ width: '100%', height: 'auto' }}
+                                />
                             </div>
                         </div>
                     </div>
@@ -111,9 +172,9 @@ const BlogPost: React.FC<BlogPostProps> = ({ slug }) => {
                                 <div className="share-widget mt-8">
                                     <h4 className="widget-title">Share</h4>
                                     <div className="share-buttons">
-                                        <button className="share-btn">LN</button>
-                                        <button className="share-btn">X</button>
-                                        <button className="share-btn">FB</button>
+                                        <button className="share-btn" aria-label="Share on LinkedIn">LN</button>
+                                        <button className="share-btn" aria-label="Share on X (formerly Twitter)">X</button>
+                                        <button className="share-btn" aria-label="Share on Facebook">FB</button>
                                     </div>
                                 </div>
                             </div>
@@ -121,13 +182,14 @@ const BlogPost: React.FC<BlogPostProps> = ({ slug }) => {
 
                         {/* MAIN ARTICLE */}
                         <div className="premium-content-col">
-                            {/* Mobile TOC REMOVED */}
-
                             <div className="premium-prose">
                                 {isLoading ? (
                                     <div className="py-20 text-center text-slate-400">Loading article...</div>
                                 ) : (
-                                    <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                                    <>
+                                        <BlogPostContent content={post.content || ''} />
+                                        <AuthorBox author={post.author} />
+                                    </>
                                 )}
                             </div>
 

@@ -6,6 +6,7 @@ import { CheckCircle, Users, Code, PieChart, FileText, Rocket, ChevronDown, Chev
 import Link from 'next/link';
 import Image from 'next/image';
 import HeroBackground from '../components/HeroBackground';
+import sebProstImg from '../assets/seb-prost-cutout-hq.png';
 import TalkSoonLogo from '../assets/logos/talksoon.avif';
 import VaraiLogo from '../assets/logos/varailogoe.webp';
 import RethinkLogo from '../assets/logos/rethink-logo-light-2.png';
@@ -297,12 +298,18 @@ const Home: React.FC = () => {
                 <div className="container">
                     <div className="split-layout">
                         <div className="team-image-wrapper">
-                            <div className="glass team-placeholder-image">
-                                <span>Sebastien Prost, CPA</span>
+                            <div className="team-image-container">
+                                <Image
+                                    src={sebProstImg}
+                                    alt="Sebastien Prost, CPA"
+                                    className="team-image"
+                                    width={1000}
+                                    height={1250}
+                                />
                             </div>
                         </div>
                         <div className="team-content">
-                            <h2 className="section-title">Meet Your Strategic Partner</h2>
+                            <h2 className="section-title"><span className="team-role">Your Dedicated Expert</span></h2>
                             <h3 className="team-name">Sebastien Prost, CPA</h3>
                             <p className="team-role">Founder & CEO</p>
                             <p className="team-bio">
