@@ -2064,7 +2064,7 @@ export const blogPosts: BlogPost[] = [
             "Corporate Tax"
         ],
         "category": "Tax",
-        "image": "/images/blog-heroes/hero_tax_canada.png"
+        "image": "/images/blog-heroes/hero_ledgerlogic_capital_dividend_account.png"
     },
     {
         "id": "gst-hst-on-remote-services",
@@ -2121,7 +2121,7 @@ export const blogPosts: BlogPost[] = [
             "Sales Tax"
         ],
         "category": "Tax",
-        "image": "/images/blog-heroes/hero_startup.png"
+        "image": "/images/blog-heroes/hero_ledgerlogic_gst_hst_remote_services.png"
     },
     {
         "id": "cra-voluntary-disclosure",
@@ -2182,7 +2182,7 @@ export const blogPosts: BlogPost[] = [
             "Cra"
         ],
         "category": "Cra",
-        "image": "/images/blog-heroes/hero_tax_canada.png"
+        "image": "/images/blog-heroes/hero_ledgerlogic_cra_voluntary_disclosure.png"
     },
     {
         "id": "canadian-corporate-tax-rates-by-province",
@@ -2263,7 +2263,7 @@ export const blogPosts: BlogPost[] = [
             "Corporate Tax"
         ],
         "category": "Tax",
-        "image": "/images/blog-heroes/hero_startup.png"
+        "image": "/images/blog-heroes/hero_ledgerlogic_corp_tax_rates_provinces.png"
     },
     {
         "id": "how-to-save-money-with-the-gst-hst-quick-method",
@@ -2312,7 +2312,7 @@ export const blogPosts: BlogPost[] = [
             "Sales Tax"
         ],
         "category": "Tax",
-        "image": "/images/blog-heroes/hero_tax_canada.png"
+        "image": "/images/blog-heroes/hero_ledgerlogic_gst_hst_quick_method.png"
     },
     {
         "id": "opening-a-canadian-business-bank-account-remotely-as-a-non-resident",
