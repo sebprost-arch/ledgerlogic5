@@ -2019,7 +2019,7 @@ export const blogPosts: BlogPost[] = [
             "Corporate Tax"
         ],
         "category": "Tax",
-        "image": "/images/blog-heroes/hero_startup.png"
+        "image": "/images/blog-heroes/hero_ledgerlogic_corp_tax_planning.png"
     },
     {
         "id": "capital-dividend-account-example",
