@@ -1,4 +1,7 @@
-import BlogPostContent from '../../../src/views/BlogPost';
+// Import the BlogPost component (which we will convert to a client component for interactivity or keep as server if no interaction needed)
+// Actually, BlogPost.tsx needs to be split. The main layout can be server, but interactive bits (shortcodes, share buttons) should be client.
+// For now, let's keep BlogPost.tsx as the main view and pass data to it.
+import BlogPost from '../../../src/views/BlogPost';
 import { Metadata } from 'next';
 import { blogPosts } from '../../../src/data/blogData';
 
@@ -32,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                     alt: post.title,
                 },
             ],
-            publishedTime: post.date, // Assuming format 'October 1, 2023', might need normalization if ISO required strict
+            publishedTime: post.date,
             authors: [post.author],
         },
         twitter: {
@@ -44,6 +47,43 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
-export default function Page({ params }: Props) {
-    return <BlogPostContent slug={params.slug} />;
+export default async function Page({ params }: Props) {
+    const postMetadata = blogPosts.find((p) => p.slug === params.slug);
+
+    if (!postMetadata) {
+        return <div>Post not found</div>;
+    }
+
+    let content = postMetadata.content || '';
+
+    // If content is missing in blogData.ts, try loading from JSON
+    if (!content) {
+        try {
+            const postData = await import(`../../../src/data/posts/${params.slug}.json`);
+            content = postData.content;
+        } catch (err) {
+            console.error("Failed to load post content:", err);
+            content = "<p>Failed to load content.</p>";
+        }
+    }
+
+    // Find related posts (same category, excluding current)
+    const relatedPosts = blogPosts
+        .filter(p => p.category === postMetadata.category && p.slug !== params.slug)
+        .slice(0, 3);
+
+    // If we don't have enough same-category posts, fill with recent ones
+    if (relatedPosts.length < 3) {
+        const recent = blogPosts
+            .filter(p => p.slug !== params.slug && !relatedPosts.find(r => r.slug === p.slug))
+            .slice(0, 3 - relatedPosts.length);
+        relatedPosts.push(...recent);
+    }
+
+    return (
+        <BlogPost
+            post={{ ...postMetadata, content }}
+            relatedPosts={relatedPosts}
+        />
+    );
 }

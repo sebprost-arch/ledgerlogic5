@@ -13,14 +13,9 @@ import './Blog.css';
 
 const categories = [
     'All',
-    'Business Management',
     'Accounting Tools',
-    'Tax',
-    'Startups',
-    'E-Commerce',
-    'Bitcoin',
-    'CRA',
-    'Personal Tax'
+    'Business Management',
+    'Tax'
 ];
 
 const Blog: React.FC = () => {

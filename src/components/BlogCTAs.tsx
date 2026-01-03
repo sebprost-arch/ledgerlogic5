@@ -1,8 +1,7 @@
 import React from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
-export const ConsultationCTA = () => {
+export const ConsultationCTA = ({ onOpenModal }: { onOpenModal?: () => void }) => {
     return (
         <div className="my-16 relative overflow-hidden rounded-2xl bg-white shadow-xl border border-slate-100">
             <div className="absolute top-0 left-0 w-2 h-full bg-teal-500"></div>
@@ -17,12 +16,12 @@ export const ConsultationCTA = () => {
                     </p>
                 </div>
                 <div className="flex-shrink-0">
-                    <Link
-                        href="/contact"
+                    <button
+                        onClick={onOpenModal}
                         className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all bg-teal-600 rounded-lg hover:bg-teal-700 hover:shadow-lg hover:-translate-y-0.5"
                     >
                         Book a Free Consult
-                    </Link>
+                    </button>
                 </div>
             </div>
         </div>
