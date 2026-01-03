@@ -2377,7 +2377,7 @@ export const blogPosts: BlogPost[] = [
             "Non Residents"
         ],
         "category": "Tax",
-        "image": "/images/blog-heroes/logo_vault.svg"
+        "image": "/images/blog-heroes/hero_ledgerlogic_non_resident_bank_account.png"
     },
     {
         "id": "top-tax-challenges-for-dropshipping-businesses-in-canada",
@@ -2426,7 +2426,7 @@ export const blogPosts: BlogPost[] = [
             "E Commerce"
         ],
         "category": "E Commerce",
-        "image": "/images/blog-heroes/logo_shopify.png"
+        "image": "/images/blog-heroes/hero_ledgerlogic_dropshipping_tax_challenges.png"
     },
     {
         "id": "notice-of-objection-cra",
@@ -2475,7 +2475,7 @@ export const blogPosts: BlogPost[] = [
             "Cra"
         ],
         "category": "Cra",
-        "image": "/images/blog-heroes/hero_tax_canada.png"
+        "image": "/images/blog-heroes/hero_ledgerlogic_cra_notice_of_objection.png"
     },
     {
         "id": "what-is-the-difference-between-t3-t4-t4a-and-t5-slips",
@@ -2530,7 +2530,7 @@ export const blogPosts: BlogPost[] = [
             "Personal Tax"
         ],
         "category": "Tax",
-        "image": "/images/blog-heroes/hero_tax_canada.png"
+        "image": "/images/blog-heroes/hero_ledgerlogic_tax_slips_t3_t4_t5.png"
     },
     {
         "id": "is-xero-worth-it",
@@ -2584,7 +2584,7 @@ export const blogPosts: BlogPost[] = [
             "Xero"
         ],
         "category": "Accounting Tools",
-        "image": "/images/blog-heroes/hero_data_migration_v2.png"
+        "image": "/images/blog-heroes/hero_ledgerlogic_is_xero_worth_it.png"
     },
     {
         "id": "t1135-reporting-requirements",
