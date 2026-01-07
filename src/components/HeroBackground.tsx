@@ -1,22 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import heroBg from '../assets/hero-bg-light.png';
-
 
 const HeroBackground: React.FC = () => {
     return (
         <div className="hero-background-container">
             {/* Base Background Image with Slow Zoom/Pan */}
             <motion.div
-                initial={{ scale: 1.0, opacity: 0 }}
+                initial={{ scale: 1.0, opacity: 1 }}
                 animate={{ scale: 1.1, opacity: 1 }}
                 transition={{
                     scale: { duration: 25, repeat: Infinity, repeatType: "reverse", ease: "linear" },
-                    opacity: { duration: 1.0 }
                 }}
                 className="hero-bg-image"
                 style={{
-                    backgroundImage: `url(${heroBg.src})`,
+                    backgroundImage: `url(/images/hero-bg.jpg)`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                 }}

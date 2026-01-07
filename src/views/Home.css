@@ -861,6 +861,20 @@
     color: var(--color-brand-dark) !important;
 }
 
+/* Style links within feature cards */
+.feature-card a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-color: rgba(56, 178, 172, 0.4);
+    text-underline-offset: 2px;
+    transition: all 0.2s ease;
+}
+
+.feature-card a:hover {
+    color: var(--color-accent-hover);
+    text-decoration-color: var(--color-accent);
+}
+
 /* Process Section - Enhanced Steps override */
 .step-card {
     background: rgba(255, 255, 255, 0.6) !important;
@@ -875,6 +889,20 @@
 
 .step-card p {
     color: var(--color-text-muted);
+}
+
+/* Style links within step cards */
+.step-card a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-color: rgba(56, 178, 172, 0.4);
+    text-underline-offset: 2px;
+    transition: all 0.2s ease;
+}
+
+.step-card a:hover {
+    color: var(--color-accent-hover);
+    text-decoration-color: var(--color-accent);
 }
 
 @media (max-width: 1024px) {
@@ -961,6 +989,20 @@
     position: relative;
     transform: scale(1.02);
     /* Slight lift to emphasize correct choice */
+}
+
+/* Style links within comparison section */
+.comparison-col a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-color: rgba(56, 178, 172, 0.4);
+    text-underline-offset: 2px;
+    transition: all 0.2s ease;
+}
+
+.comparison-col a:hover {
+    color: var(--color-accent-hover);
+    text-decoration-color: var(--color-accent);
 }
 
 /* FAQ Preview Section - Interactive Accordion */
@@ -1062,15 +1104,18 @@
     line-height: 1.6;
 }
 
-@media (max-width: 768px) {
-    .faq-header {
-        padding: 1rem;
-        gap: 1rem;
-    }
+/* Style links within FAQ answers */
+.faq-body a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-color: rgba(56, 178, 172, 0.4);
+    text-underline-offset: 2px;
+    transition: all 0.2s ease;
+}
 
-    .faq-body p {
-        padding: 0 1rem 1.5rem 1rem;
-    }
+.faq-body a:hover {
+    color: var(--color-accent-hover);
+    text-decoration-color: var(--color-accent);
 }
 
 .btn-link {
@@ -1248,5 +1293,53 @@
 
     .comparison-col.new-way {
         transform: none;
+    }
+}
+
+/* Mobile Layout Fixes */
+@media (max-width: 768px) {
+
+    /* Fix 1: Stats Card Spacing - prevent crowding with "Trusted by" section */
+    .hero-stats-card {
+        margin-bottom: 4rem;
+    }
+
+    /* Fix 2: Center Seb Prost Image */
+    .team-image-wrapper {
+        justify-content: center;
+        width: 100%;
+        display: flex;
+        margin-bottom: 2rem;
+        /* Ensure wrapper doesn't constrain height weirdly */
+        position: relative;
+        height: auto;
+    }
+
+    .team-image-container {
+        /* CRITICAL: Reset desktop absolute positioning */
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin: 0 auto;
+
+        /* Responsive sizing */
+        width: 100%;
+        max-width: 400px;
+        /* Prevent it from being colossal */
+        height: auto;
+    }
+
+    .team-image-container:hover {
+        transform: none;
+        /* Disable hover lift on mobile */
+    }
+
+    /* Fix 3: Visually center the person who is off-center in the image file */
+    .team-image {
+        transform: translateX(-15%);
+        /* Shift left to center the subject */
+        max-width: 120%;
+        width: 120%;
     }
 }

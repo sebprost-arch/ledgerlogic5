@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-// import { Menu, X, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import OnboardingModal from './OnboardingModal';
@@ -72,8 +72,8 @@ const Navbar: React.FC = () => {
             <a
               href="https://clientlogin-ca2.karbonhq.com/247Pxw6ZlPBD/Identity/Account/Login?token="
               className={`btn btn-sm mr-4 transition-all border-2 font-bold text-sm ${scrolled
-                  ? 'border-white/30 text-white hover:bg-white/10 hover:border-white'
-                  : 'border-slate-300 text-slate-600 hover:border-slate-800 hover:text-slate-900'
+                ? 'border-white/30 text-white hover:bg-white/10 hover:border-white'
+                : 'border-slate-300 text-slate-600 hover:border-slate-800 hover:text-slate-900'
                 }`}
               style={{ padding: '0.5rem 1rem' }}
             >
@@ -85,9 +85,8 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile Toggle */}
-          <button className="mobile-toggle" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? "X" : "Menu"}
-            {/* {isOpen ? <X size={24} /> : <Menu size={24} />} */}
+          <button className="mobile-toggle" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle Menu">
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
           {/* Mobile Menu */}
@@ -97,7 +96,7 @@ const Navbar: React.FC = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                className="mobile-menu glass"
+                className="mobile-menu"
               >
                 {navLinks.map((link) => (
                   <Link

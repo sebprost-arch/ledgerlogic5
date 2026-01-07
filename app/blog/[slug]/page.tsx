@@ -47,6 +47,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
+import BlogJsonLd from '../../../src/components/BlogJsonLd';
+
 export default async function Page({ params }: Props) {
     const postMetadata = blogPosts.find((p) => p.slug === params.slug);
 
@@ -81,9 +83,12 @@ export default async function Page({ params }: Props) {
     }
 
     return (
-        <BlogPost
-            post={{ ...postMetadata, content }}
-            relatedPosts={relatedPosts}
-        />
+        <>
+            <BlogJsonLd post={postMetadata} />
+            <BlogPost
+                post={{ ...postMetadata, content }}
+                relatedPosts={relatedPosts}
+            />
+        </>
     );
 }

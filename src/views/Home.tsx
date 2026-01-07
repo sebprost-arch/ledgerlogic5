@@ -5,8 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle, Users, Code, PieChart, FileText, Rocket, ChevronDown, ChevronUp, X, Check, Star, Settings, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import HeroBackground from '../components/HeroBackground';
-import sebProstImg from '../assets/seb-prost-cutout-hq.png';
+import sebProstImg from '../assets/seb-prost-optimized.png';
 import TalkSoonLogo from '../assets/logos/talksoon.avif';
 import VaraiLogo from '../assets/logos/varailogoe.webp';
 import RethinkLogo from '../assets/logos/rethink-logo-light-2.png';
@@ -15,7 +16,12 @@ import SproutLogo from '../assets/logos/Sprout-.jpg';
 import SentinelLogo from '../assets/logos/TheSentinel_Logo_White@2x-640x340.webp';
 import OnlyTheBestLogo from '../assets/logos/only the best.avif';
 import EntrepriseRainvilleLogo from '../assets/logos/entreprise j rainville.avif';
-import OnboardingModal from '../components/OnboardingModal';
+
+// Lazy load OnboardingModal since it's only shown on user interaction
+const OnboardingModal = dynamic(() => import('../components/OnboardingModal'), {
+    ssr: false,
+    loading: () => null
+});
 
 // Enhanced Clients Array with Logo Fixes based on extraction
 const clients = [
@@ -34,22 +40,22 @@ const features = [
     {
         icon: <Settings className="text-accent" size={32} />, // Process Optimization icon (inferred)
         title: "Process Optimization",
-        desc: "We review your entire workflow from how you get paid to how you pay bills. Then we automate the busy work so your business runs on autopilot."
+        desc: <>We review your entire workflow from how you get paid to how you pay bills. Then we automate the busy work so your business runs on autopilot.</>
     },
     {
         icon: <TrendingUp className="text-accent" size={32} />, // Modern Tech Stack icon (inferred)
         title: "Modern Tech Stack",
-        desc: "We implement best-in-class tools like Xero, Ramp, and Dext. Real-time data means you always know exactly where your business stands."
+        desc: <>We implement best-in-class tools like Xero, Ramp, and Dext. Real-time data means you always know exactly where your business stands.</>
     },
     {
         icon: <FileText className="text-accent" size={32} />, // Bookkeeping & Tax icon
         title: "Bookkeeping & Tax",
-        desc: "With the right tools, compliance becomes reliable. We keep your books pristine and optimize your tax strategy year-round, not just at deadline."
+        desc: <>With the right tools, compliance becomes reliable. We keep your books pristine and optimize your tax strategy year-round, not just at deadline.</>
     },
     {
         icon: <PieChart className="text-accent" size={32} />, // Virtual CFO icon
         title: "Virtual CFO & Advisory",
-        desc: "Once the data is clean, we help you use it. Strategic budgeting, cash flow forecasting, and tax planning to fuel your growth."
+        desc: <>Once the data is clean, we help you use it. Strategic budgeting, cash flow forecasting, and tax planning to fuel your growth.</>
     }
 ];
 
@@ -79,22 +85,22 @@ const testimonials = [
 const faqs = [
     {
         question: "How does the monthly fixed price work?",
-        answer: "We assess your transaction volume and complexity to create a flat monthly rate. You get unlimited support and no surprise bills at year-end.",
+        answer: <>We assess your transaction volume and complexity to create a flat monthly rate. You get unlimited support and no surprise bills at year-end.</>,
         icon: <Settings size={20} className="text-accent" />
     },
     {
         question: "Do I need to switch my accounting software?",
-        answer: "We work exclusively with modern cloud tools like Xero and QBO. If you're on desktop tech, we'll handle the migration for you.",
+        answer: <>We work exclusively with modern cloud tools like Xero and QBO. If you're on desktop tech, we'll handle the migration for you.</>,
         icon: <Code size={20} className="text-accent" />
     },
     {
         question: "Is it easy to switch to LedgerLogic?",
-        answer: "Yes. We have a streamlined onboarding process. We contact your previous accountant to get the files, so you don't have to have awkward conversations.",
+        answer: <>Yes. We have a streamlined onboarding process. We contact your previous accountant to get the files, so you don't have to have awkward conversations. View our <Link href="/pricing">pricing</Link> to get started.</>,
         icon: <CheckCircle size={20} className="text-accent" />
     },
     {
         question: "Will I get a dedicated CPA?",
-        answer: "Absolutely. You'll be matched with a dedicated account manager who knows your business inside out. No call centers, ever.",
+        answer: <>Absolutely. You'll be matched with a dedicated account manager who knows your business inside out. No call centers, ever.</>,
         icon: <Users size={20} className="text-accent" />
     }
 ];
@@ -184,8 +190,9 @@ const Home: React.FC = () => {
                             <div key={i} className={`client-logo-item ${client.className || ''}`}>
                                 <Image
                                     src={client.logo}
-                                    alt={client.name}
+                                    alt={`${client.name} - LedgerLogic client logo`}
                                     className="client-logo-img"
+                                    loading="lazy"
                                 />
                             </div>
                         ))}
@@ -218,7 +225,7 @@ const Home: React.FC = () => {
                             <h3><Check className="icon-check" /> The LedgerLogic Way</h3>
                             <ul>
                                 <li><strong>Fixed Monthly Fees:</strong> One predictable price. Unlimited support included.</li>
-                                <li><strong>Total Automation:</strong> We implement tools like Xero & Dext. Zero manual data entry.</li>
+                                <li><strong>Total Automation:</strong> We implement <Link href="/tools">tools like Xero & Dext</Link>. Zero manual data entry.</li>
                                 <li><strong>Deadlines Guaranteed:</strong> We manage the calendar. Your filings are always on time.</li>
                                 <li><strong>Easy Collaboration:</strong> We're part of your team. Fast answers via our client management platform Karbon or by email.</li>
                             </ul>
@@ -268,7 +275,7 @@ const Home: React.FC = () => {
                                 <div className="step-number">02</div>
                                 <div className="step-icon"><Settings size={28} className="text-accent" /></div>
                                 <h3>Custom Package</h3>
-                                <p>We design a fixed-price monthly package tailored to you. No surprise bills, ever.</p>
+                                <p>We design a <Link href="/pricing">fixed-price monthly package</Link> tailored to you. No surprise bills, ever.</p>
                             </div>
                         </div>
                         <div className="process-arrow mobile-hide"></div>
@@ -301,10 +308,11 @@ const Home: React.FC = () => {
                             <div className="team-image-container">
                                 <Image
                                     src={sebProstImg}
-                                    alt="Sebastien Prost, CPA"
+                                    alt="Sebastien Prost, CPA - Founder and CEO of LedgerLogic, Canadian accounting firm"
                                     className="team-image"
                                     width={1000}
                                     height={1250}
+                                    priority
                                 />
                             </div>
                         </div>

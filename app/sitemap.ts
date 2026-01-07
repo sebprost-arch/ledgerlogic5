@@ -8,8 +8,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const routes = [
         '',
         '/pricing',
-        // '/contact', // Check if contact is a page or modal - looks like directory exists
-        // '/blog', // Check if blog index exists - directory 'blog' exists
+        '/tools',
+        '/blog',
     ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date().toISOString().split('T')[0],
