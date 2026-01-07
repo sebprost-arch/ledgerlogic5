@@ -13,7 +13,7 @@ import { Linkedin, Twitter, Facebook, ChevronRight } from 'lucide-react';
 import './BlogPost.css';
 
 // Shortcode Parser Component
-const BlogPostContent = ({ content, onOpenModal }: { content: string; onOpenModal: () => void }) => {
+const BlogPostContent = ({ content, onOpenModal, ctaContext }: { content: string; onOpenModal: () => void; ctaContext?: { title: string; description: string; buttonText?: string } }) => {
     // Regex to find shortcodes
     // We split the content by specific known shortcodes based on strings
 
@@ -34,7 +34,14 @@ const BlogPostContent = ({ content, onOpenModal }: { content: string; onOpenModa
                                 {subIndex < subParts.length - 1 && <LeadMagnetCTA />}
                             </React.Fragment>
                         ))}
-                        {index < parts.length - 1 && <ConsultationCTA onOpenModal={onOpenModal} />}
+                        {index < parts.length - 1 && (
+                            <ConsultationCTA
+                                onOpenModal={onOpenModal}
+                                title={ctaContext?.title}
+                                description={ctaContext?.description}
+                                buttonText={ctaContext?.buttonText}
+                            />
+                        )}
                     </React.Fragment>
                 );
             })}
@@ -65,6 +72,66 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, relatedPosts }) => {
     // Onboarding Modal State
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+
+
+    // Dynamic CTA Context Logic
+    const ctaContext = React.useMemo(() => {
+        // 1. Explicit Override
+        if (post.midContentCta) return post.midContentCta;
+
+        const titleLower = post.title.toLowerCase();
+
+        // 2. E-Commerce Signals (Highest Priority)
+        if (titleLower.match(/amazon|shopify|e-commerce|dropshipping|product/)) {
+            return {
+                title: "Scaling Your E-Commerce Brand?",
+                description: "Inventory, sales tax, and margins can get messy. We specialize in accounting for Canadian e-commerce sellers.",
+                buttonText: "Talk to an E-Com Expert"
+            };
+        }
+
+        // 3. Tax Signals
+        if (titleLower.match(/tax|cra|deduction|write off|audit/)) {
+            return {
+                title: "Worried About the CRA?",
+                description: "Ensure you're compliant and maximizing every deduction. Don't leave money on the table.",
+                buttonText: "Book a Tax Review"
+            };
+        }
+
+        // 4. Switching/Relationship Signals
+        if (titleLower.match(/switch|ghosted|taking so long|change accountant|hiring|choose/)) {
+            return {
+                title: "Tired of Your Current Accountant?",
+                description: "You deserve responsive support and proactive advice. Switch to LedgerLogic for a partner who actually cares.",
+                buttonText: "Book a Discovery Call"
+            };
+        }
+
+        // 5. Default Category Fallbacks
+        if (post.category === 'Business Management') {
+            return {
+                title: "Scale Your Business Faster",
+                description: "Get the financial visibility you need to make confident growth decisions.",
+                buttonText: "Talk to a CFO"
+            };
+        }
+
+        if (post.category === 'Tax') {
+            return {
+                title: "Concerned About Corporate Tax?",
+                description: "Ensure your corporation is compliant and tax-efficient. Our experts handle the complexity for you.",
+                buttonText: "Book a Tax Plan Review"
+            };
+        }
+
+        // Generic Fallback
+        return {
+            title: "Ready to Simplify Your Finances?",
+            description: "Stop stressing about your numbers. Let our team handle your accounting so you can focus on leading your business.",
+            buttonText: "Book a Free Consult"
+        };
+    }, [post]);
 
 
     useEffect(() => {
@@ -214,7 +281,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, relatedPosts }) => {
                                 <h1 className="premium-post-title">{post.title}</h1>
 
                                 <div className="premium-post-meta">
-                                    <span className="meta-text">By <strong>{post.author}</strong></span>
+                                    <span className="meta-text">By <strong>{post.author}</strong> <span className="text-teal-600 text-[10px] font-bold uppercase ml-1.5 bg-teal-50 px-2 py-0.5 rounded border border-teal-100 align-middle">CPA, Ex-CRA</span></span>
                                     <span className="meta-dot">·</span>
                                     <span className="meta-text">{post.date}</span>
                                     <span className="meta-dot">·</span>
@@ -303,7 +370,11 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, relatedPosts }) => {
                             )}
 
                             <div className="content-body premium-prose">
-                                <BlogPostContent content={post.content} onOpenModal={() => setIsModalOpen(true)} />
+                                <BlogPostContent
+                                    content={post.content}
+                                    onOpenModal={() => setIsModalOpen(true)}
+                                    ctaContext={ctaContext}
+                                />
                             </div>
 
                             {/* Author Box */}
@@ -394,16 +465,27 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, relatedPosts }) => {
                 </div>
             </section>
 
-            {/* NEWSLETTER CTA - Full Width */}
+            {/* 5. CONTEXTUAL FOOTER CTA */}
             <section className="bg-white py-20 border-t border-slate-200 -mx-4 md:-mx-8 lg:-mx-16 px-4 md:px-8 lg:px-16">
                 <div className="post-container">
-                    <div className="newsletter-cta max-w-4xl mx-auto shadow-sm">
-                        <h3>Get Smarter About Your Finances</h3>
-                        <p>Monthly insights on Canadian accounting, tax strategy, and compliance.</p>
-                        <div className="newsletter-form">
-                            <input type="email" placeholder="work@email.com" />
-                            <button className="btn-subscribe">Subscribe</button>
-                        </div>
+                    <div className={`newsletter-cta max-w-4xl mx-auto shadow-sm border-none text-white ${ctaContext.buttonText === 'Talk to an E-Com Expert' ? 'bg-indigo-900' :
+                            ctaContext.buttonText === 'Book a Tax Review' || ctaContext.buttonText === 'Book a Tax Plan Review' ? 'bg-slate-900' :
+                                'bg-teal-900'
+                        }`}>
+                        <h3 className="text-white">{ctaContext.title}</h3>
+                        <p className={`${ctaContext.buttonText === 'Talk to an E-Com Expert' ? 'text-indigo-100' :
+                                ctaContext.buttonText === 'Book a Tax Review' || ctaContext.buttonText === 'Book a Tax Plan Review' ? 'text-slate-300' :
+                                    'text-teal-100'
+                            } mb-8`}>{ctaContext.description}</p>
+                        <button
+                            onClick={() => setIsModalOpen(true)}
+                            className={`inline-flex items-center justify-center px-8 py-4 text-base font-bold transition-all bg-white rounded-lg hover:shadow-lg hover:-translate-y-0.5 ${ctaContext.buttonText === 'Talk to an E-Com Expert' ? 'text-indigo-900 hover:bg-indigo-50' :
+                                    ctaContext.buttonText === 'Book a Tax Review' || ctaContext.buttonText === 'Book a Tax Plan Review' ? 'text-slate-900 hover:bg-slate-100' :
+                                        'text-teal-900 hover:bg-teal-50'
+                                }`}
+                        >
+                            {ctaContext.buttonText}
+                        </button>
                     </div>
                 </div>
             </section>

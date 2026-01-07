@@ -25,7 +25,14 @@ const AuthorBox = ({ author }: Props) => {
                 <div className="flex items-center justify-center sm:justify-start gap-2 mb-1">
                     <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Written By</span>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2 font-display">{author}</h3>
+                <h3 className="text-lg font-bold text-slate-900 mb-2 font-display">
+                    {author}
+                    {author === "Seb Prost, CPA" && (
+                        <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-teal-100 text-teal-800 uppercase tracking-wide">
+                            CPA, Ex-CRA
+                        </span>
+                    )}
+                </h3>
                 <p className="text-slate-600 text-sm leading-relaxed mb-3">
                     {authorBio}
                 </p>

@@ -7,6 +7,7 @@ export interface Tool {
     initials: string; // 1-2 chars for logo placeholder
     brandColor: string; // Hex code for background
     iconName?: string; // Optional lucide icon name
+    slug?: string; // Internal guide page slug
     summary: string;
     bestFor: string;
     benefits: string[];
@@ -186,6 +187,7 @@ export const TOOLS: Tool[] = [
         ],
         integrations: ['Everything'],
         affiliateUrl: '{{AFFILIATE_XERO_URL}}',
+        slug: 'xero-canada',
         categoryIds: ['accounting'],
         detailAnchor: 'tool-xero',
         detailContent: {
@@ -216,6 +218,7 @@ export const TOOLS: Tool[] = [
         ],
         integrations: ['Everything'],
         affiliateUrl: '{{AFFILIATE_QBO_URL}}',
+        slug: 'quickbooks-vs-xero-canada',
         categoryIds: ['accounting'],
         detailAnchor: 'tool-qbo',
         detailContent: {
@@ -246,6 +249,7 @@ export const TOOLS: Tool[] = [
         ],
         integrations: ['Xero', 'QuickBooks Online'],
         affiliateUrl: '{{AFFILIATE_DEXT_URL}}',
+        slug: 'dext-canada',
         categoryIds: ['receipts'],
         detailAnchor: 'tool-dext',
         detailContent: {
@@ -276,6 +280,7 @@ export const TOOLS: Tool[] = [
         ],
         integrations: ['Shopify', 'Stripe', 'PayPal', 'Square', 'Xero', 'QBO'],
         affiliateUrl: '{{AFFILIATE_SYNDER_URL}}',
+        slug: 'shopify-accounting-apps',
         categoryIds: ['ecommerce'],
         detailAnchor: 'tool-synder',
         detailContent: {

@@ -1,18 +1,27 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 
-export const ConsultationCTA = ({ onOpenModal }: { onOpenModal?: () => void }) => {
+export const ConsultationCTA = ({
+    onOpenModal,
+    title = "Ready to Simplify Your Finances?",
+    description = "Stop stressing about your numbers. Let our team handle your accounting so you can focus on leading your business.",
+    buttonText = "Book a Free Consult"
+}: {
+    onOpenModal?: () => void;
+    title?: string;
+    description?: string;
+    buttonText?: string;
+}) => {
     return (
         <div className="my-16 relative overflow-hidden rounded-2xl bg-white shadow-xl border border-slate-100">
             <div className="absolute top-0 left-0 w-2 h-full bg-teal-500"></div>
             <div className="p-8 md:p-10 md:flex md:items-center md:gap-8">
                 <div className="flex-1">
                     <h3 className="text-2xl font-bold text-slate-900 mb-3 font-display">
-                        Stop Wrestling with Xero
+                        {title}
                     </h3>
                     <p className="text-slate-600 text-lg leading-relaxed mb-6 md:mb-0">
-                        You didn't start a business to become a part-time bookkeeper.
-                        Let our team handle your monthly bookkeeping so you can get back to growth.
+                        {description}
                     </p>
                 </div>
                 <div className="flex-shrink-0">
@@ -20,7 +29,7 @@ export const ConsultationCTA = ({ onOpenModal }: { onOpenModal?: () => void }) =
                         onClick={onOpenModal}
                         className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all bg-teal-600 rounded-lg hover:bg-teal-700 hover:shadow-lg hover:-translate-y-0.5"
                     >
-                        Book a Free Consult
+                        {buttonText}
                     </button>
                 </div>
             </div>

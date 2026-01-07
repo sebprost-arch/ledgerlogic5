@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TOOLS, CATEGORIES, STACKS, FAQS } from '../../app/tools/tools-data';
-import { CheckCircle2, ExternalLink, Info, ShieldCheck, ChevronDown, ChevronUp, Zap, Star, X } from 'lucide-react';
+import { CheckCircle2, ExternalLink, Info, ShieldCheck, ChevronDown, ChevronUp, Zap, Star, X, BookOpen } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -263,6 +263,18 @@ export default function ToolsView() {
                                                 >
                                                     Visit Website <ExternalLink size={12} />
                                                 </a>
+                                                {tool.slug && (
+                                                    <a
+                                                        href={`/tools/${tool.slug}`}
+                                                        className="px-3 py-2.5 rounded-lg border border-slate-200 bg-white text-slate-500 hover:border-teal-300 hover:text-teal-600 hover:bg-teal-50 transition-colors flex items-center justify-center relative group/guide"
+                                                        title="Read Guide"
+                                                    >
+                                                        <BookOpen size={16} />
+                                                        <span className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[10px] py-1 px-2 rounded opacity-0 group-hover/guide:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                                                            View Guide
+                                                        </span>
+                                                    </a>
+                                                )}
                                                 <button
                                                     onClick={() => toggleTool(tool.id)}
                                                     className={`px-3 py-2.5 rounded-lg border transition-colors flex items-center justify-center ${expandedTool === tool.id ? 'bg-slate-800 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-500 hover:border-slate-300 hover:text-slate-700'}`}
