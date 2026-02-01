@@ -9,8 +9,37 @@ import { BlogPost as BlogPostType } from '../data/blogData';
 import { ConsultationCTA, LeadMagnetCTA } from '../components/BlogCTAs';
 import AuthorBox from '../components/AuthorBox';
 import OnboardingModal from '../components/OnboardingModal';
-import { Linkedin, Twitter, Facebook, ChevronRight } from 'lucide-react';
+import { Linkedin, Twitter, Facebook, ChevronRight, BookOpen } from 'lucide-react';
 import './BlogPost.css';
+
+// Map of Support Pages -> Pillar Pages for explicit "Related Reading" callouts
+const PILLAR_MAP: Record<string, { slug: string; title: string; category: string }> = {
+    // Cluster A: Xero
+    'should-i-switch-to-xero': { slug: 'is-xero-easy-to-use', title: 'Is Xero Easy to Use? The Ultimate Guide', category: 'Cloud Accounting' },
+    'xero-pricing-for-canadian-businesses-what-you-need-to-know-before-subscribing': { slug: 'is-xero-easy-to-use', title: 'Is Xero Easy to Use? The Ultimate Guide', category: 'Cloud Accounting' },
+    'can-i-use-xero-for-multiple-companies': { slug: 'is-xero-easy-to-use', title: 'Is Xero Easy to Use? The Ultimate Guide', category: 'Cloud Accounting' },
+    'how-long-does-it-take-to-learn-xero': { slug: 'is-xero-easy-to-use', title: 'Is Xero Easy to Use? The Ultimate Guide', category: 'Cloud Accounting' },
+    'streamline-your-invoicing-how-xero-transforms-the-process-for-canadian-companies': { slug: 'is-xero-easy-to-use', title: 'Is Xero Easy to Use? The Ultimate Guide', category: 'Cloud Accounting' },
+    'quickbooks-vs-xero-a-comparative-analysis-for-canadian-smes': { slug: 'is-xero-easy-to-use', title: 'Is Xero Easy to Use? The Ultimate Guide', category: 'Cloud Accounting' },
+
+    // Cluster B: Incorporation
+    'transferring-personal-assets-from-proprietorship-to-a-corporation-in-canada-section-85-rollover': { slug: 'tax-benefits-and-disadvantages-of-incorporating-in-canada', title: 'Tax Benefits & Disadvantages of Incorporating', category: 'Structuring' },
+    'small-business-tax-rate-canada': { slug: 'tax-benefits-and-disadvantages-of-incorporating-in-canada', title: 'Tax Benefits & Disadvantages of Incorporating', category: 'Structuring' },
+    'corporate-tax-filing-requirements-in-canada': { slug: 'tax-benefits-and-disadvantages-of-incorporating-in-canada', title: 'Tax Benefits & Disadvantages of Incorporating', category: 'Structuring' },
+    'how-to-file-ontario-annual-return': { slug: 'tax-benefits-and-disadvantages-of-incorporating-in-canada', title: 'Tax Benefits & Disadvantages of Incorporating', category: 'Structuring' },
+
+    // Cluster C: Holding Company
+    'capital-dividend-account-example': { slug: 'what-is-a-holding-company-in-canada', title: 'What is a Holding Company in Canada?', category: 'Adv. Tax' },
+    'corporate-tax-planning-strategies-in-canada': { slug: 'what-is-a-holding-company-in-canada', title: 'What is a Holding Company in Canada?', category: 'Adv. Tax' },
+    'taxation-of-investment-income-in-a-canadian-corporation': { slug: 'what-is-a-holding-company-in-canada', title: 'What is a Holding Company in Canada?', category: 'Adv. Tax' },
+    'are-dividends-taxable-in-canada': { slug: 'what-is-a-holding-company-in-canada', title: 'What is a Holding Company in Canada?', category: 'Adv. Tax' },
+
+    // Cluster D: CRA
+    'chances-of-getting-audited-by-cra': { slug: 'tax-filing-deadlines-in-canada-a-comprehensive-guide', title: 'Tax Filing Deadlines: Comprehensive Guide', category: 'Compliance' },
+    'how-do-you-deal-with-a-cra-audit': { slug: 'tax-filing-deadlines-in-canada-a-comprehensive-guide', title: 'Tax Filing Deadlines: Comprehensive Guide', category: 'Compliance' },
+    'does-cra-audit-your-bank-account': { slug: 'tax-filing-deadlines-in-canada-a-comprehensive-guide', title: 'Tax Filing Deadlines: Comprehensive Guide', category: 'Compliance' },
+    'how-far-back-can-cra-audit': { slug: 'tax-filing-deadlines-in-canada-a-comprehensive-guide', title: 'Tax Filing Deadlines: Comprehensive Guide', category: 'Compliance' },
+};
 
 // Shortcode Parser Component
 const BlogPostContent = ({ content, onOpenModal, ctaContext }: { content: string; onOpenModal: () => void; ctaContext?: { title: string; description: string; buttonText?: string } }) => {
@@ -369,6 +398,30 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, relatedPosts }) => {
                                 </div>
                             )}
 
+                            {/* RELATED PILLAR CALLOUT */}
+                            {PILLAR_MAP[post.slug] && (
+                                <div className="mb-8 not-prose">
+                                    <Link href={`/blog/${PILLAR_MAP[post.slug].slug}`} className="group block bg-teal-50 border border-teal-100 rounded-xl p-5 hover:border-teal-300 hover:shadow-md transition-all">
+                                        <div className="flex items-start gap-4">
+                                            <div className="bg-teal-100 p-2.5 rounded-lg text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors mt-0.5">
+                                                <BookOpen size={20} />
+                                            </div>
+                                            <div>
+                                                <span className="text-xs font-bold uppercase tracking-wider text-teal-600 mb-1 block">
+                                                    Deep Dive: {PILLAR_MAP[post.slug].category}
+                                                </span>
+                                                <h4 className="text-slate-900 font-bold text-lg group-hover:text-teal-700 transition-colors">
+                                                    {PILLAR_MAP[post.slug].title} &rarr;
+                                                </h4>
+                                                <p className="text-slate-600 text-sm mt-1">
+                                                    Read our comprehensive guide on this topic.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </div>
+                            )}
+
                             <div className="content-body premium-prose">
                                 <BlogPostContent
                                     content={post.content}
@@ -469,19 +522,19 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, relatedPosts }) => {
             <section className="bg-white py-20 border-t border-slate-200 -mx-4 md:-mx-8 lg:-mx-16 px-4 md:px-8 lg:px-16">
                 <div className="post-container">
                     <div className={`newsletter-cta max-w-4xl mx-auto shadow-sm border-none text-white ${ctaContext.buttonText === 'Talk to an E-Com Expert' ? 'bg-indigo-900' :
-                            ctaContext.buttonText === 'Book a Tax Review' || ctaContext.buttonText === 'Book a Tax Plan Review' ? 'bg-slate-900' :
-                                'bg-teal-900'
+                        ctaContext.buttonText === 'Book a Tax Review' || ctaContext.buttonText === 'Book a Tax Plan Review' ? 'bg-slate-900' :
+                            'bg-teal-900'
                         }`}>
                         <h3 className="text-white">{ctaContext.title}</h3>
                         <p className={`${ctaContext.buttonText === 'Talk to an E-Com Expert' ? 'text-indigo-100' :
-                                ctaContext.buttonText === 'Book a Tax Review' || ctaContext.buttonText === 'Book a Tax Plan Review' ? 'text-slate-300' :
-                                    'text-teal-100'
+                            ctaContext.buttonText === 'Book a Tax Review' || ctaContext.buttonText === 'Book a Tax Plan Review' ? 'text-slate-300' :
+                                'text-teal-100'
                             } mb-8`}>{ctaContext.description}</p>
                         <button
                             onClick={() => setIsModalOpen(true)}
                             className={`inline-flex items-center justify-center px-8 py-4 text-base font-bold transition-all bg-white rounded-lg hover:shadow-lg hover:-translate-y-0.5 ${ctaContext.buttonText === 'Talk to an E-Com Expert' ? 'text-indigo-900 hover:bg-indigo-50' :
-                                    ctaContext.buttonText === 'Book a Tax Review' || ctaContext.buttonText === 'Book a Tax Plan Review' ? 'text-slate-900 hover:bg-slate-100' :
-                                        'text-teal-900 hover:bg-teal-50'
+                                ctaContext.buttonText === 'Book a Tax Review' || ctaContext.buttonText === 'Book a Tax Plan Review' ? 'text-slate-900 hover:bg-slate-100' :
+                                    'text-teal-900 hover:bg-teal-50'
                                 }`}
                         >
                             {ctaContext.buttonText}

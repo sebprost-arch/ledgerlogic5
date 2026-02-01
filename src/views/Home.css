@@ -394,7 +394,7 @@
     /* Lower height to prevent top cutoff (was 50%) */
     top: 75%;
     /* Exact center of left column (was 8%, shifted slightly left to 4%) */
-    left: 4%;
+    left: -10%;
     transform: translate(-50%, -50%);
     height: auto;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));

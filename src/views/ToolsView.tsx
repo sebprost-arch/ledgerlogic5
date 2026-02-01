@@ -4,8 +4,7 @@ import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TOOLS, CATEGORIES, STACKS, FAQS } from '../../app/tools/tools-data';
 import { CheckCircle2, ExternalLink, Info, ShieldCheck, ChevronDown, ChevronUp, Zap, Star, X, BookOpen } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+
 
 export default function ToolsView() {
     const [searchQuery, setSearchQuery] = useState('');
@@ -78,8 +77,6 @@ export default function ToolsView() {
 
     return (
         <div className="bg-slate-50 min-h-screen text-slate-900">
-            <Navbar />
-
             {/* 1. HERO SECTION */}
             <section className="relative pt-32 pb-20 overflow-hidden bg-white border-b border-slate-100">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-50 via-transparent to-transparent opacity-50"></div>
@@ -426,8 +423,6 @@ export default function ToolsView() {
                 </section>
 
             </div>
-
-            <Footer />
         </div>
     );
 }

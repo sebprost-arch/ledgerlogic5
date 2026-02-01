@@ -51,6 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 import BlogJsonLd from '../../../src/components/BlogJsonLd';
+import { injectInternalLinks } from '../../../src/lib/internalLinks';
 
 export default async function Page({ params }: Props) {
     const postMetadata = blogPosts.find((p) => p.slug === params.slug);
@@ -71,6 +72,9 @@ export default async function Page({ params }: Props) {
             content = "<p>Failed to load content.</p>";
         }
     }
+
+    // Inject internal links
+    content = injectInternalLinks(content);
 
     // Find related posts (same category, excluding current)
     const relatedPosts = blogPosts

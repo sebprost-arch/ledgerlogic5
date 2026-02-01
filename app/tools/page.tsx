@@ -1,5 +1,6 @@
+
+import AffiliateToolsView from '../../src/views/AffiliateToolsView';
 import { Metadata } from 'next';
-import ToolsView from '../../src/views/ToolsView';
 
 export const metadata: Metadata = {
     title: 'Best Accounting Tools for Canadian Business',
@@ -15,5 +16,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-    return <ToolsView />;
+    return <AffiliateToolsView />;
 }
