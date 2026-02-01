@@ -74,7 +74,7 @@ const ToolPageView: React.FC<ToolPageProps> = ({ data }) => {
                         <div>
                             <div className="flex flex-wrap gap-2 mb-6">
                                 {['Canadian CPA Firm', 'Cloud-First', 'Implementation Support'].map((tag, i) => (
-                                    <span key={i} className="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-bold uppercase tracking-wide rounded-full border border-teal-100">
+                                    <span key={i} className="px-3 py-1.5 bg-gradient-to-r from-teal-50 to-blue-50 text-teal-700 text-xs font-bold uppercase tracking-wide rounded-full border border-teal-200 shadow-sm">
                                         {tag}
                                     </span>
                                 ))}
@@ -91,13 +91,13 @@ const ToolPageView: React.FC<ToolPageProps> = ({ data }) => {
                                     href={data.affiliateUrl}
                                     target="_blank"
                                     rel="sponsored nofollow"
-                                    className="px-8 py-4 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-center flex items-center justify-center gap-2"
+                                    className="px-8 py-4 bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-center flex items-center justify-center gap-2"
                                 >
                                     {data.hero.primaryCtaText} <ArrowRight size={18} />
                                 </a>
                                 <button
                                     onClick={() => setIsModalOpen(true)}
-                                    className="px-8 py-4 bg-white border border-slate-200 text-slate-700 font-bold rounded-xl hover:bg-slate-50 transition-all flex items-center justify-center gap-2"
+                                    className="px-8 py-4 bg-white border-2 border-slate-300 text-slate-700 font-bold rounded-xl hover:bg-slate-50 hover:border-slate-400 hover:shadow-md transition-all flex items-center justify-center gap-2"
                                 >
                                     Book Stack Setup
                                 </button>
@@ -110,14 +110,17 @@ const ToolPageView: React.FC<ToolPageProps> = ({ data }) => {
                         <div className="flex flex-col gap-6">
                             {/* Recommendation Callout */}
                             {data.recommendation && (
-                                <div className="bg-gradient-to-r from-indigo-50 to-blue-50 border border-blue-100 p-6 rounded-2xl relative overflow-hidden">
+                                <div className="relative bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 border-2 border-blue-200 p-6 rounded-2xl shadow-md overflow-hidden">
                                     <div className="flex items-start gap-4 relative z-10">
-                                        <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold shrink-0 shadow-lg">
-                                            <Star size={20} fill="currentColor" />
+                                        <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 text-white rounded-xl flex items-center justify-center font-bold shrink-0 shadow-lg">
+                                            <Star size={22} fill="currentColor" />
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-slate-900 mb-1">{data.recommendation.title}</h4>
-                                            <p className="text-sm text-slate-600 mb-3 leading-relaxed">{data.recommendation.desc}</p>
+                                            <div className="flex items-center gap-2 mb-2">
+                                                <h4 className="font-bold text-slate-900">{data.recommendation.title}</h4>
+                                                <span className="px-2 py-0.5 bg-blue-600 text-white text-[10px] font-bold uppercase tracking-wider rounded-full">Top Pick</span>
+                                            </div>
+                                            <p className="text-sm text-slate-700 mb-3 leading-relaxed">{data.recommendation.desc}</p>
                                             <a
                                                 href={data.affiliateUrl}
                                                 target="_blank"
@@ -132,11 +135,15 @@ const ToolPageView: React.FC<ToolPageProps> = ({ data }) => {
                             )}
 
                             {/* Quick Verdict Card */}
-                            <div className="bg-slate-900 text-white p-8 rounded-2xl shadow-2xl relative overflow-hidden">
-                                <div className="absolute top-0 right-0 p-20 bg-teal-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                            <div className="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-8 rounded-2xl shadow-2xl relative overflow-hidden">
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-teal-500/30 to-blue-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                                <div className="absolute top-6 right-6 w-16 h-16 rounded-full bg-gradient-to-br from-amber-400 to-yellow-500 flex items-center justify-center shadow-xl border-4 border-amber-200">
+                                    <ShieldCheck className="text-slate-900" size={28} />
+                                </div>
                                 <h3 className="text-lg font-bold mb-6 flex items-center gap-2">
                                     <Zap className="text-yellow-400 fill-yellow-400" size={20} />
                                     CPA Quick Verdict
+                                    <span className="text-xs text-teal-300 ml-auto mr-20">Certified Pick</span>
                                 </h3>
 
                                 <div className="space-y-6 relative z-10">
@@ -164,30 +171,38 @@ const ToolPageView: React.FC<ToolPageProps> = ({ data }) => {
                 <div className="container max-w-5xl mx-auto px-6">
                     <div className="grid md:grid-cols-2 gap-8 mb-16">
                         {/* ... Pros/Cons content is unchanged mostly, just ensuring text color is clear ... */}
-                        <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
-                            <h3 className="text-xl font-bold text-green-700 mb-6 flex items-center gap-2">
-                                <Check size={24} strokeWidth={3} />
-                                Why We Choose It
-                            </h3>
+                        <div className="bg-gradient-to-br from-white to-green-50/30 p-8 rounded-2xl border-2 border-green-100 shadow-lg hover:shadow-xl transition-all">
+                            <div className="flex items-center gap-3 mb-6">
+                                <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                                    <Check className="text-green-600" size={20} strokeWidth={3} />
+                                </div>
+                                <h3 className="text-xl font-bold text-green-700">
+                                    Why We Choose It
+                                </h3>
+                            </div>
                             <ul className="space-y-4">
                                 {data.prosCons.pros.map((pro, i) => (
                                     <li key={i} className="flex items-start gap-3 text-slate-700">
-                                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 shrink-0"></div>
-                                        <span>{pro}</span>
+                                        <div className="mt-1.5 w-2 h-2 rounded-full bg-green-500 shrink-0"></div>
+                                        <span className="font-medium">{pro}</span>
                                     </li>
                                 ))}
                             </ul>
                         </div>
-                        <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
-                            <h3 className="text-xl font-bold text-red-600 mb-6 flex items-center gap-2">
-                                <X size={24} strokeWidth={3} />
-                                What to Watch For
-                            </h3>
+                        <div className="bg-gradient-to-br from-white to-red-50/30 p-8 rounded-2xl border-2 border-red-100 shadow-lg hover:shadow-xl transition-all">
+                            <div className="flex items-center gap-3 mb-6">
+                                <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
+                                    <X className="text-red-600" size={20} strokeWidth={3} />
+                                </div>
+                                <h3 className="text-xl font-bold text-red-600">
+                                    What to Watch For
+                                </h3>
+                            </div>
                             <ul className="space-y-4">
                                 {data.prosCons.cons.map((con, i) => (
-                                    <li key={i} className="flex items-start gap-3 text-slate-600">
-                                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-400 shrink-0"></div>
-                                        <span>{con}</span>
+                                    <li key={i} className="flex items-start gap-3 text-slate-700">
+                                        <div className="mt-1.5 w-2 h-2 rounded-full bg-red-400 shrink-0"></div>
+                                        <span className="font-medium">{con}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -196,21 +211,21 @@ const ToolPageView: React.FC<ToolPageProps> = ({ data }) => {
 
                     {/* Comparison Table (Conditional) */}
                     {data.comparisonTable && (
-                        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden mb-16">
+                        <div className="bg-white rounded-2xl border border-slate-200 shadow-lg overflow-hidden mb-16">
                             <div className="overflow-x-auto">
                                 <table className="w-full text-left text-sm text-slate-600">
-                                    <thead className="bg-slate-50 text-xs uppercase font-bold text-slate-500">
+                                    <thead className="bg-gradient-to-r from-slate-800 to-slate-700 text-white">
                                         <tr>
                                             {data.comparisonTable.headers.map((h, i) => (
-                                                <th key={i} className="px-6 py-4">{h}</th>
+                                                <th key={i} className="px-6 py-4 text-left text-xs uppercase font-bold tracking-wider">{h}</th>
                                             ))}
                                         </tr>
                                     </thead>
                                     <tbody className="divide-y divide-slate-100">
                                         {data.comparisonTable.rows.map((row, i) => (
-                                            <tr key={i} className="hover:bg-slate-50/50">
+                                            <tr key={i} className={`hover:bg-teal-50/50 transition-colors ${i % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}`}>
                                                 {row.map((cell, j) => (
-                                                    <td key={j} className={`px-6 py-4 ${j === 0 ? 'font-bold text-slate-900' : ''}`}>
+                                                    <td key={j} className={`px-6 py-4 ${j === 0 ? 'font-bold text-slate-900' : 'text-slate-700'}`}>
                                                         {cell}
                                                     </td>
                                                 ))}
@@ -228,8 +243,11 @@ const ToolPageView: React.FC<ToolPageProps> = ({ data }) => {
             <section className="py-16 bg-white border-y border-slate-100">
                 <div className="container max-w-3xl mx-auto px-6 text-center">
                     <h2 className="text-2xl font-bold text-slate-900 mb-6">Pricing Considerations</h2>
-                    <div className="p-8 bg-blue-50 rounded-2xl border border-blue-100 text-left">
-                        <p className="text-slate-700 leading-relaxed whitespace-pre-line">
+                    <div className="relative p-10 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl border-2 border-blue-200 shadow-inner text-left">
+                        <div className="absolute top-4 right-4 px-3 py-1.5 bg-white/90 backdrop-blur rounded-full text-xs font-bold text-blue-700 shadow-sm">
+                            Updated for 2026
+                        </div>
+                        <p className="text-slate-700 leading-relaxed whitespace-pre-line text-base">
                             {data.pricing.content}
                         </p>
                     </div>
@@ -252,13 +270,18 @@ const ToolPageView: React.FC<ToolPageProps> = ({ data }) => {
 
                     <div className="space-y-6">
                         {data.implementation.steps.map((step, i) => (
-                            <div key={i} className="flex gap-6 p-6 bg-white rounded-xl border border-slate-200 hover:border-indigo-200 transition-colors">
-                                <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-400 shrink-0 border border-slate-200">
-                                    {i + 1}
+                            <div key={i} className="flex gap-6 p-6 bg-white rounded-xl border border-slate-200 hover:border-teal-200 hover:shadow-md transition-all group">
+                                <div className="relative">
+                                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-teal-500 to-blue-500 flex items-center justify-center font-bold text-white shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                                        {i + 1}
+                                    </div>
+                                    {i < data.implementation.steps.length - 1 && (
+                                        <div className="absolute top-12 left-1/2 -translate-x-1/2 w-px h-6 bg-gradient-to-b from-teal-300 to-transparent"></div>
+                                    )}
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-slate-900 mb-2">{step.title}</h4>
-                                    <p className="text-slate-600 text-sm leading-relaxed">{step.desc}</p>
+                                    <h4 className="font-bold text-slate-900 mb-2 text-lg">{step.title}</h4>
+                                    <p className="text-slate-600 leading-relaxed">{step.desc}</p>
                                 </div>
                             </div>
                         ))}
