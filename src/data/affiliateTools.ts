@@ -221,7 +221,7 @@ export const AFFILIATE_TOOLS: AffiliateTool[] = [
         learnMoreUrl: '/tools/dext-canada',
         resultHeadline: 'Never type data from a receipt again.',
         resultBullets: [
-            'No promo',
+            'Free 14-day trial',
             '99% accuracy on receipt data extraction',
             'Fetches bills from utility portals automatically'
         ],
@@ -268,7 +268,7 @@ export const AFFILIATE_TOOLS: AffiliateTool[] = [
         category: 'Payment Sync',
         bestFor: 'High Volume Stripe/Square',
         summary: 'Synchronize payment processor data with granular detail.',
-        affiliateUrl: 'https://synderapp.com/v7wxtg7s7164',
+        affiliateUrl: 'https://partnerstack.synder.com/v7cwzyta7164',
         learnMoreUrl: '/tools/shopify-accounting-apps',
         resultHeadline: 'Sync Stripe & Square with zero errors.',
         resultBullets: [

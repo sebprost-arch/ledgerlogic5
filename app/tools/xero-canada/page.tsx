@@ -12,7 +12,8 @@ export const metadata: Metadata = {
 
 const DATA = {
     slug: 'xero-canada',
-    affiliateUrl: '{{AFFILIATE_XERO_URL}}',
+    affiliateUrl: 'https://referrals.xero.com/qp622xbmjhis-q1e71',
+    specialOffer: '90% off for 6 months',
     hero: {
         title: 'Xero for Canadian Businesses (2026): The Modern Standard',
         subtitle: 'The cloud accounting favorite for Canadian startups, agencies, and ecommerce brands. Cleaner design, better app ecosystem, and included receipt capture.',

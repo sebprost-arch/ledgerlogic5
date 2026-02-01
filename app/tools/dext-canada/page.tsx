@@ -12,7 +12,8 @@ export const metadata: Metadata = {
 
 const DATA = {
     slug: 'dext-canada',
-    affiliateUrl: '{{AFFILIATE_DEXT_URL}}',
+    affiliateUrl: 'https://join.dext.com/pbtm26786g10',
+    specialOffer: 'Free 14-day trial',
     hero: {
         title: 'Dext for Canadian Businesses: Audit-Proof Your Expenses',
         subtitle: 'The gold standard for receipt capture and data extraction. Snap a photo, email a bill, and Dext does the data entry for you.',
