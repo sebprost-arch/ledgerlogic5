@@ -241,17 +241,44 @@ const ToolPageView: React.FC<ToolPageProps> = ({ data }) => {
 
             {/* 3. PRICING NOTES */}
             <section className="py-16 bg-white border-y border-slate-100">
-                <div className="container max-w-3xl mx-auto px-6 text-center">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-6">Pricing Considerations</h2>
-                    <div className="relative p-10 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl border-2 border-blue-200 shadow-inner text-left">
+                <div className="container max-w-3xl mx-auto px-6">
+                    <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">Pricing Overview</h2>
+                    <div className="relative p-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl border-2 border-blue-200 shadow-inner">
                         <div className="absolute top-4 right-4 px-3 py-1.5 bg-white/90 backdrop-blur rounded-full text-xs font-bold text-blue-700 shadow-sm">
                             Updated for 2026
                         </div>
-                        <p className="text-slate-700 leading-relaxed whitespace-pre-line text-base">
-                            {data.pricing.content}
-                        </p>
+                        <div className="space-y-6">
+                            <div>
+                                <h4 className="font-bold text-slate-900 text-lg mb-2 flex items-center gap-2">
+                                    <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+                                    Volume-Based Pricing
+                                </h4>
+                                <p className="text-slate-700 leading-relaxed">
+                                    Dext charges based on monthly document volume.
+                                </p>
+                            </div>
+
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div className="p-4 bg-white rounded-xl border border-blue-100">
+                                    <p className="text-xs font-bold text-blue-700 uppercase tracking-wider mb-2">Business Plans</p>
+                                    <p className="text-2xl font-bold text-slate-900 mb-1">$20-30<span className="text-sm font-normal text-slate-500">/month</span></p>
+                                    <p className="text-sm text-slate-600">Basic volume processing</p>
+                                </div>
+                                <div className="p-4 bg-white rounded-xl border border-blue-100">
+                                    <p className="text-xs font-bold text-blue-700 uppercase tracking-wider mb-2">Premium</p>
+                                    <p className="text-sm font-bold text-slate-900 mb-1">Line-Item Extraction</p>
+                                    <p className="text-xs text-slate-600">Critical for Walmart/Amazon receipts with mixed categories</p>
+                                </div>
+                            </div>
+
+                            <div className="p-4 bg-gradient-to-r from-teal-50 to-blue-50 rounded-xl border border-teal-200">
+                                <p className="text-sm text-slate-700 italic">
+                                    <span className="font-bold text-teal-700">Pro Tip:</span> LedgerLogic clients often get Dext included in their monthly packages at a preferred rate.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <p className="mt-4 text-xs text-slate-400 uppercase tracking-widest">
+                    <p className="mt-4 text-xs text-slate-400 uppercase tracking-widest text-center">
                         Check official pricing pages for latest updates.
                     </p>
                 </div>
@@ -289,23 +316,7 @@ const ToolPageView: React.FC<ToolPageProps> = ({ data }) => {
                 </div>
             </section>
 
-            {/* 5. COMMON PITFALLS */}
-            <section className="py-20 bg-white">
-                <div className="container max-w-4xl mx-auto px-6">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
-                        <ShieldCheck className="text-orange-500" />
-                        Common Canadian Pitfalls
-                    </h2>
-                    <div className="grid md:grid-cols-2 gap-4">
-                        {data.pitfalls.map((pitfall, i) => (
-                            <div key={i} className="p-4 rounded-lg bg-orange-50 border border-orange-100 text-orange-900 font-medium text-sm flex gap-3">
-                                <span className="font-bold text-orange-400">{i + 1}.</span>
-                                {pitfall}
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+
 
             {/* 6. STACK SETUP SPRINT */}
             <section id="sprint" className="py-20 bg-teal-900 text-white relative overflow-hidden">
