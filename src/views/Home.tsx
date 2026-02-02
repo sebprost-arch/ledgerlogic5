@@ -62,21 +62,21 @@ const features = [
 // Extracted Testimonials
 const testimonials = [
     {
-        quote: "Finally, a CPA who understands SaaS metrics. LedgerLogic handled our complex subscription revenue recognition perfectly. Total peace of mind.",
-        author: "Sarah Jenkins",
-        role: "Founder, TechFlow Inc.",
+        quote: "LedgerLogic streamlined our Xero setup and financial operations. Finally, accounting that moves as fast as we do.",
+        author: "Ben Archambault",
+        role: "Founder, Talksoon Inc.",
         rating: 5
     },
     {
-        quote: "Before LedgerLogic, I wasted 10 hours a month on payroll and receipts. Now it's all automated. I can actually focus on my agency's growth.",
-        author: "David Ross",
-        role: "Director, AgencyOne",
+        quote: "As a creative, I dreaded tax season. Seb and his team simplified everything. Now I focus on design, not receipts.",
+        author: "Louis Fortier",
+        role: "Owner, Louis Fortier Design",
         rating: 5
     },
     {
-        quote: "I finally know my real profit margins in real-time. The Virtual CFO insights helped us pivot our inventory strategy and double our profits.",
-        author: "Michael Chen",
-        role: "CEO, NorthRetail",
+        quote: "They are incredibly easy to work with. Responses are prompt, collaboration is seamless.",
+        author: "Joanie Mercier",
+        role: "Owner, Wildberry Pelvic Health Physiotherapy",
         rating: 5
     }
 ];

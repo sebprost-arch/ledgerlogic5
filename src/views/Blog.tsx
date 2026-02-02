@@ -119,8 +119,7 @@ const Blog: React.FC = () => {
     const handlePageChange = (page: number) => {
         const newParams = new URLSearchParams(searchParams?.toString());
         newParams.set('page', page.toString());
-        router.replace(`?${newParams.toString()}`);
-        window.scrollTo({ top: 400, behavior: 'smooth' });
+        router.replace(`?${newParams.toString()}`, { scroll: false });
     };
 
     return (

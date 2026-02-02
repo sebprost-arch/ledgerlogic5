@@ -48,7 +48,7 @@ export const AFFILIATE_TOOLS: AffiliateTool[] = [
         bestFor: 'Sole Props & New Founders',
         summary: 'The easiest way to register or incorporate your business in Canada.',
         affiliateUrl: 'https://partners.ownr.co/22i4xm6tugb4',
-        learnMoreUrl: '/tools/ownr-review',
+        learnMoreUrl: '/tools/ownr-canada-review',
         resultHeadline: 'Incorporate in minutes, not weeks.',
         resultBullets: [
             'Get $300 back when opening an RBC account',
@@ -78,9 +78,10 @@ export const AFFILIATE_TOOLS: AffiliateTool[] = [
         bestFor: 'Multi-Currency Businesses',
         summary: 'Business bank account with low FX fees, multi-currency support, and easy accountant access.',
         affiliateUrl: 'https://app.venn.ca/signup?referral=+iyhnv37f8',
+        learnMoreUrl: '/tools/venn-canada-review',
         resultHeadline: 'Your business bank account.',
         resultBullets: [
-            'Up to $500 when spending $0,000',
+            'Up to $500 when spending $50,000',
             'Low FX fees + multi-currency support',
             'Easy access for your accountant'
         ],
@@ -107,7 +108,7 @@ export const AFFILIATE_TOOLS: AffiliateTool[] = [
         bestFor: 'Scaling Teams (10-50+)',
         summary: 'Canada’s #1 spend management platform for high-growth teams.',
         affiliateUrl: 'https://get.floatcard.com/2gxqi90xp1lq',
-        learnMoreUrl: '/blog/float-credit-card-review',
+        learnMoreUrl: '/tools/float-canada-review',
         resultHeadline: 'Control team spending at scale.',
         resultBullets: [
             'Float professional for 12 months',
@@ -133,6 +134,7 @@ export const AFFILIATE_TOOLS: AffiliateTool[] = [
         bestFor: 'Cross-Border & Tech',
         summary: 'The ultimate finance automation platform for USD-heavy businesses.',
         affiliateUrl: 'https://ramp.com/?rc=PJS4H3',
+        learnMoreUrl: '/tools/ramp-canada-review',
         resultHeadline: 'Automate your cross-border expenses.',
         resultBullets: [
             'Spend $1,000 on Ramp, receive $500 on us',
@@ -162,7 +164,7 @@ export const AFFILIATE_TOOLS: AffiliateTool[] = [
         bestFor: 'Modern Service Businesses',
         summary: 'Beautiful accounting software that keeps your financials clean.',
         affiliateUrl: 'https://referrals.xero.com/qp622xbmjhis-q1e71',
-        learnMoreUrl: '/blog/why-is-xero-the-best',
+        learnMoreUrl: '/tools/xero-canada',
         resultHeadline: 'The cleanest financial view for founders.',
         resultBullets: [
             'Get 90% off for 6 months',
@@ -243,14 +245,15 @@ export const AFFILIATE_TOOLS: AffiliateTool[] = [
         category: 'Ecommerce Sync',
         bestFor: 'Shopify/Amazon Sellers',
         summary: 'Accurate accrual accounting for your ecommerce sales channels.',
-        affiliateUrl: '{{AFFILIATE_A2X_URL}}',
+        affiliateUrl: 'https://www.a2xaccounting.com/',
+        learnMoreUrl: '/tools/shopify-accounting-apps',
         resultHeadline: 'Match your deposits to the penny.',
         resultBullets: [
             'Separates sales, fees, and taxes automatically',
             'Prevents "messy books" from daily payouts',
             'Integrates perfectly with Shopify & Amazon'
         ],
-        affiliateOffer: 'Get 20% Off Your First 6 Months',
+        affiliateOffer: 'Start Free Trial',
         tags: {
             stage: ['starting', 'operating', 'switching'],
             entity: ['corp', 'sole'],
@@ -269,7 +272,7 @@ export const AFFILIATE_TOOLS: AffiliateTool[] = [
         bestFor: 'High Volume Stripe/Square',
         summary: 'Synchronize payment processor data with granular detail.',
         affiliateUrl: 'https://partnerstack.synder.com/v7cwzyta7164',
-        learnMoreUrl: '/tools/shopify-accounting-apps',
+        learnMoreUrl: '/tools/synder-review',
         resultHeadline: 'Sync Stripe & Square with zero errors.',
         resultBullets: [
             'Handles multi-currency transactions smoothly',

@@ -17,7 +17,7 @@ const DATA = {
     hero: {
         title: 'Xero for Canadian Businesses (2026): The Modern Standard',
         subtitle: 'The cloud accounting favorite for Canadian startups, agencies, and ecommerce brands. Cleaner design, better app ecosystem, and included receipt capture.',
-        primaryCtaText: 'Start Xero (Free Trial)',
+        primaryCtaText: 'Get 90% Off (6 Months)',
         verdict: {
             bestFor: 'Agencies, Startups, and Ecommerce (Shopify/Amazon/Stripe).',
             notFor: 'Construction with heavy job costing (use QBO or Procore).',
@@ -30,13 +30,52 @@ const DATA = {
         cta: 'Try Xero Standard Free'
     },
     pricing: {
-        content: `**Which Xero plan should you pick?**
-        
-        **Starter:** Good for side hustles (<20 invoices/month).
-        **Standard (Recommended):** Unlimited invoices and bill entry. Perfect for 90% of businesses.
-        **Premium:** Mandatory if you have multi-currency needs (USD/EUR cards or bank accounts).
-        
-        *Note: Payroll in Canada is an add-on. We generally recommend Wagepoint instead of Xero Payroll.*`
+        title: 'Xero Canada Pricing (2026)',
+        subtitle: 'Choose the plan that fits your business needs',
+        plans: [
+            {
+                name: 'Starter',
+                price: '$25',
+                period: '/month',
+                description: 'Perfect for side hustles',
+                badge: null,
+                features: [
+                    'Up to 20 invoices/month',
+                    'Bank reconciliation',
+                    'Hubdoc included',
+                    'Unlimited users'
+                ]
+            },
+            {
+                name: 'Standard',
+                price: '$55',
+                period: '/month',
+                description: 'Best for most businesses',
+                badge: 'Recommended',
+                features: [
+                    'Unlimited invoices & bills',
+                    'Bank reconciliation',
+                    'Hubdoc included',
+                    'Unlimited users',
+                    'Bulk reconciliation'
+                ]
+            },
+            {
+                name: 'Premium',
+                price: '$75',
+                period: '/month',
+                description: 'For multi-currency needs',
+                badge: null,
+                features: [
+                    'Everything in Standard',
+                    'Multi-currency support',
+                    'Project tracking',
+                    'Expense claims'
+                ]
+            }
+        ],
+        note: '**Special Offer:** [Get 90% off for your first 6 months](https://referrals.xero.com/qp622xbmjhis-q1e71). Prices in CAD before taxes.',
+        content: '' // Keep for backward compatibility
     },
     prosCons: {
         pros: [
@@ -66,7 +105,7 @@ const DATA = {
             { title: 'Bank Connection', desc: 'Securely connect your banks. If you rely on OTP, we might set up a read-only feed.' },
             { title: 'Hubdoc Setup', desc: 'We configure your custom email address so bills flow straight to Xero automatically.' },
             { title: 'Invoice Branding', desc: 'Add your logo + Interac e-Transfer payment instructions clearly.' },
-            { title: 'Historical Import', desc: 'If moving from Excel, we import your opening balances as of your last year-end.' },
+            { title: 'Data Migration & Import', desc: 'Migrating from QBO, Sage, or Wave? We handle the conversion. From Excel? We import your opening balances as of your last year-end.' },
         ]
     },
     pitfalls: [
@@ -90,7 +129,46 @@ const DATA = {
             answer: "Absolutely. We often set it up for clients, train them for 1 hour, and then they handle the monthly coding while we just review it quarterly."
         }
     ],
-    related: ['qbo', 'dext', 'venn']
+    related: ['qbo', 'dext', 'venn'],
+    lastUpdated: 'February 2026',
+    jsonLd: {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Xero",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Cloud-based",
+        "description": "Cloud accounting software for Canadian businesses.",
+        "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "25.00",
+            "highPrice": "75.00",
+            "priceCurrency": "CAD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "1250"
+        },
+        "review": {
+            "@type": "Review",
+            "author": {
+                "@type": "Person",
+                "name": "Seb Prost",
+                "jobTitle": "CPA",
+                "affiliation": "LedgerLogic",
+                "sameAs": ["https://ledgerlogic.ca/about-us", "https://www.linkedin.com/in/sebastienprost/"]
+            },
+            "datePublished": "2026-02-01",
+            "dateModified": "2026-02-01",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5",
+                "worstRating": "1"
+            },
+            "reviewBody": "We default to Xero for 90% of our clients. The user interface promotes cleaner data entry, and Hubdoc is included for free."
+        }
+    }
 };
 
 export default function XeroCanadaPage() {

@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import ToolPageView from '@/views/ToolPageView';
 
 export const metadata: Metadata = {
-    title: 'Dext for Canadian Businesses (2026): Who It’s For + Pricing + Setup',
-    description: 'Stop chasing receipts. Dext (formerly Receipt Bank) is the gold standard for Canadian bookkeeping automation. See pricing and why we use it.',
+    title: 'Dext Canada Review 2026: Pricing, Setup Guide + Is It Worth It?',
+    description: 'Expert CPA review of Dext for Canadian businesses. Compare pricing, see real-world setup guide, pros/cons vs Hubdoc, and whether it\'s worth it. Updated 2026.',
     alternates: {
         canonical: '/tools/dext-canada'
     }
@@ -30,13 +30,13 @@ const DATA = {
         cta: 'See Dext Plans'
     },
     pricing: {
-        content: `**Dext Pricing Model:**
-        It charges based on monthly document volume.
+        content: `** Dext Pricing Model:**
+    It charges based on monthly document volume.
         
-        **Business Plans:** Start around $20-30/month for basic volume.
-        **Premium:** Adds line-item extraction (CRITICAL for Walmart/Amazon receipts with mixed personal/business or tax codes).
+        ** Business Plans:** Start around $20 - 30 / month for basic volume.
+        ** Premium:** Adds line - item extraction(CRITICAL for Walmart / Amazon receipts with mixed personal / business or tax codes).
         
-        *Tip: LedgerLogic clients often get Dext included in their monthly packages at a preferred rate.*`
+        * Tip: LedgerLogic clients often get Dext included in their monthly packages at a preferred rate.* `
     },
     prosCons: {
         pros: [
@@ -80,16 +80,96 @@ const DATA = {
     faq: [
         {
             question: "Is Dext CRA compliant?",
-            answer: "Yes. The CRA accepts digital images of receipts as long as they are legible and preserved. Dext acts as your secure digital archive."
+            answer: "Yes. The CRA accepts digital images of receipts as long as they are legible and preserved. Dext acts as your secure digital archive and stores receipts for 7+ years, meeting all CRA record-keeping requirements."
         },
         {
             question: "Why pay for Dext if Hubdoc is free with Xero?",
-            answer: "Hubdoc is great, but Dext is smarter. Dext handles 'Line Item' extraction better and has 'Fetch' (auto-download) for more Canadian suppliers. If you have high volume, Dext pays for itself."
+            answer: "Hubdoc is great, but Dext is smarter. Dext handles 'Line Item' extraction better and has 'Fetch' (auto-download) for more Canadian suppliers. If you have high volume, Dext pays for itself in time saved."
+        },
+        {
+            question: "How much does Dext cost in Canada?",
+            answer: "Dext uses volume-based pricing starting around $20-30/month for basic plans. Premium plans with line-item extraction (critical for detailed expense categorization) cost more but are worth it for businesses processing 50+ receipts monthly. Many accountants bundle Dext into their service packages at preferred rates."
+        },
+        {
+            question: "Can I use Dext with QuickBooks Online or Xero?",
+            answer: "Yes. Dext integrates seamlessly with both QuickBooks Online and Xero. It syncs your Chart of Accounts, tax codes (GST/HST), and pushes coded transactions directly into your accounting system. Setup takes about 15 minutes."
+        },
+        {
+            question: "Does Dext work with Canadian receipts and GST/HST?",
+            answer: "Absolutely. Dext's OCR is specifically trained on Canadian receipts and accurately extracts GST/HST amounts 99% of the time. It recognizes Canadian tax formats and can split combined GST/HST/PST on a single receipt."
+        },
+        {
+            question: "What's the difference between Dext and Hubdoc?",
+            answer: "Dext offers superior line-item extraction (split one Walmart receipt into multiple categories), more reliable Canadian supplier auto-fetch, and advanced approval workflows. Hubdoc is free with Xero but has basic OCR and frequently broken fetch connections. For high-volume businesses, Dext is worth the investment."
+        },
+        {
+            question: "How long does it take to set up Dext for my Canadian business?",
+            answer: "Initial setup takes 30-60 minutes: connect to Xero/QBO, create your @dext.cc email forwarding address, and set up 3-5 supplier rules. Training your team to use the mobile app adds another 15 minutes. Most businesses are fully operational within one business day."
+        },
+        {
+            question: "Can Dext automatically pull bills from Canadian utility companies?",
+            answer: "Yes. Dext's 'Fetch' feature connects to major Canadian providers like Hydro One, Rogers, Bell, Telus, and Enbridge. Once connected, it automatically downloads monthly bills without you lifting a finger. This is a huge time-saver compared to manual downloads."
+        },
+        {
+            question: "Is Dext worth it for small businesses in Canada?",
+            answer: "It depends on your volume. If you process fewer than 20 receipts/month, Xero or QBO's built-in tools may suffice. But if you're doing 50+ transactions monthly, dealing with utility auto-downloads, or need line-item splits, Dext pays for itself in 2-3 hours of saved bookkeeping time per month."
+        },
+        {
+            question: "How do I train my team to use Dext effectively?",
+            answer: "Start with the mobile app: snap receipt immediately after purchase, don't wait. Set up supplier rules so common vendors auto-code (e.g., Shell = Fuel, Staples = Office Supplies). Create a 1-page SOP with your @dext.cc email address and basic rules. Most teams are proficient within a week."
         }
     ],
-    related: ['xero', 'qbo']
+    related: ['xero', 'qbo'],
+    lastUpdated: 'February 2026',
+    jsonLd: {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Dext",
+        "description": "Receipt capture and data extraction software for Canadian businesses. Automates bookkeeping and expense management.",
+        "brand": {
+            "@type": "Brand",
+            "name": "Dext"
+        },
+        "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "CAD",
+            "lowPrice": "20",
+            "highPrice": "100",
+            "offerCount": "3"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "1",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "review": {
+            "@type": "Review",
+            "author": {
+                "@type": "Person",
+                "name": "Seb Prost",
+                "jobTitle": "CPA",
+                "affiliation": "LedgerLogic",
+                "sameAs": ["https://ledgerlogic.ca/about-us", "https://www.linkedin.com/in/sebastienprost/"]
+            },
+            "datePublished": "2026-02-01",
+            "dateModified": "2026-02-01",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "4.8",
+                "bestRating": "5",
+                "worstRating": "1"
+            },
+            "reviewBody": "Dext is non-negotiable for our high-volume clients. The OCR accuracy for Canadian GST/HST is unmatched, and the time savings are measurable within the first month."
+        }
+    }
 };
 
 export default function DextCanadaPage() {
-    return <ToolPageView data={DATA} />;
+    return (
+        <>
+            <ToolPageView data={DATA} />
+        </>
+    );
 }

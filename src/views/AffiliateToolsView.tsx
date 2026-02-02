@@ -193,7 +193,10 @@ const AffiliateToolsView: React.FC = () => {
     };
 
     // Static Top Picks (Updated List)
-    const topPicks = AFFILIATE_TOOLS.filter(t => ['ownr', 'venn', 'xero', 'ramp', 'dext', 'synder'].includes(t.id));
+    const topPicksOrder = ['ownr', 'venn', 'xero', 'ramp', 'float', 'dext', 'a2x', 'synder'];
+    const topPicks = AFFILIATE_TOOLS
+        .filter(t => topPicksOrder.includes(t.id))
+        .sort((a, b) => topPicksOrder.indexOf(a.id) - topPicksOrder.indexOf(b.id));
 
     return (
         <div className="bg-slate-50 min-h-screen font-sans text-slate-900">
@@ -464,14 +467,14 @@ const AffiliateToolsView: React.FC = () => {
                             <div className="mt-8 p-6 rounded-xl bg-slate-50 border border-slate-200">
                                 <div className="flex items-start gap-4">
                                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-teal-500 to-blue-600 flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
-                                        SC
+                                        BA
                                     </div>
                                     <div className="flex-1">
                                         <p className="text-slate-700 italic mb-2">
-                                            "LedgerLogic helped us implement the perfect tech stack. Complete game-changer for our SaaS accounting."
+                                            "LedgerLogic streamlined our Xero setup and financial operations. Finally, accounting that moves as fast as we do."
                                         </p>
                                         <p className="text-sm text-slate-500">
-                                            <span className="font-bold text-slate-700">Sarah Chen</span>, CFO at TechCo
+                                            <span className="font-bold text-slate-700">Ben Archambault</span>, Founder, Talksoon Inc.
                                         </p>
                                     </div>
                                 </div>
@@ -555,13 +558,35 @@ const AffiliateToolsView: React.FC = () => {
                                         ))}
                                     </div>
 
-                                    <a
-                                        href={tool.affiliateUrl}
-                                        target="_blank"
-                                        className="block w-full text-center py-4 rounded-xl bg-slate-900 text-white font-bold text-sm hover:bg-slate-800 hover:scale-[1.02] transition-all shadow-xl shadow-slate-200"
-                                    >
-                                        Get {tool.name}
-                                    </a>
+                                    {/* Dual CTA Buttons */}
+                                    <div className="flex items-center gap-3">
+                                        {/* Left: Get Tool (Primary - Prominent Black) */}
+                                        <a
+                                            href={tool.affiliateUrl}
+                                            target="_blank"
+                                            rel="sponsored nofollow"
+                                            className="flex-1 text-center py-3 rounded-xl bg-slate-900 text-white font-bold text-sm hover:bg-slate-800 hover:scale-[1.02] transition-all shadow-xl shadow-slate-200"
+                                        >
+                                            Get {tool.name.split(' ')[0]}
+                                        </a>
+
+                                        {/* Right: Read Guide (Secondary - Compact) */}
+                                        {tool.learnMoreUrl ? (
+                                            <Link
+                                                href={tool.learnMoreUrl}
+                                                className="px-4 py-3 rounded-xl bg-white border-2 border-slate-200 text-slate-700 font-bold text-sm hover:bg-slate-50 hover:border-slate-300 transition-all whitespace-nowrap"
+                                            >
+                                                Read Guide
+                                            </Link>
+                                        ) : (
+                                            <button
+                                                disabled
+                                                className="px-4 py-3 rounded-xl bg-slate-100 border-2 border-slate-200 text-slate-400 font-bold text-sm cursor-not-allowed opacity-60 whitespace-nowrap"
+                                            >
+                                                Guide Soon
+                                            </button>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
                         ))}

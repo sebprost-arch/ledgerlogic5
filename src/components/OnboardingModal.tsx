@@ -69,10 +69,26 @@ const OnboardingModal: React.FC<OnboardingModalProps> = ({ isOpen, onClose }) =>
     const handleSubmit = async () => {
         setIsSubmitting(true);
         try {
-            await new Promise(resolve => setTimeout(resolve, 800));
+            // Send questionnaire data to API
+            const response = await fetch('/api/send-questionnaire', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to submit questionnaire');
+            }
+
+            // Success - move to calendar booking
             nextStep();
         } catch (error) {
-            console.error("Submission error", error);
+            console.error("Submission error:", error);
+            // You could add user-facing error handling here
+            // For now, still proceed to calendar
+            nextStep();
         } finally {
             setIsSubmitting(false);
         }
@@ -343,7 +359,7 @@ const OnboardingModal: React.FC<OnboardingModalProps> = ({ isOpen, onClose }) =>
 
                                 <div className="flex-1 w-full relative">
                                     <InlineWidget
-                                        url="https://calendly.com/ledgerlogic/discovery"
+                                        url="https://calendly.com/ledgerlogic/free-consultation-30-min"
                                         prefill={{
                                             email: formData.email,
                                             name: formData.name,

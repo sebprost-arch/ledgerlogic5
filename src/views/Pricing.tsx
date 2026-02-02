@@ -260,34 +260,34 @@ const Pricing: React.FC = () => {
                     <div className="testimonials-grid">
                         <div className="testimonial-card glass">
                             <div className="testimonial-stars">★★★★★</div>
-                            <p className="testimonial-quote">"Finally, a CPA who understands SaaS metrics. LedgerLogic handled our complex subscription revenue recognition perfectly."</p>
+                            <p className="testimonial-quote">"LedgerLogic streamlined our Xero setup and financial operations. Finally, accounting that moves as fast as we do."</p>
                             <div className="testimonial-author">
-                                <div className="testimonial-avatar">S</div>
+                                <div className="testimonial-avatar">B</div>
                                 <div>
-                                    <p className="testimonial-name">Sarah Jenkins</p>
-                                    <p className="testimonial-role">Founder, TechFlow Inc.</p>
+                                    <p className="testimonial-name">Ben Archambault</p>
+                                    <p className="testimonial-role">Founder, Talksoon Inc.</p>
                                 </div>
                             </div>
                         </div>
                         <div className="testimonial-card glass">
                             <div className="testimonial-stars">★★★★★</div>
-                            <p className="testimonial-quote">"Before LedgerLogic, I wasted 10 hours a month on payroll. Now it's all automated. I can actually focus on growth."</p>
+                            <p className="testimonial-quote">"As a creative, I dreaded tax season. Seb and his team simplified everything. Now I focus on design, not receipts."</p>
                             <div className="testimonial-author">
-                                <div className="testimonial-avatar">D</div>
+                                <div className="testimonial-avatar">L</div>
                                 <div>
-                                    <p className="testimonial-name">David Ross</p>
-                                    <p className="testimonial-role">Director, AgencyOne</p>
+                                    <p className="testimonial-name">Louis Fortier</p>
+                                    <p className="testimonial-role">Owner, Louis Fortier Design</p>
                                 </div>
                             </div>
                         </div>
                         <div className="testimonial-card glass">
                             <div className="testimonial-stars">★★★★★</div>
-                            <p className="testimonial-quote">"The Virtual CFO insights helped us pivot our inventory strategy and double our profits. Game changer."</p>
+                            <p className="testimonial-quote">"They are incredibly easy to work with. Responses are prompt, collaboration is seamless."</p>
                             <div className="testimonial-author">
-                                <div className="testimonial-avatar">M</div>
+                                <div className="testimonial-avatar">J</div>
                                 <div>
-                                    <p className="testimonial-name">Michael Chen</p>
-                                    <p className="testimonial-role">CEO, NorthRetail</p>
+                                    <p className="testimonial-name">Joanie Mercier</p>
+                                    <p className="testimonial-role">Owner, Wildberry Pelvic Health Physiotherapy</p>
                                 </div>
                             </div>
                         </div>

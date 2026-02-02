@@ -252,32 +252,43 @@ export default function ToolsView() {
 
                                             {/* ACTIONS ROW */}
                                             <div className="flex items-center gap-2 mt-auto pt-4 border-t border-slate-100">
+                                                {/* 1. GET TOOL BUTTON (Left, Smaller/Secondary) */}
                                                 <a
                                                     href={tool.affiliateUrl}
                                                     target="_blank"
                                                     rel="sponsored nofollow"
-                                                    className="flex-1 bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-700 py-2.5 rounded-lg text-xs font-bold transition-colors flex items-center justify-center gap-2 border border-slate-200 hover:border-blue-200"
+                                                    className="px-4 py-2 bg-white hover:bg-slate-50 text-slate-600 hover:text-blue-600 rounded-lg text-[11px] font-bold transition-colors flex items-center justify-center gap-1.5 border border-slate-200 hover:border-blue-200 whitespace-nowrap"
+                                                    title={`Get ${tool.name}`}
                                                 >
-                                                    Visit Website <ExternalLink size={12} />
+                                                    Get {tool.initials} <ExternalLink size={10} />
                                                 </a>
-                                                {tool.slug && (
+
+                                                {/* 2. READ GUIDE BUTTON (Right, Primary or Placeholder) */}
+                                                {tool.slug ? (
                                                     <a
                                                         href={`/tools/${tool.slug}`}
-                                                        className="px-3 py-2.5 rounded-lg border border-slate-200 bg-white text-slate-500 hover:border-teal-300 hover:text-teal-600 hover:bg-teal-50 transition-colors flex items-center justify-center relative group/guide"
-                                                        title="Read Guide"
+                                                        className="flex-1 bg-teal-50 hover:bg-teal-100 text-teal-700 hover:text-teal-800 py-2 rounded-lg text-[11px] font-bold transition-colors flex items-center justify-center gap-1.5 border border-teal-100 hover:border-teal-200"
                                                     >
-                                                        <BookOpen size={16} />
-                                                        <span className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[10px] py-1 px-2 rounded opacity-0 group-hover/guide:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-                                                            View Guide
-                                                        </span>
+                                                        <BookOpen size={14} />
+                                                        Read Guide
                                                     </a>
+                                                ) : (
+                                                    <button
+                                                        disabled
+                                                        className="flex-1 bg-slate-50 text-slate-400 py-2 rounded-lg text-[11px] font-bold flex items-center justify-center gap-1.5 border border-slate-100 cursor-not-allowed opacity-60"
+                                                    >
+                                                        <BookOpen size={14} />
+                                                        Guide Coming Soon
+                                                    </button>
                                                 )}
+
+                                                {/* 3. INFO TOGGLE */}
                                                 <button
                                                     onClick={() => toggleTool(tool.id)}
-                                                    className={`px-3 py-2.5 rounded-lg border transition-colors flex items-center justify-center ${expandedTool === tool.id ? 'bg-slate-800 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-500 hover:border-slate-300 hover:text-slate-700'}`}
-                                                    title="Implementation Notes"
+                                                    className={`px-2.5 py-2 rounded-lg border transition-colors flex items-center justify-center ${expandedTool === tool.id ? 'bg-slate-800 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-400 hover:text-slate-600'}`}
+                                                    title="Quick Stats"
                                                 >
-                                                    {expandedTool === tool.id ? <ChevronUp size={16} /> : <Info size={16} />}
+                                                    {expandedTool === tool.id ? <ChevronUp size={14} /> : <Info size={14} />}
                                                 </button>
                                             </div>
                                         </div>

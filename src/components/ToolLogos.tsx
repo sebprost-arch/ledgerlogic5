@@ -9,6 +9,7 @@ import SynderLogo from '@/assets/Affiliate logos/Synder logo(horizontal).png';
 import FloatLogo from '@/assets/Affiliate logos/Float_Logo_RGB_Float-Logo-RGB-Black.jpg';
 import OwnrLogo from '@/assets/Affiliate logos/logo-default.jpg';
 import VennLogo from '@/assets/Affiliate logos/venn.svg';
+import A2XLogo from '@/assets/Affiliate logos/logo-a2x.svg';
 
 interface LogoProps {
     className?: string;
@@ -117,9 +118,15 @@ export const QBOLogoComponent: React.FC<LogoProps> = ({ className = '' }) => (
 
 // A2X Logo
 export const A2XLogoComponent: React.FC<LogoProps> = ({ className = '' }) => (
-    <svg width="100%" height="100%" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} preserveAspectRatio="xMidYMid meet">
-        <text x="10" y="55" fontFamily="Arial, sans-serif" fontSize="48" fontWeight="700" fill="#0891B2">A2X</text>
-    </svg>
+    <Image
+        src={A2XLogo}
+        alt="A2X"
+        width={300}
+        height={120}
+        className={className}
+        style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
+        unoptimized
+    />
 );
 
 // Logo component mapper
