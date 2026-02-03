@@ -107,7 +107,7 @@ export const AFFILIATE_TOOLS: AffiliateTool[] = [
         category: 'Spend Management',
         bestFor: 'Scaling Teams (10-50+)',
         summary: 'Canada’s #1 spend management platform for high-growth teams.',
-        affiliateUrl: 'https://get.floatcard.com/2gxqi90xp1lq',
+        affiliateUrl: 'https://welcome.floatfinancial.com/?eid=NNodPIIg',
         learnMoreUrl: '/tools/float-canada-review',
         resultHeadline: 'Control team spending at scale.',
         resultBullets: [

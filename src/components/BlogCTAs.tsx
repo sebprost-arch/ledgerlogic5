@@ -1,16 +1,19 @@
 import React from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 export const ConsultationCTA = ({
     onOpenModal,
     title = "Ready to Simplify Your Finances?",
     description = "Stop stressing about your numbers. Let our team handle your accounting so you can focus on leading your business.",
-    buttonText = "Book a Free Consult"
+    buttonText = "Book a Free Consult",
+    buttonLink
 }: {
     onOpenModal?: () => void;
     title?: string;
     description?: string;
     buttonText?: string;
+    buttonLink?: string;
 }) => {
     return (
         <div className="my-16 relative overflow-hidden rounded-2xl bg-white shadow-xl border border-slate-100">
@@ -25,12 +28,21 @@ export const ConsultationCTA = ({
                     </p>
                 </div>
                 <div className="flex-shrink-0">
-                    <button
-                        onClick={onOpenModal}
-                        className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all bg-teal-600 rounded-lg hover:bg-teal-700 hover:shadow-lg hover:-translate-y-0.5"
-                    >
-                        {buttonText}
-                    </button>
+                    {buttonLink ? (
+                        <Link
+                            href={buttonLink}
+                            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all bg-teal-600 rounded-lg hover:bg-teal-700 hover:shadow-lg hover:-translate-y-0.5"
+                        >
+                            {buttonText}
+                        </Link>
+                    ) : (
+                        <button
+                            onClick={onOpenModal}
+                            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all bg-teal-600 rounded-lg hover:bg-teal-700 hover:shadow-lg hover:-translate-y-0.5"
+                        >
+                            {buttonText}
+                        </button>
+                    )}
                 </div>
             </div>
         </div>

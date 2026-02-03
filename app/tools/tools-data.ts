@@ -126,7 +126,7 @@ export const TOOLS: Tool[] = [
             'Minimum balance requirements for some tiers'
         ],
         integrations: ['QuickBooks Online', 'Xero', 'NetSuite'],
-        affiliateUrl: '{{AFFILIATE_FLOAT_URL}}',
+        affiliateUrl: 'https://welcome.floatfinancial.com/?eid=NNodPIIg',
         categoryIds: ['banking'],
         detailAnchor: 'tool-float',
         detailContent: {

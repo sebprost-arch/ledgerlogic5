@@ -161,7 +161,7 @@ export const RESOURCES: ResourceProduct[] = [
         category: 'guide',
         format: 'Notion',
         bestFor: 'Delegators',
-        difficulty: 'Begnner',
+        difficulty: 'Beginner',
         outcome: 'Business runs without you',
         timeToImplement: '15 mins',
         features: [

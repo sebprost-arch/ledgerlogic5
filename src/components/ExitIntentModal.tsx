@@ -1,0 +1,70 @@
+import React from 'react';
+import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X, ArrowRight } from 'lucide-react';
+
+interface ExitIntentModalProps {
+    isOpen: boolean;
+    onClose: () => void;
+    title: string;
+    description: string;
+    buttonText: string;
+    buttonLink: string;
+}
+
+const ExitIntentModal: React.FC<ExitIntentModalProps> = ({ isOpen, onClose, title, description, buttonText, buttonLink }) => {
+    if (!isOpen) return null;
+
+    return (
+        <AnimatePresence>
+            <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    onClick={onClose}
+                    className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
+                />
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                    className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden z-10"
+                >
+                    <button
+                        onClick={onClose}
+                        className="absolute top-4 right-4 p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-600 transition-colors z-20"
+                    >
+                        <X size={20} />
+                    </button>
+
+                    <div className="p-8 text-center pt-12">
+                        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-teal-100 text-teal-600 mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+                        </div>
+                        <h2 className="text-2xl font-bold text-slate-900 mb-3 font-display">
+                            {title}
+                        </h2>
+                        <p className="text-slate-600 mb-8 leading-relaxed">
+                            {description}
+                        </p>
+
+                        <Link
+                            href={buttonLink}
+                            className="inline-flex items-center justify-center gap-2 w-full px-6 py-4 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-teal-500/20 hover:-translate-y-1 group"
+                        >
+                            {buttonText}
+                            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                        </Link>
+
+                        <button onClick={onClose} className="mt-6 text-xs text-slate-400 hover:text-slate-600 font-medium transition-colors">
+                            No thanks, I don't want to check my eligibility.
+                        </button>
+                    </div>
+                </motion.div>
+            </div>
+        </AnimatePresence>
+    );
+};
+
+export default ExitIntentModal;

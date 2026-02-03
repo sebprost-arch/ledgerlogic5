@@ -10,12 +10,12 @@ categories:
   - "business-management"
   - "cloud-accounting"
 ---
-Float credit cards are designed to help businesses effectively manage their expenses while earning rewards. **Businesses can earn 1% cash back on spending over $25,000 per month and enjoy no foreign exchange (FX) fees.** The card also offers an attractive welcome offer, giving $250 in cashback for spending $1,000 within 180 days as well as 4% interest on funds held in Float (subject to market conditions) **if you use this [link](https://get.floatcard.com/2gxqi90xp1lq) to sign up.**
+Float credit cards are designed to help businesses effectively manage their expenses while earning rewards. **Businesses can earn 1% cash back on spending over $25,000 per month and enjoy no foreign exchange (FX) fees.** The card also offers an attractive welcome offer, giving $250 in cashback for spending $1,000 within 180 days as well as 4% interest on funds held in Float (subject to market conditions) **if you use this [link](https://welcome.floatfinancial.com/?eid=NNodPIIg) to sign up.**
 
 Float cards come in both secured and unsecured options to meet different business needs. The secured card is ideal for small businesses that may not qualify for traditional credit cards. On the other hand, the unsecured options provide flexible spending limits and can accommodate substantial monthly transactions.
 
 In addition to cashback rewards, Float provides tools to [simplify bookkeeping](https://ledgerlogic.ca/bookkeeping/) and integrate with various business management systems. This allows businesses to track spending efficiently and make informed financial decisions.
-[Earn $250 and 4% interest with Float](https://get.floatcard.com/2gxqi90xp1lq)
+[Earn $250 and 4% interest with Float](https://welcome.floatfinancial.com/?eid=NNodPIIg)
 
 
 ### Key Takeaways
@@ -107,7 +107,7 @@ Float credit cards come with various pricing plans, spending controls, and trans
 
 
 Float offers a **free basic plan** and a **premium plan** that costs **$99 per month**. Both plans provide the **1% cashback** reward.
-There's a welcome offer of **$250 cashback** for new customers spending **$1,000 within the first 180 days if you use this [link](https://get.floatcard.com/2gxqi90xp1lq) to sign up.**.
+There's a welcome offer of **$250 cashback** for new customers spending **$1,000 within the first 180 days if you use this [link](https://welcome.floatfinancial.com/?eid=NNodPIIg) to sign up.**.
 
 *No foreign transaction fees* applies to CAD and USD transactions, which can save money when dealing with international expenses.
 ### Credit Limit and Spending Controls

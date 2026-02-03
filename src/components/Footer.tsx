@@ -22,6 +22,7 @@ const Footer: React.FC = () => {
                         <h3 className="footer-heading">Company</h3>
                         <Link href="/#about" className="footer-link">About Us</Link>
                         <Link href="/#services" className="footer-link">Services</Link>
+                        <Link href="/regulation-105-refund" className="footer-link">Regulation 105 Refund</Link>
                         <Link href="/pricing" className="footer-link">Pricing</Link>
                     </div>
 

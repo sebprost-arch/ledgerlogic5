@@ -9,6 +9,7 @@ import { BlogPost as BlogPostType } from '../data/blogData';
 import { ConsultationCTA, LeadMagnetCTA } from '../components/BlogCTAs';
 import AuthorBox from '../components/AuthorBox';
 import OnboardingModal from '../components/OnboardingModal';
+import ExitIntentModal from '../components/ExitIntentModal';
 import { Linkedin, Twitter, Facebook, ChevronRight, BookOpen } from 'lucide-react';
 import './BlogPost.css';
 
@@ -42,7 +43,7 @@ const PILLAR_MAP: Record<string, { slug: string; title: string; category: string
 };
 
 // Shortcode Parser Component
-const BlogPostContent = ({ content, onOpenModal, ctaContext }: { content: string; onOpenModal: () => void; ctaContext?: { title: string; description: string; buttonText?: string } }) => {
+const BlogPostContent = ({ content, onOpenModal, ctaContext }: { content: string; onOpenModal: () => void; ctaContext?: { title: string; description: string; buttonText?: string; buttonLink?: string } }) => {
     // Regex to find shortcodes
     // We split the content by specific known shortcodes based on strings
 
@@ -69,6 +70,7 @@ const BlogPostContent = ({ content, onOpenModal, ctaContext }: { content: string
                                 title={ctaContext?.title}
                                 description={ctaContext?.description}
                                 buttonText={ctaContext?.buttonText}
+                                buttonLink={ctaContext?.buttonLink}
                             />
                         )}
                     </React.Fragment>
@@ -85,6 +87,25 @@ interface BlogPostProps {
 
 const BlogPost: React.FC<BlogPostProps> = ({ post, relatedPosts }) => {
     const searchParams = useSearchParams();
+
+    // Exit Intent Logic for specific post
+    const [showExitPopup, setShowExitPopup] = useState(false);
+    const [hasShownExitPopup, setHasShownExitPopup] = useState(false);
+
+    useEffect(() => {
+        // Target specific Regulation 105 post
+        if (post.slug !== 'treaty-based-return-for-non-resident-corporations-operating-in-canada-schedule-91-and-97') return;
+
+        const handleMouseLeave = (e: MouseEvent) => {
+            if (e.clientY <= 0 && !hasShownExitPopup) {
+                setShowExitPopup(true);
+                setHasShownExitPopup(true);
+            }
+        };
+
+        document.addEventListener('mouseleave', handleMouseLeave);
+        return () => document.removeEventListener('mouseleave', handleMouseLeave);
+    }, [post.slug, hasShownExitPopup]);
     const backParams = searchParams?.toString() ? `?${searchParams.toString()}` : '';
 
     // Scroll Progress
@@ -530,21 +551,42 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, relatedPosts }) => {
                             ctaContext.buttonText === 'Book a Tax Review' || ctaContext.buttonText === 'Book a Tax Plan Review' ? 'text-slate-300' :
                                 'text-teal-100'
                             } mb-8`}>{ctaContext.description}</p>
-                        <button
-                            onClick={() => setIsModalOpen(true)}
-                            className={`inline-flex items-center justify-center px-8 py-4 text-base font-bold transition-all bg-white rounded-lg hover:shadow-lg hover:-translate-y-0.5 ${ctaContext.buttonText === 'Talk to an E-Com Expert' ? 'text-indigo-900 hover:bg-indigo-50' :
-                                ctaContext.buttonText === 'Book a Tax Review' || ctaContext.buttonText === 'Book a Tax Plan Review' ? 'text-slate-900 hover:bg-slate-100' :
-                                    'text-teal-900 hover:bg-teal-50'
-                                }`}
-                        >
-                            {ctaContext.buttonText}
-                        </button>
+                        {ctaContext.buttonLink ? (
+                            <Link
+                                href={ctaContext.buttonLink}
+                                className={`inline-flex items-center justify-center px-8 py-4 text-base font-bold transition-all bg-white rounded-lg hover:shadow-lg hover:-translate-y-0.5 ${ctaContext.buttonText === 'Talk to an E-Com Expert' ? 'text-indigo-900 hover:bg-indigo-50' :
+                                    ctaContext.buttonText === 'Book a Tax Review' || ctaContext.buttonText === 'Book a Tax Plan Review' ? 'text-slate-900 hover:bg-slate-100' :
+                                        'text-teal-900 hover:bg-teal-50'
+                                    }`}
+                            >
+                                {ctaContext.buttonText}
+                            </Link>
+                        ) : (
+                            <button
+                                onClick={() => setIsModalOpen(true)}
+                                className={`inline-flex items-center justify-center px-8 py-4 text-base font-bold transition-all bg-white rounded-lg hover:shadow-lg hover:-translate-y-0.5 ${ctaContext.buttonText === 'Talk to an E-Com Expert' ? 'text-indigo-900 hover:bg-indigo-50' :
+                                    ctaContext.buttonText === 'Book a Tax Review' || ctaContext.buttonText === 'Book a Tax Plan Review' ? 'text-slate-900 hover:bg-slate-100' :
+                                        'text-teal-900 hover:bg-teal-50'
+                                    }`}
+                            >
+                                {ctaContext.buttonText}
+                            </button>
+                        )}
                     </div>
                 </div>
             </section>
 
             {/* Onboarding Modal */}
             <OnboardingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
+            <ExitIntentModal
+                isOpen={showExitPopup}
+                onClose={() => setShowExitPopup(false)}
+                title="Before you go..."
+                description="Don't leave potential refunds on the table. Take our quick quiz to see if you're eligible for a Regulation 105 refund."
+                buttonText="Check Eligibility"
+                buttonLink="/regulation-105-refund"
+            />
         </>
     );
 };

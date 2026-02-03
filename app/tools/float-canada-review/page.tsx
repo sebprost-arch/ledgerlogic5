@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 const DATA = {
     slug: 'float-canada-review',
-    affiliateUrl: 'https://get.floatcard.com/2gxqi90xp1lq',
+    affiliateUrl: 'https://welcome.floatfinancial.com/?eid=NNodPIIg',
     hero: {
         title: 'Float Review: Canada\'s #1 Spend Management Platform',
         subtitle: 'Eliminate expense reports, earn 4% yield on your cash, and issue unlimited cards to your team with zero monthly fees.',
