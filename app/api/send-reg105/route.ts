@@ -7,15 +7,39 @@ export async function POST(request: Request) {
 
     try {
         const body = await request.json();
-        const { contact, formData, result } = body;
-        const { name, email } = contact;
+        console.log('Received body keys:', Object.keys(body));
 
-        if (!name || !email) {
+        // Handle both nested structure (new) and flat structure (legacy/test)
+        let contact = body.contact;
+        let formData = body.formData || body; // Fallback to body if formData missing
+        let result = body.result || 'LIKELY';
+
+        // Construct contact if missing but flat fields exist
+        if (!contact && body.name && body.email) {
+            contact = {
+                name: body.name,
+                email: body.email
+            };
+            console.log('Constructed contact from flat fields');
+        }
+
+        if (!contact || !contact.name || !contact.email) {
+            console.log('Missing contact info. Body dump:', JSON.stringify(body, null, 2));
             return NextResponse.json(
-                { error: 'Missing contact info' },
+                { error: 'Missing contact info', received: body },
                 { status: 400 }
             );
         }
+
+        // Normalize formData fields if coming from flat/legacy structure
+        if (!formData.provinces && formData.province) {
+            formData.provinces = [formData.province];
+        }
+        if (!formData.numPayers && formData.payersCount) {
+            formData.numPayers = formData.payersCount;
+        }
+
+        const { name, email } = contact;
 
         // Format the form data for email
         const formatCurrency = (amount: string, currency: string) => {
@@ -56,7 +80,7 @@ export async function POST(request: Request) {
 
         const { data, error } = await resend.emails.send({
             from: 'LedgerLogic Reg105 <onboarding@resend.dev>',
-            to: ['seb@ledgerlogic.ca'], // Sending to Admin
+            to: ['sebprost@gmail.com'], // Updated to match Resend account owner for testing
             replyTo: email,
             subject: `Reg 105 Lead: ${name} (${result})`,
             html: htmlContent,

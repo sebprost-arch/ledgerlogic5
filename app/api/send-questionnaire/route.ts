@@ -20,7 +20,7 @@ export async function POST(request: Request) {
         // Send email
         const { data, error } = await resend.emails.send({
             from: 'LedgerLogic Questionnaire <onboarding@resend.dev>', // Will change to onboarding@ledgerlogic.ca after domain verification
-            to: ['seb@ledgerlogic.ca'],
+            to: ['sebprost@gmail.com'],
             replyTo: email,
             subject: `New Questionnaire Submission - ${name}`,
             html: `
