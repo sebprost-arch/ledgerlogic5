@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, Outfit } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import '../src/index.css';
 import '../src/views/Home.css';
 import '../src/views/Pricing.css';
@@ -102,6 +103,7 @@ export default function RootLayout({
                 <Layout>
                     {children}
                 </Layout>
+                <Analytics />
             </body>
         </html>
     );
