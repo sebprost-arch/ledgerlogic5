@@ -58,10 +58,10 @@ const Navbar: React.FC = () => {
                 Resources <ChevronDown size={14} className="ml-1 inline" />
               </button>
               <div className="dropdown-menu">
-                <Link href="/resources" className="dropdown-item">
+                {/* <Link href="/resources" className="dropdown-item">
                   <span className="font-bold block">Templates & Kits</span>
                   <span className="text-xs text-slate-500">DIY Store</span>
-                </Link>
+                </Link> */}
                 <Link href="/tools" className="dropdown-item">
                   <span className="font-bold block">Tools & Offers</span>
                   <span className="text-xs text-slate-500">Curated tech stack</span>
@@ -123,9 +123,9 @@ const Navbar: React.FC = () => {
                   </button>
                   {resourcesOpen && (
                     <div className="pl-4 flex flex-col gap-2 mt-2 mb-2">
-                      <Link href="/resources" className="mobile-sublink" onClick={() => setIsOpen(false)}>
+                      {/* <Link href="/resources" className="mobile-sublink" onClick={() => setIsOpen(false)}>
                         Templates & Kits
-                      </Link>
+                      </Link> */}
                       <Link href="/tools" className="mobile-sublink" onClick={() => setIsOpen(false)}>
                         Tools & Offers
                       </Link>
