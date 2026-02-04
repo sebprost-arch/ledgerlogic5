@@ -187,8 +187,8 @@ export const blogPosts: BlogPost[] = [
         "image": "/images/blog-heroes/hero_ledgerlogic_choose_accountant.png"
     },
     {
-        "id": "5653",
-        "slug": "5653",
+        "id": "how-to-use-float-credit-cards",
+        "slug": "how-to-use-float-credit-cards",
         "title": "How to Use Float Credit Cards to Simplify Small Business Expenses in Canada",
         "atAGlance": {
             "title": "At a Glance",

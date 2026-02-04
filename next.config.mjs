@@ -21,6 +21,20 @@ const nextConfig = {
     compiler: {
         removeConsole: process.env.NODE_ENV === 'production',
     },
+    async redirects() {
+        return [
+            {
+                source: '/blog/5653',
+                destination: '/blog/how-to-use-float-credit-cards',
+                permanent: true,
+            },
+            {
+                source: '/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug',
+                destination: '/blog/:slug',
+                permanent: true,
+            },
+        ];
+    },
 };
 
 export default nextConfig;
