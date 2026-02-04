@@ -29,9 +29,8 @@ const nextConfig = {
                 permanent: true,
             },
             {
-                // Match /YYYY/MM/DD/slug based on structure (relaxed regex)
-                // This matches any 3 segments followed by a slug
-                source: '/:year/:month/:day/:slug*',
+                // Match /YYYY/MM/DD/slug strict to avoid matching /images/...
+                source: '/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug*',
                 destination: '/blog/:slug*',
                 permanent: true,
             },
