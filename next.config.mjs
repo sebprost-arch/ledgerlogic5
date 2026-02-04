@@ -28,6 +28,12 @@ const nextConfig = {
                 destination: '/blog/how-to-use-float-credit-cards',
                 permanent: true,
             },
+            {
+                // Strict regex to match ONLY /YYYY/MM/DD/slug and NOT /images/...
+                source: '/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug*',
+                destination: '/blog/:slug*',
+                permanent: true,
+            },
         ];
     },
 };
