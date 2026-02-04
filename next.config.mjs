@@ -29,7 +29,7 @@ const nextConfig = {
                 permanent: true,
             },
             {
-                source: '/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug',
+                source: '/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug{/}?',
                 destination: '/blog/:slug',
                 permanent: true,
             },
