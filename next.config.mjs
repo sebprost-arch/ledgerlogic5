@@ -29,8 +29,9 @@ const nextConfig = {
                 permanent: true,
             },
             {
-                source: '/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug{/}?',
-                destination: '/blog/:slug',
+                // Match /YYYY/MM/DD/slug... and redirect to /blog/slug
+                source: '/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug*',
+                destination: '/blog/:slug*',
                 permanent: true,
             },
         ];
