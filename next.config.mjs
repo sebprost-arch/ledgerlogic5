@@ -29,6 +29,12 @@ const nextConfig = {
                 permanent: true,
             },
             {
+                // Specific redirect for Regulation 105 (Location changed)
+                source: '/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/regulation-102-105-withholdings-for-payments-to-non-residents-canada',
+                destination: '/regulation-105-refund',
+                permanent: true,
+            },
+            {
                 // Strict regex to match ONLY /YYYY/MM/DD/slug and NOT /images/...
                 source: '/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug*',
                 destination: '/blog/:slug*',
