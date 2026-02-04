@@ -34,11 +34,4 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
 }
 
-export const config = {
-    matcher: [
-        // Match all paths that start with a year (4 digits)
-        '/\\d{4}/:path*',
-        // Also match specific old blog path if needed
-        '/blog/5653'
-    ],
-};
+
