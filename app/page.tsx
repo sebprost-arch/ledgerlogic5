@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import HomeContent from '../src/views/Home';
+import HomeJsonLd from './home-json-ld';
 
 export const metadata: Metadata = {
     title: 'Modern Accounting & Virtual CFO for Canadian Businesses',
@@ -20,5 +21,10 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-    return <HomeContent />;
+    return (
+        <>
+            <HomeJsonLd />
+            <HomeContent />
+        </>
+    );
 }
