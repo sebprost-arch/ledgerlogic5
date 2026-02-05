@@ -3,7 +3,7 @@
 export const keywordMap: Record<string, string> = {
     // --- Tools & Services ---
     'Xero': '/tools/xero-canada',
-    'QuickBooks': '/tools/quickbooks-online-canada', // Redirects to /tools/quickbooks-vs-xero-canada? Or is it a separate tool? "quickbooks-vs-xero-canada" exists. Let's use xero-canada and general tools if unsure.
+    'QuickBooks': '/tools/quickbooks-vs-xero-canada', // Redirects to /tools/quickbooks-vs-xero-canada? Or is it a separate tool? "quickbooks-vs-xero-canada" exists. Let's use xero-canada and general tools if unsure.
     // I see 'xero-canada' and 'quickbooks-vs-xero-canada' in tools.
     // Let's stick to safe bets.
     'QuickBooks Online': '/tools/quickbooks-vs-xero-canada', // Mapping to comparison as it's a high value page
@@ -31,19 +31,19 @@ export const keywordMap: Record<string, string> = {
     'Benefits of Incorporation': '/blog/tax-benefits-and-disadvantages-of-incorporating-in-canada',
     'Section 85 Rollover': '/blog/transferring-personal-assets-from-proprietorship-to-a-corporation-in-canada-section-85-rollover',
     'Small Business Tax Rate': '/blog/small-business-tax-rate-canada',
-    'Corporate Tax Filing': '/blog/corporate-tax-filing-requirements-in-canada',
+    'Corporate Tax Filing': '/blog/corporate-tax-planning-strategies-in-canada',
     'Ontario Annual Return': '/blog/how-to-file-ontario-annual-return',
 
     // Cluster C: Holding Companies & Tax Planning
     'Holding Company Definition': '/blog/what-is-a-holding-company-in-canada', // Renamed to avoid collision with Service page
     'Holding Company Benefits': '/blog/what-is-a-holding-company-in-canada',
-    'Capital Dividend Account': '/blog/capital-dividend-account-example',
-    'CDA': '/blog/capital-dividend-account-example',
+    'Capital Dividend Account': '/blog/taxation-of-investment-income-in-a-canadian-corporation',
+    'CDA': '/blog/taxation-of-investment-income-in-a-canadian-corporation',
     'Investment Income Tax': '/blog/taxation-of-investment-income-in-a-canadian-corporation',
     'Tax on Dividends': '/blog/are-dividends-taxable-in-canada',
 
     // Cluster D: CRA Audits & Compliance
-    'Tax Deadlines': '/blog/tax-filing-deadlines-in-canada-a-comprehensive-guide',
+    'Tax Deadlines': '/blog/year-end-checklist-for-small-business-canada',
     'CRA Penalties': '/blog/cra-audit-penalties',
     'CRA Audit': '/blog/how-do-you-deal-with-a-cra-audit',
     'Audit Chances': '/blog/chances-of-getting-audited-by-cra',
