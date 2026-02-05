@@ -7,13 +7,19 @@ export const ConsultationCTA = ({
     title = "Ready to Simplify Your Finances?",
     description = "Stop stressing about your numbers. Let our team handle your accounting so you can focus on leading your business.",
     buttonText = "Book a Free Consult",
-    buttonLink
+    buttonLink,
+    secondaryButtonText,
+    secondaryButtonLink,
+    onSecondaryClick
 }: {
     onOpenModal?: () => void;
     title?: string;
     description?: string;
     buttonText?: string;
     buttonLink?: string;
+    secondaryButtonText?: string;
+    secondaryButtonLink?: string;
+    onSecondaryClick?: () => void;
 }) => {
     return (
         <div className="my-16 relative overflow-hidden rounded-2xl bg-white shadow-xl border border-slate-100">
@@ -27,21 +33,39 @@ export const ConsultationCTA = ({
                         {description}
                     </p>
                 </div>
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 flex flex-col gap-3 min-w-[200px]">
                     {buttonLink ? (
                         <Link
                             href={buttonLink}
-                            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all bg-teal-600 rounded-lg hover:bg-teal-700 hover:shadow-lg hover:-translate-y-0.5"
+                            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all bg-teal-600 rounded-lg hover:bg-teal-700 hover:shadow-lg hover:-translate-y-0.5 text-center w-full"
                         >
                             {buttonText}
                         </Link>
                     ) : (
                         <button
                             onClick={onOpenModal}
-                            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all bg-teal-600 rounded-lg hover:bg-teal-700 hover:shadow-lg hover:-translate-y-0.5"
+                            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all bg-teal-600 rounded-lg hover:bg-teal-700 hover:shadow-lg hover:-translate-y-0.5 text-center w-full"
                         >
                             {buttonText}
                         </button>
+                    )}
+
+                    {(secondaryButtonText && (secondaryButtonLink || onSecondaryClick)) && (
+                        secondaryButtonLink ? (
+                            <Link
+                                href={secondaryButtonLink}
+                                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-slate-700 transition-all bg-white border-2 border-slate-200 rounded-lg hover:border-teal-600 hover:text-teal-700 hover:shadow-md hover:-translate-y-0.5 text-center w-full"
+                            >
+                                {secondaryButtonText}
+                            </Link>
+                        ) : (
+                            <button
+                                onClick={onSecondaryClick}
+                                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-slate-700 transition-all bg-white border-2 border-slate-200 rounded-lg hover:border-teal-600 hover:text-teal-700 hover:shadow-md hover:-translate-y-0.5 text-center w-full"
+                            >
+                                {secondaryButtonText}
+                            </button>
+                        )
                     )}
                 </div>
             </div>

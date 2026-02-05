@@ -43,9 +43,23 @@ const PILLAR_MAP: Record<string, { slug: string; title: string; category: string
 };
 
 // Shortcode Parser Component
-const BlogPostContent = ({ content, onOpenModal, ctaContext }: { content: string; onOpenModal: () => void; ctaContext?: { title: string; description: string; buttonText?: string; buttonLink?: string } }) => {
-    // Regex to find shortcodes
-    // We split the content by specific known shortcodes based on strings
+const BlogPostContent = ({
+    content,
+    onOpenModal,
+    ctaContext
+}: {
+    content: string;
+    onOpenModal: () => void;
+    ctaContext?: {
+        title: string;
+        description: string;
+        buttonText?: string;
+        buttonLink?: string;
+        secondaryButtonText?: string;
+        secondaryButtonLink?: string;
+        secondaryAction?: 'modal';
+    }
+}) => {
 
     // 1. Split by Consult CTA
     const parts = content.split('[[CTA_CONSULT]]');
@@ -71,6 +85,9 @@ const BlogPostContent = ({ content, onOpenModal, ctaContext }: { content: string
                                 description={ctaContext?.description}
                                 buttonText={ctaContext?.buttonText}
                                 buttonLink={ctaContext?.buttonLink}
+                                secondaryButtonText={ctaContext?.secondaryButtonText}
+                                secondaryButtonLink={ctaContext?.secondaryButtonLink}
+                                onSecondaryClick={ctaContext?.secondaryAction === 'modal' ? onOpenModal : undefined}
                             />
                         )}
                     </React.Fragment>
@@ -92,20 +109,156 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, relatedPosts }) => {
     const [showExitPopup, setShowExitPopup] = useState(false);
     const [hasShownExitPopup, setHasShownExitPopup] = useState(false);
 
-    useEffect(() => {
-        // Target specific Regulation 105 post
-        if (post.slug !== 'treaty-based-return-for-non-resident-corporations-operating-in-canada-schedule-91-and-97') return;
+    // Target Regulation 105 content cluster (Specific Override)
+    const reg105ClusterSlugs = [
+        'treaty-based-return-for-non-resident-corporations-operating-in-canada-schedule-91-and-97',
+        'canadian-client-withheld-15-percent-invoice-refund',
+        'regulation-105-refund-us-companies-treaty-t2',
+        'regulation-105-waiver-application-canada',
+        'regulation-105-vs-regulation-102-canada',
+        'quebec-non-resident-withholding-refund-tp-1015',
+        'nr4-slip-vs-t4a-nr-proof-of-withholding',
+        'regulation-105-refund-filing-deadlines-canada'
+    ];
 
+    const getPostCategory = (post: BlogPostType) => {
+        if (reg105ClusterSlugs.includes(post.slug)) return 'REG105';
+
+        const title = post.title.toLowerCase();
+
+        // General Xero Signals (Priority 1)
+        if (title.match(/xero|pricing/)) return 'GENERAL_XERO';
+
+        // Migration Signals
+        if (title.match(/switch|migration|move from|sage|quickbooks|freshbooks|wave/)) return 'MIGRATION';
+        // Troubleshooting Signals
+        if (title.match(/how to|fix|error|audit|guide|help|troubleshoot/)) return 'TROUBLESHOOTING';
+
+        return 'DEFAULT';
+    };
+
+    const postCategory = getPostCategory(post);
+
+    // Dynamic CTA Context Logic
+    const { ctaContext, exitIntentContext } = React.useMemo(() => {
+        // Affiliate Link (Direct)
+        const xeroOfferLink = "https://xero5440.partnerlinks.io/lc4v5f7lmse2";
+
+        // 1. Explicit Override
+        if (post.midContentCta) {
+            return {
+                ctaContext: post.midContentCta,
+                exitIntentContext: {
+                    title: "Ready to Level Up?",
+                    description: "Get the expert support your business deserves.",
+                    buttonText: "Book a Discovery Call",
+                    buttonAction: 'modal'
+                }
+            };
+        }
+
+        // 2. Regulation 105 Cluster (Specific)
+        if (postCategory === 'REG105') {
+            const context = {
+                title: "Claim Your 15% Withholding Tax Refund",
+                description: "Did a Canadian client withhold 15% of your invoice? We help US companies get that money back fast.",
+                buttonText: "Check Refund Eligibility",
+                buttonLink: "/regulation-105-refund"
+            };
+            return { ctaContext: context, exitIntentContext: { ...context, title: "Before you go..." } };
+        }
+
+        // 3. Migration Posts
+        if (postCategory === 'MIGRATION') {
+            return {
+                ctaContext: {
+                    title: "Ready to Switch to Xero?",
+                    description: "We handle the entire migration process from QuickBooks or Sage. Zero downtime, zero data loss.",
+                    buttonText: "Book our Migration Service",
+                    secondaryButtonText: "Claim 90% Off Xero",
+                    secondaryButtonLink: xeroOfferLink
+                },
+                exitIntentContext: {
+                    title: "Thinking About Switching?",
+                    description: "Don't struggle with legacy software. Let us handle your migration to Xero.",
+                    buttonText: "Book Migration Call",
+                    buttonAction: 'modal',
+                    secondaryButtonText: "Or claim 90% off Xero",
+                    secondaryButtonLink: xeroOfferLink
+                }
+            };
+        }
+
+        // 4. General Xero Posts
+        if (postCategory === 'GENERAL_XERO') {
+            return {
+                ctaContext: {
+                    title: "Get 6 Months of Xero at 90% Off",
+                    description: "As Xero Partners, we have exclusive access to Canada's best software deal.",
+                    buttonText: "Claim Xero Offer",
+                    buttonLink: xeroOfferLink,
+                    secondaryButtonText: "Talk to a CPA first",
+                    secondaryAction: 'modal' as const
+                },
+                exitIntentContext: {
+                    title: "Don't Miss This Xero Deal",
+                    description: "Get 90% off for 6 months when you switch today. Exclusive partner offer.",
+                    buttonText: "Claim 90% Off Offer",
+                    buttonLink: xeroOfferLink,
+                    secondaryButtonText: "I have questions (Book Call)",
+                    secondaryAction: 'modal' as const
+                }
+            };
+        }
+
+        // 5. Troubleshooting/How-to Posts
+        if (postCategory === 'TROUBLESHOOTING') {
+            return {
+                ctaContext: {
+                    title: "Struggling with this Issue?",
+                    description: "Our CPAs can fix this for you fast. Stop wasting time on DIY accounting.",
+                    buttonText: "Book a Support Call",
+                    secondaryButtonText: "See Xero Hub",
+                    secondaryButtonLink: "/tools/xero-canada"
+                },
+                exitIntentContext: undefined
+            };
+        }
+
+        // Default Fallback
+        const defaultContext = {
+            title: "Ready to Simplify Your Finances?",
+            description: "Stop stressing about your numbers. Let our team handle your accounting so you can focus on leading your business.",
+            buttonText: "Book a Free Consult",
+            buttonLink: undefined,
+            secondaryAction: undefined
+        };
+        return {
+            ctaContext: defaultContext,
+            exitIntentContext: undefined // Disable exit intent for default posts
+        };
+
+    }, [post, postCategory]);
+
+    useEffect(() => {
+        // Exit Intent Logic for ALL posts
         const handleMouseLeave = (e: MouseEvent) => {
-            if (e.clientY <= 0 && !hasShownExitPopup) {
-                setShowExitPopup(true);
-                setHasShownExitPopup(true);
+            if (e.clientY <= 0 && !hasShownExitPopup && exitIntentContext) {
+                // Check Session Storage (Frequency Cap)
+                const hasSessionShown = sessionStorage.getItem('ledgerLogic_exitIntentShown');
+
+                if (!hasSessionShown) {
+                    setShowExitPopup(true);
+                    setHasShownExitPopup(true);
+                    sessionStorage.setItem('ledgerLogic_exitIntentShown', 'true');
+                }
             }
         };
 
         document.addEventListener('mouseleave', handleMouseLeave);
         return () => document.removeEventListener('mouseleave', handleMouseLeave);
-    }, [post.slug, hasShownExitPopup]);
+    }, [post.slug, hasShownExitPopup, exitIntentContext]);
+
     const backParams = searchParams?.toString() ? `?${searchParams.toString()}` : '';
 
     // Scroll Progress
@@ -123,65 +276,6 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, relatedPosts }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
 
-
-    // Dynamic CTA Context Logic
-    const ctaContext = React.useMemo(() => {
-        // 1. Explicit Override
-        if (post.midContentCta) return post.midContentCta;
-
-        const titleLower = post.title.toLowerCase();
-
-        // 2. E-Commerce Signals (Highest Priority)
-        if (titleLower.match(/amazon|shopify|e-commerce|dropshipping|product/)) {
-            return {
-                title: "Scaling Your E-Commerce Brand?",
-                description: "Inventory, sales tax, and margins can get messy. We specialize in accounting for Canadian e-commerce sellers.",
-                buttonText: "Talk to an E-Com Expert"
-            };
-        }
-
-        // 3. Tax Signals
-        if (titleLower.match(/tax|cra|deduction|write off|audit/)) {
-            return {
-                title: "Worried About the CRA?",
-                description: "Ensure you're compliant and maximizing every deduction. Don't leave money on the table.",
-                buttonText: "Book a Tax Review"
-            };
-        }
-
-        // 4. Switching/Relationship Signals
-        if (titleLower.match(/switch|ghosted|taking so long|change accountant|hiring|choose/)) {
-            return {
-                title: "Tired of Your Current Accountant?",
-                description: "You deserve responsive support and proactive advice. Switch to LedgerLogic for a partner who actually cares.",
-                buttonText: "Book a Discovery Call"
-            };
-        }
-
-        // 5. Default Category Fallbacks
-        if (post.category === 'Business Management') {
-            return {
-                title: "Scale Your Business Faster",
-                description: "Get the financial visibility you need to make confident growth decisions.",
-                buttonText: "Talk to a CFO"
-            };
-        }
-
-        if (post.category === 'Tax') {
-            return {
-                title: "Concerned About Corporate Tax?",
-                description: "Ensure your corporation is compliant and tax-efficient. Our experts handle the complexity for you.",
-                buttonText: "Book a Tax Plan Review"
-            };
-        }
-
-        // Generic Fallback
-        return {
-            title: "Ready to Simplify Your Finances?",
-            description: "Stop stressing about your numbers. Let our team handle your accounting so you can focus on leading your business.",
-            buttonText: "Book a Free Consult"
-        };
-    }, [post]);
 
 
     useEffect(() => {
@@ -232,9 +326,6 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, relatedPosts }) => {
                 if (isBottom && sectionElements.length > 0) {
                     currentId = sectionElements[sectionElements.length - 1].id;
                 }
-
-                // Fallback: If no section is triggered (e.g. at the very top), select nothing or the first one?
-                // Usually we want nothing active until the first header is reached.
 
                 setActiveSection(currentId);
             });
@@ -582,10 +673,22 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, relatedPosts }) => {
             <ExitIntentModal
                 isOpen={showExitPopup}
                 onClose={() => setShowExitPopup(false)}
-                title="Before you go..."
-                description="Don't leave potential refunds on the table. Take our quick quiz to see if you're eligible for a Regulation 105 refund."
-                buttonText="Check Eligibility"
-                buttonLink="/regulation-105-refund"
+                title={exitIntentContext?.title || "Before you go..."}
+                description={exitIntentContext?.description || "Book a free discovery call to see how we can help your business grow."}
+                buttonText={exitIntentContext?.buttonText || "Book a Free Consult"}
+                buttonLink={exitIntentContext?.buttonLink}
+                onPrimaryClick={/* If buttonAction is 'modal' or undefined/null AND no link */
+                    (exitIntentContext?.buttonAction === 'modal' || (!exitIntentContext?.buttonLink && !exitIntentContext?.buttonAction))
+                        ? () => { setShowExitPopup(false); setIsModalOpen(true); }
+                        : undefined
+                }
+                secondaryButtonText={exitIntentContext?.secondaryButtonText}
+                secondaryButtonLink={exitIntentContext?.secondaryButtonLink}
+                secondaryButtonAction={
+                    exitIntentContext?.secondaryAction === 'modal'
+                        ? () => { setShowExitPopup(false); setIsModalOpen(true); }
+                        : undefined
+                }
             />
         </>
     );

@@ -668,6 +668,7 @@ const AffiliateToolsView: React.FC = () => {
                             __html: JSON.stringify({
                                 "@context": "https://schema.org",
                                 "@type": "FAQPage",
+                                "@id": "https://ledgerlogic.ca/tools/#faq",
                                 "mainEntity": [
                                     {
                                         "@type": "Question",

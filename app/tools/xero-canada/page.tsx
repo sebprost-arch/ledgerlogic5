@@ -138,11 +138,13 @@ const DATA = {
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Cloud-based",
         "description": "Cloud accounting software for Canadian businesses.",
+        "image": "https://ledgerlogic.ca/images/tools-hero.jpg",
         "offers": {
             "@type": "AggregateOffer",
             "lowPrice": "25.00",
             "highPrice": "75.00",
-            "priceCurrency": "CAD"
+            "priceCurrency": "CAD",
+            "availability": "https://schema.org/InStock"
         },
         "aggregateRating": {
             "@type": "AggregateRating",

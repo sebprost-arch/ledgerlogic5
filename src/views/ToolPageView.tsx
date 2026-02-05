@@ -521,6 +521,7 @@ const ToolPageView: React.FC<ToolPageProps> = ({ data }) => {
                         {
                             "@context": "https://schema.org",
                             "@type": "FAQPage",
+                            "@id": `https://ledgerlogic.ca/tools/${data.slug}#faq`,
                             "mainEntity": data.faq.map(f => ({
                                 "@type": "Question",
                                 "name": f.question,

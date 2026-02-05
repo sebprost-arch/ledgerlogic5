@@ -114,6 +114,23 @@ const Home: React.FC = () => {
         setOpenFaq(openFaq === index ? null : index);
     };
 
+    // Auto-open modal based on URL hash
+    React.useEffect(() => {
+        const handleHashChange = () => {
+            const hash = window.location.hash;
+            if (hash === '#book' || hash === '#contact') {
+                setIsModalOpen(true);
+            }
+        };
+
+        // Check on mount
+        handleHashChange();
+
+        // Listen for hash changes
+        window.addEventListener('hashchange', handleHashChange);
+        return () => window.removeEventListener('hashchange', handleHashChange);
+    }, []);
+
     return (
         <>
             <OnboardingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

@@ -7085,11 +7085,7 @@ export const blogPosts: BlogPost[] = [
                 }
             ]
         },
-        "midContentCta": {
-            "title": "Is Xero Right for Your Business?",
-            "description": "Don't guess. Let our Canadian Xero experts review your needs and build your perfect financial stack.",
-            "buttonText": "Get a Xero Assessment"
-        }
+
     }
     ,
     {

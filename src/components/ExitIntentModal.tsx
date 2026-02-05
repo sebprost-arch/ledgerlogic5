@@ -9,10 +9,25 @@ interface ExitIntentModalProps {
     title: string;
     description: string;
     buttonText: string;
-    buttonLink: string;
+    buttonLink?: string;
+    onPrimaryClick?: () => void;
+    secondaryButtonText?: string;
+    secondaryButtonLink?: string;
+    secondaryButtonAction?: () => void;
 }
 
-const ExitIntentModal: React.FC<ExitIntentModalProps> = ({ isOpen, onClose, title, description, buttonText, buttonLink }) => {
+const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
+    isOpen,
+    onClose,
+    title,
+    description,
+    buttonText,
+    buttonLink,
+    onPrimaryClick,
+    secondaryButtonText,
+    secondaryButtonLink,
+    secondaryButtonAction
+}) => {
     if (!isOpen) return null;
 
     return (
@@ -49,16 +64,48 @@ const ExitIntentModal: React.FC<ExitIntentModalProps> = ({ isOpen, onClose, titl
                             {description}
                         </p>
 
-                        <Link
-                            href={buttonLink}
-                            className="inline-flex items-center justify-center gap-2 w-full px-6 py-4 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-teal-500/20 hover:-translate-y-1 group"
-                        >
-                            {buttonText}
-                            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                        </Link>
+                        <div className="flex flex-col gap-3">
+                            {/* Primary Action */}
+                            {onPrimaryClick ? (
+                                <button
+                                    onClick={onPrimaryClick}
+                                    className="inline-flex items-center justify-center gap-2 w-full px-6 py-4 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-teal-500/20 hover:-translate-y-1 group"
+                                >
+                                    {buttonText}
+                                    <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                                </button>
+                            ) : (
+                                <Link
+                                    href={buttonLink || '#'}
+                                    className="inline-flex items-center justify-center gap-2 w-full px-6 py-4 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-teal-500/20 hover:-translate-y-1 group"
+                                >
+                                    {buttonText}
+                                    <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                                </Link>
+                            )}
+
+                            {/* Secondary Action */}
+                            {(secondaryButtonText && (secondaryButtonLink || secondaryButtonAction)) && (
+                                secondaryButtonLink ? (
+                                    <Link
+                                        href={secondaryButtonLink}
+                                        className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 bg-white border-2 border-slate-100 hover:border-teal-100 hover:bg-teal-50 text-slate-600 hover:text-teal-700 font-bold rounded-xl transition-all"
+                                    >
+                                        {secondaryButtonText}
+                                    </Link>
+                                ) : (
+                                    <button
+                                        onClick={secondaryButtonAction}
+                                        className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 bg-white border-2 border-slate-100 hover:border-teal-100 hover:bg-teal-50 text-slate-600 hover:text-teal-700 font-bold rounded-xl transition-all"
+                                    >
+                                        {secondaryButtonText}
+                                    </button>
+                                )
+                            )}
+                        </div>
 
                         <button onClick={onClose} className="mt-6 text-xs text-slate-400 hover:text-slate-600 font-medium transition-colors">
-                            No thanks, I don't want to check my eligibility.
+                            No thanks, I'm not interested.
                         </button>
                     </div>
                 </motion.div>

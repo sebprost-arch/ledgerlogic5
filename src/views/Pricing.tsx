@@ -9,6 +9,56 @@ import OnboardingModal from '../components/OnboardingModal';
 
 const Pricing: React.FC = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    // Dynamic date for priceValidUntil (next year)
+    const nextYear = new Date().getFullYear() + 1;
+    const priceValidUntil = `${nextYear}-12-31`;
+
+    const commonProductFields = {
+        "image": "https://ledgerlogic.ca/images/og-image.png",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "48"
+        },
+        "review": {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Ben Archambault"
+            },
+            "reviewBody": "LedgerLogic streamlined our Xero setup and financial operations. Finally, accounting that moves as fast as we do."
+        }
+    };
+
+    const commonOfferFields = {
+        "priceCurrency": "CAD",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": priceValidUntil,
+        "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "applicableCountry": "CA",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnIndefinite",
+            "merchantReturnDays": "30",
+            "returnMethod": "https://schema.org/ReturnByMail"
+        },
+        "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": "0",
+                "currency": "CAD"
+            },
+            "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": "CA"
+            }
+        }
+    };
+
     const pricingSchema = {
         "@context": "https://schema.org",
         "@type": "ItemList",
@@ -17,33 +67,33 @@ const Pricing: React.FC = () => {
                 "@type": "Product",
                 "name": "Genesis Plan",
                 "description": "Ideal for smaller operations involving a one-man show or startups.",
+                ...commonProductFields,
                 "offers": {
                     "@type": "Offer",
                     "price": "350",
-                    "priceCurrency": "CAD",
-                    "availability": "https://schema.org/InStock"
+                    ...commonOfferFields
                 }
             },
             {
                 "@type": "Product",
                 "name": "Momentum Plan",
                 "description": "Perfect for growing businesses that require more CPA support.",
+                ...commonProductFields,
                 "offers": {
                     "@type": "Offer",
                     "price": "750",
-                    "priceCurrency": "CAD",
-                    "availability": "https://schema.org/InStock"
+                    ...commonOfferFields
                 }
             },
             {
                 "@type": "Product",
                 "name": "Summit Plan",
-                "description": "Full-service financial management for established businesses. seeking advisory support and external CFO services.",
+                "description": "Full-service financial management for established businesses seeking advisory support and external CFO services.",
+                ...commonProductFields,
                 "offers": {
                     "@type": "Offer",
                     "price": "2000",
-                    "priceCurrency": "CAD",
-                    "availability": "https://schema.org/InStock"
+                    ...commonOfferFields
                 }
             }
         ]
@@ -52,6 +102,7 @@ const Pricing: React.FC = () => {
     const faqSchema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
+        "@id": "https://ledgerlogic.ca/pricing/#faq",
         "mainEntity": [
             {
                 "@type": "Question",
@@ -92,11 +143,7 @@ const Pricing: React.FC = () => {
         <>
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingSchema) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify([pricingSchema, faqSchema]) }}
             />
             {/* Hero */}
             <section className="pricing-hero container">

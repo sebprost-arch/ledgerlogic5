@@ -1,0 +1,2043 @@
+export const blogPosts: BlogPost[] = [
+    {
+        "id": "regulation-105-vs-regulation-102-canada",
+        "slug": "regulation-105-vs-regulation-102-canada",
+        "title": "Reg 105 vs Reg 102: Contractors vs Employees (and why it matters)",
+        "excerpt": "Regulation 105 applies to the company invoice. Regulation 102 applies to employee payroll. Learn the difference and avoid double withholding.",
+        "content": "",
+        "toc": [
+            { "id": "regulation-105-the-company-tax", "title": "Regulation 105: The \"Company\" Tax" },
+            { "id": "regulation-102-the-payroll-tax", "title": "Regulation 102: The \"Payroll\" Tax" },
+            { "id": "the-double-whammy-scenario", "title": "The \"Double Whammy\" Scenario" },
+            { "id": "do-i-need-to-set-up-canadian-payroll", "title": "Do I Need to Set Up Canadian Payroll?" },
+            { "id": "how-to-manage-both", "title": "How to Manage Both" },
+            { "id": "frequently-asked-questions", "title": "Frequently Asked Questions" }
+        ],
+        "atAGlance": {
+            "title": "At a Glance",
+            "items": [
+                { "label": "Topic", "text": "Distinguishing between two different non-resident withholding regimes" },
+                { "label": "Regulation 105", "text": "15% withheld from the Company's Invoice" },
+                { "label": "Regulation 102", "text": "Payroll tax withheld from the Employee's Paycheck" },
+                { "label": "Common Trap", "text": "US companies often face both if they aren't careful" },
+                { "label": "Solution", "text": "You may need waivers for both" },
+                { "label": "Forms", "text": "NR4 vs T4" }
+            ]
+        },
+        "author": "Seb Prost, CPA",
+        "date": "May 22, 2024",
+        "readTime": "6 min read",
+        "tags": ["Payroll", "Compliance"],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_reg105_vs_102.png"
+    },
+    {
+        "id": "quebec-non-resident-withholding-refund-tp-1015",
+        "slug": "quebec-non-resident-withholding-refund-tp-1015",
+        "title": "Québec Non-Resident Withholding (9%): Refunds & Rules",
+        "excerpt": "Services rendered in Québec are subject to an EXTRA 9% withholding tax on top of the federal 15%. Learn about Revenu Québec rules and refunds.",
+        "content": "",
+        "toc": [
+            { "id": "the-24-percent-surprise-in-quebec", "title": "The \"24% Surprise\" in Québec" },
+            { "id": "who-governs-this", "title": "Who Governs This? (CRA vs Revenu Québec)" },
+            { "id": "how-to-get-the-provincial-refund", "title": "How to Get the Provincial Refund" },
+            { "id": "the-co-17-return", "title": "The CO-17 Return" },
+            { "id": "do-i-need-a-waiver-for-quebec-too", "title": "Do I Need a Waiver for Québec Too?" },
+            { "id": "frequently-asked-questions", "title": "Frequently Asked Questions" }
+        ],
+        "atAGlance": {
+            "title": "At a Glance",
+            "items": [
+                { "label": "Topic", "text": "The additional tax for work to be performed in Québec" },
+                { "label": "Federal Rate", "text": "15% (CRA)" },
+                { "label": "Québec Rate", "text": "9% additional (Revenu Québec)" },
+                { "label": "Total Withholding", "text": "24% of your invoice!" },
+                { "label": "Refunds", "text": "Requires separate filings (Federal T2 + Québec CO-17)" },
+                { "label": "Complexity", "text": "Higher (French forms, separate agency)" }
+            ]
+        },
+        "author": "Seb Prost, CPA",
+        "date": "September 10, 2024",
+        "readTime": "5 min read",
+        "tags": ["Quebec", "Provincial Tax"],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_quebec_withholding.png"
+    },
+    {
+        "id": "nr4-slip-vs-t4a-nr-proof-of-withholding",
+        "slug": "nr4-slip-vs-t4a-nr-proof-of-withholding",
+        "title": "What Documents Prove Withholding? NR4 vs T4A-NR vs Payer Letter",
+        "excerpt": "Need to claim your Regulation 105 refund? You need specific slips. We explain the NR4, T4A-NR, and what to do if your client didn't send them.",
+        "content": "",
+        "toc": [
+            { "id": "the-nr4-slip-the-gold-standard", "title": "The NR4 Slip: The Gold Standard" },
+            { "id": "the-t4a-nr-for-individuals", "title": "The T4A-NR: For Individuals" },
+            { "id": "when-should-i-receive-these", "title": "When Should I Receive These?" },
+            { "id": "what-to-do-if-your-client-is-ghosting-you", "title": "What to Do If Your Client is Ghosting You" },
+            { "id": "frequently-asked-questions", "title": "Frequently Asked Questions" }
+        ],
+        "atAGlance": {
+            "title": "At a Glance",
+            "items": [
+                { "label": "Topic", "text": "The specific tax slips required for a refund" },
+                { "label": "NR4 Slip", "text": "The most common form used for corporations" },
+                { "label": "T4A-NR", "text": "Used for individuals (sole proprietors) or partnerships" },
+                { "label": "Deadline", "text": "Clients must issue these by February 28" },
+                { "label": "Problem", "text": "What to do if the client forgets to send it" },
+                { "label": "Solution", "text": "Letter of confirmation + proof of payment" }
+            ]
+        },
+        "author": "Seb Prost, CPA",
+        "date": "January 15, 2025",
+        "readTime": "5 min read",
+        "tags": ["Documentation", "Forms"],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_nr4_vs_t4anr.png"
+    },
+    {
+        "id": "regulation-105-refund-filing-deadlines-canada",
+        "slug": "regulation-105-refund-filing-deadlines-canada",
+        "title": "Deadlines: When to File for Your Regulation 105 Refund",
+        "excerpt": "When is your Regulation 105 refund return due? Learn the 6-month filing deadline, lateness penalties, and the 3-year hard stop for refunds.",
+        "content": "",
+        "toc": [
+            { "id": "the-6-month-rule", "title": "The 6-Month Rule" },
+            { "id": "the-difference-between-owing-and-refund-deadlines", "title": "The Difference Between \"Owing\" and \"Refund\" Deadlines" },
+            { "id": "the-3-year-hard-stop", "title": "The 3-Year Hard Stop" },
+            { "id": "what-if-i-am-late", "title": "What If I Am Late?" },
+            { "id": "how-long-does-the-refund-take", "title": "How Long Does the Refund Take?" },
+            { "id": "frequently-asked-questions", "title": "Frequently Asked Questions" }
+        ],
+        "atAGlance": {
+            "title": "At a Glance",
+            "items": [
+                { "label": "Topic", "text": "Critical dates for compliance and refunds" },
+                { "label": "Primary Deadline", "text": "6 months after your fiscal year-end" },
+                { "label": "Refund Deadline", "text": "3 years from the end of the tax year (Strict)" },
+                { "label": "Slip Deadline", "text": "February 28 (for your receipt of NR4s)" },
+                { "label": "Interest", "text": "CRA pays interest on refunds if they are slow" },
+                { "label": "Advice", "text": "File as soon as you receive the NR4" }
+            ]
+        },
+        "author": "Seb Prost, CPA",
+        "date": "August 21, 2025",
+        "readTime": "5 min read",
+        "tags": ["Deadlines", "Compliance"],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_reg105_deadlines.png"
+    },
+    {
+        "id": "canadian-client-withheld-15-percent-invoice-refund",
+        "slug": "canadian-client-withheld-15-percent-invoice-refund",
+        "title": "Canadian Client Withheld 15% From My Invoice: How to Get It Back",
+        "excerpt": "Did a Canadian client withhold 15% from your invoice? Learn how to claim your Regulation 105 refund, what forms to file, and when to expect your money.",
+        "content": "",
+        "toc": [
+            { "id": "why-did-my-client-keep-15-percent", "title": "Why did my client keep 15% of my money?" },
+            { "id": "am-i-eligible-for-a-full-refund", "title": "Am I eligible for a full refund?" },
+            { "id": "the-permanent-establishment-test", "title": "The \"Permanent Establishment\" Test" },
+            { "id": "the-refund-process-step-by-step", "title": "The Refund Process: Step-by-Step" },
+            { "id": "documents-you-need", "title": "Documents You Need (The Checklist)" },
+            { "id": "common-pitfalls-to-avoid", "title": "Common Pitfalls to Avoid" },
+            { "id": "frequently-asked-questions", "title": "Frequently Asked Questions" }
+        ],
+        "atAGlance": {
+            "title": "At a Glance",
+            "items": [
+                { "label": "Topic", "text": "Recovering 15% tax withheld by Canadian clients" },
+                { "label": "Target", "text": "US and International Contractors/Consultants" },
+                { "label": "Key Form", "text": "T2 Corporation Income Tax Return (or T1 for individuals)" },
+                { "label": "Proof Needed", "text": "NR4 Slip or T4A-NR" },
+                { "label": "Timeline", "text": "Refunds typically take 6 months to process" },
+                { "label": "Outcome", "text": "Most non-residents get the full 15% back if they have no permanent establishment" }
+            ]
+        },
+        "author": "Seb Prost, CPA",
+        "date": "July 15, 2023",
+        "readTime": "6 min read",
+        "tags": ["Regulation 105", "Tax Refund"],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_reg105_withheld_invoice.png"
+    },
+    {
+        "id": "regulation-105-refund-us-companies-treaty-t2",
+        "slug": "regulation-105-refund-us-companies-treaty-t2",
+        "title": "Regulation 105 Refund for US Companies: Treaty Basics & T2 Filing",
+        "excerpt": "US companies doing business in Canada can often recover Regulation 105 withholding taxes. Learn how the Canada-US Tax Treaty protects your profits.",
+        "content": "",
+        "toc": [
+            { "id": "the-canada-us-tax-treaty-your-best-friend", "title": "The Canada-US Tax Treaty: Your Best Friend" },
+            { "id": "what-is-regulation-105-really", "title": "What is \"Regulation 105\" really?" },
+            { "id": "do-i-have-to-file-a-canadian-tax-return", "title": "Do I have to file a Canadian Tax Return?" },
+            { "id": "article-v-the-permanent-establishment-rule", "title": "Article V: The Permanent Establishment Rule" },
+            { "id": "article-vii-business-profits-exemption", "title": "Article VII: Business Profits Exemption" },
+            { "id": "how-to-file-for-your-refund", "title": "How to File for Your Refund" },
+            { "id": "frequently-asked-questions", "title": "Frequently Asked Questions" }
+        ],
+        "atAGlance": {
+            "title": "At a Glance",
+            "items": [
+                { "label": "Topic", "text": "How US companies recover Canadian withholding tax" },
+                { "label": "Key Treaty", "text": "Canada-US Income Tax Convention (Article V & VII)" },
+                { "label": "Key Concept", "text": "\"Business Profits\" exemption" },
+                { "label": "Requirement", "text": "Must file a Canadian T2 Return to claim the treaty benefit" },
+                { "label": "Deadline", "text": "Within 6 months of year-end to avoid penalties" },
+                { "label": "Result", "text": "Full refund of the 15% withheld if no permanent establishment exists" }
+            ]
+        },
+        "author": "Seb Prost, CPA",
+        "date": "October 12, 2023",
+        "readTime": "5 min read",
+        "tags": ["US Companies", "Tax Treaty"],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_reg105_us_refund.png"
+    },
+    {
+        "id": "regulation-105-waiver-application-canada",
+        "slug": "regulation-105-waiver-application-canada",
+        "title": "Regulation 105 Waiver (R105): How to Stop the 15% Withholding",
+        "excerpt": "Want to stop Canadian clients from withholding 15% of your fees? Learn how to apply for a Regulation 105 Waiver (Form R105) before you invoice.",
+        "content": "",
+        "toc": [
+            { "id": "refunds-vs-waivers", "title": "Refunds vs. Waivers: What's the Difference?" },
+            { "id": "who-should-apply-for-a-waiver", "title": "Who Should Apply for a Waiver?" },
+            { "id": "the-application-process-form-r105", "title": "The Application Process (Form R105)" },
+            { "id": "the-30-day-rule", "title": "The \"30-Day Rule\"" },
+            { "id": "what-happens-after-approval", "title": "What Happens After Approval?" },
+            { "id": "what-if-my-waiver-is-denied", "title": "What if My Waiver is Denied?" },
+            { "id": "frequently-asked-questions", "title": "Frequently Asked Questions" }
+        ],
+        "atAGlance": {
+            "title": "At a Glance",
+            "items": [
+                { "label": "Topic", "text": "Pre-emptively stopping the 15% tax withholding" },
+                { "label": "Form", "text": "R105 Regulation 105 Waiver Application" },
+                { "label": "Timing", "text": "Must apply 30 days before service begins" },
+                { "label": "Basis", "text": "Treaty protection or income and expense estimates" },
+                { "label": "Recipient", "text": "Your Canadian client receives a letter from CRA authorizing full payment" },
+                { "label": "Difficulty", "text": "High – requires detailed disclosure of contracts and schedules" }
+            ]
+        },
+        "author": "Seb Prost, CPA",
+        "date": "February 20, 2024",
+        "readTime": "5 min read",
+        "tags": ["Waiver", "Regulation 105"],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_reg105_waiver.png"
+    },
+
+    {
+        "id": "how-to-build-bulletproof-financial-processes-for-your-startup-with-the-right-cloud-tools",
+--
+                "id": "creating-a-cra-my-business-account",
+                "title": "Creating a CRA My Business Account"
+            },
+            {
+                "id": "applying-for-business-numbers-and-accounts",
+                "title": "Applying for Business Numbers and Accounts"
+            },
+            {
+                "id": "reviewing-registration-requirements",
+                "title": "Reviewing Registration Requirements"
+            },
+            {
+                "id": "maintaining-compliance",
+                "title": "Maintaining Compliance"
+            },
+            {
+                "id": "getting-help-with-registration",
+                "title": "Getting Help with Registration"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "March 1, 2024",
+        "readTime": "5 min read",
+        "tags": [
+            "Cra"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_tax_canada.png"
+    },
+    {
+        "id": "choosing-the-right-accounting-firm-in-canada",
+        "slug": "choosing-the-right-accounting-firm-in-canada",
+--
+                "id": "step-by-step-guide-to-completing-td1-form",
+                "title": "Step-by-Step Guide to Completing TD1 Form"
+            },
+            {
+                "id": "step-by-step-guide-to-completing-td1bc-form",
+                "title": "Step-by-Step Guide to Completing TD1BC Form"
+            },
+            {
+                "id": "special-circumstances-and-exemptions",
+                "title": "Special Circumstances and Exemptions"
+            },
+            {
+                "id": "finalizing-and-submitting-the-forms",
+                "title": "Finalizing and Submitting the Forms"
+            },
+            {
+                "id": "post-submission-steps",
+                "title": "Post-Submission Steps"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "February 1, 2024",
+        "readTime": "5 min read",
+        "tags": [
+            "Payroll"
+        ],
+        "category": "Tax"
+    },
+    {
+        "id": "how-long-does-it-take-to-learn-xero",
+        "slug": "how-long-does-it-take-to-learn-xero",
+        "title": "How Long Does it Take to Learn Xero: Mastering the Basics Quickly",
+--
+                "title": "Determining Eligibility for Home-Based Business Deductions"
+            },
+            {
+                "id": "vehicle-and-transportation-expenses",
+                "title": "Vehicle and Transportation Expenses"
+            },
+            {
+                "id": "understanding-depreciation-and-capital-costs",
+                "title": "Understanding Depreciation and Capital Costs"
+            },
+            {
+                "id": "tax-planning-and-reporting-for-home-based-businesses",
+                "title": "Tax Planning and Reporting for Home-Based Businesses"
+            },
+            {
+                "id": "seeking-professional-tax-advice",
+                "title": "Seeking Professional Tax Advice"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "January 25, 2024",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax",
+            "Personal Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_business_number_registration.png"
+    },
+    {
+        "id": "tax-compliance-for-bitcoin-businesses-in-canada",
+        "slug": "tax-compliance-for-bitcoin-businesses-in-canada",
+--
+                "id": "businesses-selling-goods-and-services-in-bitcoin",
+                "title": "Businesses Selling Goods and Services in Bitcoin"
+            },
+            {
+                "id": "canada-s-legal-framework-for-cryptocurrencies",
+                "title": "Canada's Legal Framework for Cryptocurrencies"
+            },
+            {
+                "id": "understanding-the-tax-implications",
+                "title": "Understanding the Tax Implications"
+            },
+            {
+                "id": "compliance-with-the-income-tax-act",
+                "title": "Compliance with the Income Tax Act"
+            },
+            {
+                "id": "tax-compliance-best-practices",
+                "title": "Tax Compliance Best Practices"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "January 21, 2024",
+        "readTime": "5 min read",
+        "tags": [
+            "Bitcoin"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_bitcoin_tax.png"
+    },
+    {
+        "id": "why-is-xero-the-best",
+        "slug": "why-is-xero-the-best",
+--
+                "id": "eht-in-ontario",
+                "title": "EHT in Ontario"
+            },
+            {
+                "id": "eht-in-british-columbia",
+                "title": "EHT in British Columbia"
+            },
+            {
+                "id": "compliance-and-enforcement",
+                "title": "Compliance and Enforcement"
+            },
+            {
+                "id": "interjurisdictional-employers",
+                "title": "Interjurisdictional Employers"
+            },
+            {
+                "id": "potential-changes-and-impacts",
+                "title": "Potential Changes and Impacts"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "January 9, 2024",
+        "readTime": "5 min read",
+        "tags": [
+            "Payroll"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_employer_health_tax.png"
+    },
+    {
+        "id": "canada-us-tax-treaty-and-implications",
+        "slug": "canada-us-tax-treaty-and-implications",
+--
+                "id": "tax-implications-for-individuals",
+                "title": "Tax Implications for Individuals"
+            },
+            {
+                "id": "tax-implications-for-companies",
+                "title": "Tax Implications for Companies"
+            },
+            {
+                "id": "taxation-of-real-property",
+                "title": "Taxation of Real Property"
+            },
+            {
+                "id": "tax-planning-strategies",
+                "title": "Tax Planning Strategies"
+            },
+            {
+                "id": "reporting-requirements-and-compliance",
+                "title": "Reporting Requirements and Compliance"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "January 8, 2024",
+        "readTime": "5 min read",
+        "tags": [
+            "Non Residents"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_canada_us_treaty.png"
+    },
+    {
+        "id": "canadian-withholding-tax-for-non-resident-companies-and-their-shareholders",
+        "slug": "canadian-withholding-tax-for-non-resident-companies-and-their-shareholders",
+--
+                "id": "withholding-tax-on-rent",
+                "title": "Withholding Tax on Rent"
+            },
+            {
+                "id": "tax-obligations-of-non-resident-companies",
+                "title": "Tax Obligations of Non-Resident Companies"
+            },
+            {
+                "id": "tax-implications-for-shareholders",
+                "title": "Tax Implications for Shareholders"
+            },
+            {
+                "id": "dispute-resolution-and-appeals",
+                "title": "Dispute Resolution and Appeals"
+            },
+            {
+                "id": "tax-planning-strategies",
+                "title": "Tax Planning Strategies"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "January 5, 2024",
+        "readTime": "5 min read",
+        "tags": [
+            "Non Residents"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_withholding_tax.png"
+    },
+    {
+        "id": "ontario-hst-exemptions-list",
+        "slug": "ontario-hst-exemptions-list",
+--
+        "excerpt": "The Harmonized Sales Tax (HST) is a combined federal and provincial tax applicable to most goods and services in Ontario. However, there are exemption...",
+        "content": "<p>The <a href=\"/blog\">Harmonized Sales Tax</a> (HST) is a combined federal and provincial tax applicable to most goods and services in Ontario. However, there are exemptions to this tax, which means certain items and services are not subject to HST. Understanding the scope of these exemptions can help individuals and businesses make well-informed decisions about their purchases and the taxes they are expected to pay.</p>\n<p>Some examples of goods and services on the Ontario HST exemption list include health, medical, and dental services provided by licensed physicians and dentists for medical reasons. With a variety of HST exempt items, consumers and business owners can benefit from being aware of these exemptions and planning their expenses accordingly.</p>\n<p>In addition to these exemptions, it is essential to be aware of false GST/HST exemption claims and counterfeit exemption cards. By being knowledgeable about the HST exemptions in Ontario and recognizing potential fraudulent activities, individuals and businesses can better navigate the tax system and make informed decisions.\n<h2 id=\"overview-of-hst-in-ontario\">Overview of HST in Ontario</h2></p>[[CTA_CONSULT]]\n<p>In Ontario, the Harmonized Sales Tax (HST) is a combination of the federal goods and services tax (GST) and the provincial sales tax. Currently, the <a href=\"/blog/canadian-corporate-tax-rates-by-province\">HST rate</a> stands at <strong>13%</strong>. It came into effect on July 1, 2010, replacing the 5% GST and 8% RST on most goods and services in the province.</p>\n<p>HST applies to a wide range of goods and services; however, certain goods and services are exempt. This means that businesses in Ontario do not collect HST on these exempt items, and consequently, are not required to <a href=\"/blog/how-do-i-file-a-gsthst-return-in-canada-a-step-by-step-guide\">remit the tax</a>.</p>\n<p>Examples of HST-exempt goods and services in Ontario are as follows:\n<li>Health, medical, and dental services provided by licensed physicians and dentists for medical reasons</li>\n<li>Most educational services, such as vocational and college courses</li>\n<li>Childcare services</li>\n<li>Long-term rentals</li>\n<li>Legal aid services</li></p>\n<p>It is essential for businesses and consumers in Ontario to be aware of the HST exemption list. This knowledge helps businesses maintain their compliance with tax regulations, while consumers understand their rights and responsibilities related to the taxes they pay.\n<h2 id=\"general-hst-exemptions\">General HST Exemptions</h2></p>\n<p>In Ontario, certain products and services are exempt from the 13% Harmonized Sales Tax (HST). This section will discuss the general exemptions, which include basic groceries, prescription drugs, medical devices, books, children's goods, feminine hygiene products, and agricultural products.\n<h3 id=\"basic-groceries\">Basic Groceries</h3></p>\n<p>Items considered as basic groceries are exempt from HST. These include most unprocessed food products such as fresh fruits, vegetables, meat, poultry, and fish. Processed foods such as snack foods and carbonated beverages do not fall under this category and are subject to HST.\n<h3 id=\"prescription-drugs\">Prescription Drugs</h3></p>\n<p>Prescription drugs are considered zero-rated supplies when they are prescribed by a licensed healthcare provider and dispensed by a pharmacist. Any over-the-counter (OTC) medications and vitamins are subject to HST unless they are specifically prescribed by a healthcare professional.\n<h3 id=\"medical-devices\">Medical Devices</h3></p>\n<p>Most medical devices, such as hearing aids, artificial limbs, and walking aids, are exempt from HST when prescribed by a medical practitioner for a patient's use. This also includes medical equipment that is necessary for the patient's treatment or mobility.\n<h3 id=\"books\">Books</h3></p>\n<p>Printed books, audio recordings of printed books, and electronic books (e-books) are generally exempt from HST. This includes textbooks, children's books, and literary works. Magazines, newspapers, and periodicals, however, are still subject to HST.\n<h3 id=\"children-s-goods\">Children's Goods</h3></p>\n<p>Clothing and footwear designed for children under 14 years of age are exempt from HST. This includes baby garments, children's hats, gloves, and outerwear. Children's car seats and booster seats are also exempt from HST.\n<h3 id=\"feminine-hygiene-products\">Feminine Hygiene Products</h3></p>\n<p>Feminine hygiene products, such as tampons, pads, and menstrual cups, are exempt from HST in Ontario to make them more accessible and affordable for those who need them.\n<h3 id=\"agricultural-products\">Agricultural Products</h3></p>\n<p>Agricultural products, including livestock, poultry, and raw wool, are exempt from HST. Farm equipment and machinery used for agricultural purposes may also qualify for HST exemption depending on certain criteria.</p>\n<p>These general exemptions aim to make essential goods and services more accessible to Ontario residents.\n<h2 id=\"hst-exempt-services\">HST Exempt Services</h2></p>\n<h3 id=\"health-care-services\">Health Care Services</h3>\n<p>In Ontario, health care services provided by licensed physicians, dentists, and other health professionals for medical reasons are exempt from HST. This includes services such as <em>diagnosis, treatment, and prevention of illness or injury</em>. However, cosmetic procedures and non-medical services are subject to HST.\n<h3 id=\"educational-services\">Educational Services</h3></p>\n<p>Educational services consisting of <em>tuition fees</em> for courses leading to a diploma or degree from an accredited institution are HST exempt. This exemption also extends to vocational training provided by public or designated private schools. Please note that some extracurricular activities and materials may be subject to HST.</p>\n<p>| Exempt Educational Services | Non-Exempt Educational Services |\n| --- | --- |\n| Degree and diploma courses | Tutoring services |\n| Vocational training | Learning materials |\n| Government-funded training | Extracurricular activities |</p>\n<h3 id=\"\"></h3>\n<h3 id=\"legal-aid-services\">Legal Aid Services</h3>\n<p>Legal aid services that are provided or funded by <em>government-funded organizations</em> are exempt from HST. This exemption ensures that individuals in need of legal assistance can access these services without additional cost barriers.\n<h3 id=\"financial-services\">Financial Services</h3></p>\n<p>Certain financial services in Ontario are also HST exempt. These include:\n<li>Deposits and loans</li>\n<li>Insurance policies</li>\n<li>Credit card and debit card services</li>\n<li>Investment management and advisory services</li></p>\n<p>It is important for businesses and consumers to be aware that some financial services, such as service fees and ATM usage fees, may still be subject to HST.\n<h3 id=\"child-care-services\">Child Care Services</h3></p>\n<p>Child care services provided for children aged 14 or under are exempt from HST in Ontario when provided by licensed facilities, schools, and camps. This exemption eases the financial burden on parents seeking quality care for their children.</p>\n<p><strong>Note</strong>: Private child care providers that are not licensed by the government are subject to HST, and unlicensed child care services may not have the same quality standards in place.\n<h2 id=\"property-and-real-estate-exemptions\">Property and Real Estate Exemptions</h2></p>\n<h3 id=\"residential-rentals\">Residential Rentals</h3>\n<p>Long-term residential rentals, defined as rentals for a continuous period of one month or more, are <strong>exempt</strong> from HST in Ontario. This includes renting out residential properties such as houses, apartments, and condominiums. However, short-term rentals, like those often found on platforms such as Airbnb, are still subject to HST as they are considered a supply of accommodation.\n<h3 id=\"sales-of-used-residential-housing\">Sales of Used Residential Housing</h3></p>\n<p>In Ontario, the sale of used residential properties is typically <strong>exempt</strong> from HST. This means that when individuals sell their homes, they generally do not need to collect and remit HST as part of the transaction. It's essential to note that this exemption only applies to used residential properties and does not include newly built homes or commercial properties.\n<h3 id=\"certain-real-property-transactions\">Certain Real Property Transactions</h3></p>\n<p>Some specific real property transactions may also qualify for HST exemption. For example, sales of personal-use vacant land are typically exempt from HST. Personal-use vacant land refers to land that is not used for commercial purposes, such as farming or generating income. Additionally, specific transfers of real property between closely related parties, such as family members or corporations under common control, can be exempt from HST if certain conditions are met. In these cases, it's vital to consult a tax professional to ensure eligibility for the exemption.\n<h2 id=\"frequently-asked-questions\">Frequently Asked Questions</h2></p>\n<h3 id=\"what-types-of-groceries-are-not-subject-to-sales-tax-in-ontario-\">What types of groceries are not subject to sales tax in Ontario?</h3>\n<p>Most basic groceries are not subject to HST in Ontario, including items such as fresh fruits and vegetables, raw meat, dairy products, and bread. However, some groceries that involve additional processing, packaging, or are considered snack items or ready-to-eat meals may be subject to HST.\n<h3 id=\"are-children-s-clothing-items-exempt-from-hst-in-the-province-\">Are children's clothing items exempt from HST in the province?</h3></p>\n<p>Children's clothing items in Ontario are exempt from HST if they are designed specifically for a child under the age of 15. This includes items such as clothing, footwear, and accessories. However, adult-sized clothing that is intended for children is not exempt.\n<h3 id=\"how-is-restaurant-food-taxed-differently-from-other-goods-in-ontario-\">How is restaurant food taxed differently from other goods in Ontario?</h3></p>\n<p>Restaurant food is subject to the full 13% HST in Ontario, unlike many grocery items that are exempt. This tax applies to prepared meals, snacks, and beverages sold at restaurants or other food establishments, as well as delivery and takeout meals.\n<h3 id=\"which-business-expenses-may-be-claimed-as-exemptions-on-an-hst-return-in-ontario-\">Which business expenses may be claimed as exemptions on an HST return in Ontario?</h3></p>\n<p>Businesses registered for HST in Ontario can claim <a href=\"/blog/how-do-i-file-a-gsthst-return-in-canada-a-step-by-step-guide\">Input Tax Credits (ITCs)</a> for the HST paid on eligible expenses related to their commercial activities. Examples of eligible expenses include rent, office supplies, utilities, and vehicle expenses, among others. It is important for businesses to maintain proper records and documentation to support their ITC claims.</p>",
+        "toc": [
+            {
+                "id": "overview-of-hst-in-ontario",
+                "title": "Overview of HST in Ontario"
+            },
+            {
+                "id": "general-hst-exemptions",
+                "title": "General HST Exemptions"
+            },
+            {
+                "id": "hst-exempt-services",
+                "title": "HST Exempt Services"
+            },
+            {
+                "id": "property-and-real-estate-exemptions",
+                "title": "Property and Real Estate Exemptions"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "January 2, 2024",
+        "readTime": "5 min read",
+        "tags": [
+            "Sales Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_ontario_hst_exemptions.png"
+    },
+    {
+        "id": "corporate-tax-planning-strategies-in-canada",
+        "slug": "corporate-tax-planning-strategies-in-canada",
+--
+                "id": "calculating-the-cda-balance",
+                "title": "Calculating the CDA Balance"
+            },
+            {
+                "id": "utilizing-the-capital-dividend-account",
+                "title": "Utilizing the Capital Dividend Account"
+            },
+            {
+                "id": "navigating-late-filing-of-capital-dividend-elections-in-canada",
+                "title": "Navigating Late-Filing of Capital Dividend Elections in Canada"
+            },
+            {
+                "id": "examples-of-cda-transactions",
+                "title": "Examples of CDA Transactions"
+            },
+            {
+                "id": "tax-implications-and-considerations",
+                "title": "Tax Implications and Considerations"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "December 27, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_capital_dividend.png"
+    },
+    {
+        "id": "gst-hst-on-remote-services",
+        "slug": "gst-hst-on-remote-services",
+--
+                "id": "filing-and-remittances",
+                "title": "Filing and Remittances"
+            },
+            {
+                "id": "input-tax-credits",
+                "title": "Input Tax Credits"
+            },
+            {
+                "id": "digital-platform-operator-responsibilities",
+                "title": "Digital Platform Operator Responsibilities"
+            },
+            {
+                "id": "business-considerations",
+                "title": "Business Considerations"
+            },
+            {
+                "id": "consumer-implications",
+                "title": "Consumer Implications"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "December 23, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Sales Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_gst_hst_remote_services.png"
+    },
+    {
+        "id": "cra-voluntary-disclosure",
+        "slug": "cra-voluntary-disclosure",
+--
+                "id": "examples-of-voluntary-disclosure-t1135",
+                "title": "Examples of Voluntary Disclosure: T1135"
+            },
+            {
+                "id": "after-disclosure-compliance-measures",
+                "title": "After Disclosure: Compliance Measures"
+            },
+            {
+                "id": "potential-risks-and-considerations",
+                "title": "Potential Risks and Considerations"
+            },
+            {
+                "id": "legal-interpretations-and-precedents",
+                "title": "Legal Interpretations and Precedents"
+            },
+            {
+                "id": "how-to-seek-professional-advice",
+                "title": "How to Seek Professional Advice"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "December 21, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Cra"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_cra_voluntary_disclosure.png"
+    },
+    {
+        "id": "canadian-corporate-tax-rates-by-province",
+        "slug": "canadian-corporate-tax-rates-by-province",
+--
+                "id": "quebec-corporate-tax-rates",
+                "title": "Quebec Corporate Tax Rates"
+            },
+            {
+                "id": "saskatchewan-corporate-tax-rates",
+                "title": "Saskatchewan Corporate Tax Rates"
+            },
+            {
+                "id": "small-business-tax-rates-by-province",
+                "title": "Small Business Tax Rates by Province"
+            },
+            {
+                "id": "tax-credits-and-incentives-by-province",
+                "title": "Tax Credits and Incentives by Province"
+            },
+            {
+                "id": "interprovincial-tax-comparisons",
+                "title": "Interprovincial Tax Comparisons"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "December 18, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_corp_tax_rates_provinces.png"
+    },
+    {
+        "id": "how-to-save-money-with-the-gst-hst-quick-method",
+        "slug": "how-to-save-money-with-the-gst-hst-quick-method",
+--
+                "id": "calculating-your-taxes-using-the-quick-method",
+                "title": "Calculating Your Taxes Using the Quick Method"
+            },
+            {
+                "id": "reporting-and-remittances",
+                "title": "Reporting and Remittances"
+            },
+            {
+                "id": "record-keeping-requirements",
+                "title": "Record-Keeping Requirements"
+            },
+            {
+                "id": "quick-method-and-input-tax-credits",
+                "title": "Quick Method and Input Tax Credits"
+            },
+            {
+                "id": "changes-to-your-business-and-the-quick-method",
+                "title": "Changes to Your Business and the Quick Method"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "December 16, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Sales Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_gst_hst_quick_method.png"
+    },
+    {
+        "id": "opening-a-canadian-business-bank-account-remotely-as-a-non-resident",
+        "slug": "opening-a-canadian-business-bank-account-remotely-as-a-non-resident",
+--
+                "id": "opening-deposit-and-fees",
+                "title": "Opening Deposit and Fees"
+            },
+            {
+                "id": "business-banking-services",
+                "title": "Business Banking Services"
+            },
+            {
+                "id": "legal-and-tax-considerations",
+                "title": "Legal and Tax Considerations"
+            },
+            {
+                "id": "bank-account-management",
+                "title": "Bank Account Management"
+            },
+            {
+                "id": "finalizing-the-account-setup",
+                "title": "Finalizing the Account Setup"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "December 14, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Non Residents"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_non_resident_bank_account.png"
+    },
+    {
+        "id": "top-tax-challenges-for-dropshipping-businesses-in-canada",
+        "slug": "top-tax-challenges-for-dropshipping-businesses-in-canada",
+--
+                "id": "submission-process",
+                "title": "Submission Process"
+            },
+            {
+                "id": "after-filing-an-objection",
+                "title": "After Filing an Objection"
+            },
+            {
+                "id": "resolving-disputes",
+                "title": "Resolving Disputes"
+            },
+            {
+                "id": "understanding-your-rights",
+                "title": "Understanding Your Rights"
+            },
+            {
+                "id": "record-keeping",
+                "title": "Record Keeping"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "December 8, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Cra"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_cra_notice_of_objection.png"
+    },
+    {
+        "id": "what-is-the-difference-between-t3-t4-t4a-and-t5-slips",
+        "slug": "what-is-the-difference-between-t3-t4-t4a-and-t5-slips",
+--
+            },
+            {
+                "id": "deciphering-t5-slips",
+                "title": "Deciphering T5 Slips"
+            },
+            {
+                "id": "comparative-analysis",
+                "title": "Comparative Analysis"
+            },
+            {
+                "id": "filing-implications",
+                "title": "Filing Implications"
+            },
+            {
+                "id": "utilization-in-tax-returns",
+                "title": "Utilization in Tax Returns"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "December 6, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax",
+            "Cra",
+            "Personal Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_tax_slips_t3_t4_t5.png"
+    },
+    {
+        "id": "is-xero-worth-it",
+        "slug": "is-xero-worth-it",
+--
+                "title": "Penalties and Consequences"
+            },
+            {
+                "id": "supporting-documentation",
+                "title": "Supporting Documentation"
+            },
+            {
+                "id": "online-reporting",
+                "title": "Online Reporting"
+            },
+            {
+                "id": "guidance-and-interpretation",
+                "title": "Guidance and Interpretation"
+            },
+            {
+                "id": "international-agreements-and-impact",
+                "title": "International Agreements and Impact"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "December 3, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax",
+            "Personal Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_t1135_reporting.png"
+    },
+    {
+        "id": "e-commerce-gst-hst-collection-for-online-sales-in-canada",
+        "slug": "e-commerce-gst-hst-collection-for-online-sales-in-canada",
+--
+            },
+            {
+                "id": "ecommerce-tax-deductions-and-credits",
+                "title": "Ecommerce Tax Deductions and Credits"
+            },
+            {
+                "id": "tax-compliance-for-international-ecommerce-sellers",
+                "title": "Tax Compliance for International Ecommerce Sellers"
+            },
+            {
+                "id": "ecommerce-platform-specific-tax-considerations",
+                "title": "Ecommerce Platform-Specific Tax Considerations"
+            },
+            {
+                "id": "audits-and-penalties-for-ecommerce-tax-non-compliance",
+                "title": "Audits and Penalties for Ecommerce Tax Non-Compliance"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "December 1, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax",
+            "E Commerce",
+            "Sales Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_ecommerce_gst_hst.png"
+    },
+    {
+        "id": "how-to-file-ontario-annual-return",
+        "slug": "how-to-file-ontario-annual-return",
+--
+                "id": "preparing-to-file-your-return",
+                "title": "Preparing to File Your Return"
+            },
+            {
+                "id": "completing-the-ontario-annual-return-form",
+                "title": "Completing the Ontario Annual Return Form"
+            },
+            {
+                "id": "filing-options",
+                "title": "Filing Options"
+            },
+            {
+                "id": "after-filing",
+                "title": "After Filing"
+            },
+            {
+                "id": "compliance-and-deadlines",
+                "title": "Compliance and Deadlines"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "November 30, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_ontario_annual_return.png"
+    },
+    {
+        "id": "how-to-calculate-vacation-pay-for-salaried-employees",
+        "slug": "how-to-calculate-vacation-pay-for-salaried-employees",
+--
+                "id": "pay-during-partial-years-of-employment",
+                "title": "Pay during Partial Years of Employment"
+            },
+            {
+                "id": "vacation-pay-on-termination",
+                "title": "Vacation Pay on Termination"
+            },
+            {
+                "id": "record-keeping-requirements",
+                "title": "Record Keeping Requirements"
+            },
+            {
+                "id": "addressing-common-challenges",
+                "title": "Addressing Common Challenges"
+            },
+            {
+                "id": "vacation-pay-in-various-provinces",
+                "title": "Vacation Pay In Various Provinces"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "November 27, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Payroll"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_vacation_pay_calculator.png"
+    },
+    {
+        "id": "bc-interactive-digital-media-tax-credit-guide-bc-idmtc",
+        "slug": "bc-interactive-digital-media-tax-credit-guide-bc-idmtc",
+--
+                "title": "Compliance and Auditing"
+            },
+            {
+                "id": "longevity-and-changes-to-the-idmtc",
+                "title": "Longevity and Changes to the IDMTC"
+            },
+            {
+                "id": "supporting-technology-and-innovation",
+                "title": "Supporting Technology and Innovation"
+            },
+            {
+                "id": "interaction-with-other-tax-incentives",
+                "title": "Interaction with Other Tax Incentives"
+            },
+            {
+                "id": "industry-impact-and-public-perception",
+                "title": "Industry Impact and Public Perception"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "November 24, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax",
+            "Startups"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_bc_idmtc.png"
+    },
+    {
+        "id": "the-importance-of-accounting-for-startups-in-canada",
+        "slug": "the-importance-of-accounting-for-startups-in-canada",
+--
+                "id": "understanding-the-dividend-tax-credit",
+                "title": "Understanding the Dividend Tax Credit"
+            },
+            {
+                "id": "tax-planning-considerations",
+                "title": "Tax Planning Considerations"
+            },
+            {
+                "id": "maximizing-your-dividend-tax-credit",
+                "title": "Maximizing Your Dividend Tax Credit"
+            },
+            {
+                "id": "reporting-dividends-on-your-tax-return",
+                "title": "Reporting Dividends on Your Tax Return"
+            },
+            {
+                "id": "the-importance-of-professional-advice",
+                "title": "The Importance of Professional Advice"
+            },
+            {
+                "id": "conclusion",
+                "title": "Conclusion"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "November 21, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_dividends_taxable.png"
+    },
+    {
+        "id": "is-it-better-to-pay-yourself-a-salary-or-dividends-in-canada",
+        "slug": "is-it-better-to-pay-yourself-a-salary-or-dividends-in-canada",
+--
+                "title": "Salary vs Dividend - Finding the Right Balance"
+            },
+            {
+                "id": "how-much-dividends-should-i-pay-myself-",
+                "title": "How Much Dividends Should I Pay Myself?"
+            },
+            {
+                "id": "how-to-pay-yourself-dividends-",
+                "title": "How to Pay Yourself Dividends?"
+            },
+            {
+                "id": "can-you-pay-yourself-dividends-monthly-",
+                "title": "Can you Pay Yourself Dividends Monthly?"
+            },
+            {
+                "id": "salaries-vs-dividends-small-businesses-filing-requirements",
+                "title": "Salaries vs Dividends - Small Businesses Filing Requirements"
+            },
+            {
+                "id": "conclusion",
+                "title": "Conclusion"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "November 21, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax",
+            "Personal Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_salary_vs_dividends.png"
+    },
+    {
+        "id": "transferring-personal-assets-from-proprietorship-to-a-corporation-in-canada-section-85-rollover",
+        "slug": "transferring-personal-assets-from-proprietorship-to-a-corporation-in-canada-section-85-rollover",
+--
+                "id": "preparing-for-asset-transfer",
+                "title": "Preparing for Asset Transfer"
+            },
+            {
+                "id": "legal-aspects-of-asset-transfer",
+                "title": "Legal Aspects of Asset Transfer"
+            },
+            {
+                "id": "tax-implications",
+                "title": "Tax Implications"
+            },
+            {
+                "id": "implementing-the-rollover",
+                "title": "Implementing the Rollover"
+            },
+            {
+                "id": "post-transfer-consideration",
+                "title": "Post-Transfer Consideration"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "November 19, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_transfer_assets_section_85.png"
+    },
+    {
+        "id": "choosing-the-right-accounting-software-for-your-e-commerce-business",
+        "slug": "choosing-the-right-accounting-software-for-your-e-commerce-business",
+--
+                "id": "impact-on-taxpayers",
+                "title": "Impact on Taxpayers"
+            },
+            {
+                "id": "compliance-and-reporting-requirements",
+                "title": "Compliance and Reporting Requirements"
+            },
+            {
+                "id": "exceptions-and-relief-provisions",
+                "title": "Exceptions and Relief Provisions"
+            },
+            {
+                "id": "legal-recourse-and-appeals",
+                "title": "Legal Recourse and Appeals"
+            },
+            {
+                "id": "advisory-and-planning-strategies",
+                "title": "Advisory and Planning Strategies"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "November 13, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Cra"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_cra_10_year_limit.png"
+    },
+    {
+        "id": "how-do-i-change-accountant",
+        "slug": "how-do-i-change-accountant",
+--
+                "id": "goods-and-services-tax-gst-harmonized-sales-tax-hst-considerations",
+                "title": "Goods and Services Tax (GST)/Harmonized Sales Tax (HST) Considerations"
+            },
+            {
+                "id": "withholding-taxes",
+                "title": "Withholding Taxes"
+            },
+            {
+                "id": "financing-and-repatriating-profits",
+                "title": "Financing and Repatriating Profits"
+            },
+            {
+                "id": "tax-planning-and-strategies",
+                "title": "Tax Planning and Strategies"
+            },
+            {
+                "id": "audit-and-legal-considerations",
+                "title": "Audit and Legal Considerations"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "November 8, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Non Residents"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_non_resident_guide.png"
+    },
+    {
+        "id": "how-do-i-file-a-gsthst-return-in-canada-a-step-by-step-guide",
+        "slug": "how-do-i-file-a-gsthst-return-in-canada-a-step-by-step-guide",
+--
+            },
+            {
+                "id": "deadlines-and-due-dates-for-gst-hst-returns",
+                "title": "Deadlines and Due Dates for GST/HST Returns"
+            },
+            {
+                "id": "payment-options-and-procedures",
+                "title": "Payment Options and Procedures"
+            },
+            {
+                "id": "record-keeping-for-gst-hst",
+                "title": "Record Keeping for GST/HST"
+            },
+            {
+                "id": "handling-audits-and-compliance",
+                "title": "Handling Audits and Compliance"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "November 6, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax",
+            "Personal Tax",
+            "Sales Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_gst_hst_return.png"
+    },
+    {
+        "id": "what-you-need-to-know-about-shareholder-loans-in-canada",
+        "slug": "what-you-need-to-know-about-shareholder-loans-in-canada",
+--
+        "excerpt": "As a shareholder of a corporation in Canada, you have various options to extract funds from your company. This includes salary, dividends, management ...",
+        "content": "<p>As a shareholder of a <a href=\"/blog/tax-benefits-and-disadvantages-of-incorporating-in-canada\">corporation</a> in Canada, you have various options to extract funds from your company. This includes salary, <a href=\"/blog/are-dividends-taxable-in-canada\">dividends</a>, management fees, and shareholder loans. While salary and dividends are the more common methods, a shareholders loan can provide tax planning opportunities in certain circumstances. However, it’s crucial to understand the rules and guidelines set by the <a href=\"https://www.canada.ca/en/revenue-agency.html\">Canada Revenue Agency</a> (CRA). This will ensure compliance and help you avoid any potential income tax issues. In this comprehensive guide, we will explore the concept of shareholder loans, how they work, their income tax implications, and the CRA rules you need to be aware of.</p>\n<h2 id=\"what-is-a-shareholder-loan-\">What is a Shareholder Loan?</h2>\n<p>A shareholder loan, or shareholder advance, refers to an amount borrowed by a shareholder from their corporation. It can be seen as a form of remuneration, similar to <a href=\"/blog/is-it-better-to-pay-yourself-a-salary-or-dividends-in-canada\">salary or dividends</a>, where funds are withdrawn from the corporation for personal use. A corporate loan to shareholder can be made from the shareholder’s own company or a related company. These loans are usually temporary in nature and must be repaid within a specific timeframe to avoid tax consequences.</p>\n<h2 id=\"how-shareholder-loans-are-used\">How Shareholder Loans are Used</h2>\n<p>Shareholder loans can be categorized into two types: “due from shareholder” loans and “due to shareholder” loans.</p>[[CTA_CONSULT]]\n<h3 id=\"due-from-shareholder\">Due from Shareholder</h3>\n<p>A “due from shareholder” loan occurs when a shareholder withdraws money from their corporation for personal use, without designating it as <a href=\"/blog/is-it-better-to-pay-yourself-a-salary-or-dividends-in-canada\">salary or dividends</a>. For example, if a shareholder uses corporate funds to purchase a personal item or cover personal expenses, it would be considered a loan from the company to the shareholder. These loans need to be repaid to the corporation within a specific timeframe to avoid income tax implications.</p>\n<img src=\"https://ledgerlogic.ca/wp-content/uploads/2023/11/DALL%C2%B7E-2023-11-22-14.51.40-A-portrait-of-an-individual-in-a-business-setting-looking-worried-and-holding-an-invoice.-The-person-is-a-middle-aged-Caucasian-male-with-short-brown.png\" alt=\"\" class=\"img-fluid\" />\n<h3 id=\"due-to-shareholder\">Due to Shareholder</h3>\n<p>On the other hand, a “due to shareholder” loan, or loan from shareholder to corporation, occurs when a shareholder lends money to their corporation. This typically happens when the shareholder contributes personal funds to the company to cover expenses or provide additional capital. The corporation is then obligated to repay the shareholder at a later date.</p>\n<h2 id=\"income-tax-implications-of-shareholder-loans\">Income Tax Implications of Shareholder Loans</h2>\n<p>When it comes to shareholder loans, it’s crucial to understand the tax implications and CRA rules. Failure to comply with the CRA shareholder loans rules may result in both corporate and personal tax consequences. The key income tax implications of shareholder loans include:</p>\n<h3 id=\"repayment-rules-of-shareholder-loans\">Repayment Rules of Shareholder Loans</h3>\n<p>The repayment of shareholder loan rule is a fundamental principle to keep in mind when dealing with shareholder loans. A shareholder loan has to be repaid within one year from the end of the corporation’s fiscal year in which the loan was made. If repaid in that timeframe, it will not be included in the shareholder’s income. However, failing to repay the loan within this timeframe would mean that the unpaid amount will be deemed as other income to the shareholder and subject to personal income tax.</p>\n<h3 id=\"interest-rates\">Interest Rates</h3>\n<p>The Canada Revenue Agency requires that interest on shareholder loans bear the prescribed interest rate as indicated in the Income Tax Act. If no interest or inadequate shareholder loan interest is charged, the CRA may impute interest at the prescribed rate and consider it as a taxable benefit to the shareholder.</p>\n<img src=\"https://ledgerlogic.ca/wp-content/uploads/2023/11/DALL%C2%B7E-2023-11-22-14.55.10-An-abstract-representation-of-interest-rates-and-debt-without-specific-currency-symbols.-The-image-features-a-large-stylized-percentage-sign-in-the-c.png\" alt=\"\" class=\"img-fluid\" />\n<h3 id=\"exceptions-and-special-circumstances\">Exceptions and Special Circumstances</h3>\n<p>There are certain exceptions and special circumstances where the shareholder loan repayment rule may not apply or different rules may come into play. For example, loans made in the ordinary course of business or loans used to purchase a principal residence or a motor vehicle for business use may have different repayment requirements or tax treatment. It’s important to consult with a tax professional or refer to the CRA guidelines for specific details regarding these exceptions as loans from shareholders rules can get quite complex.</p>\n<h2 id=\"cra-rules-and-guidelines-for-shareholder-loans\">CRA Rules and Guidelines for Shareholder Loans</h2>\n<img src=\"https://ledgerlogic.ca/wp-content/uploads/2023/11/DALL%C2%B7E-2023-11-22-15.05.48-An-illustration-of-a-tax-collector-in-a-professional-setting.-The-tax-collector-is-a-middle-aged-Hispanic-male-with-short-black-hair-wearing-formal-a.png\" alt=\"\" class=\"img-fluid\" />\n<p>The CRA has established rules and guidelines to ensure that shareholder loans are used appropriately and to prevent tax abuse. It’s essential to be familiar with these rules to comply with CRA requirements. Here are some key rules and guidelines to keep in mind:</p>\n<h3 id=\"documentation-and-record-keeping\">Documentation and Record-Keeping</h3>\n<p>Proper documentation and record-keeping are crucial when it comes to shareholder loans. It’s important to have a written loan agreement or corporate resolution that clearly outlines the terms of the loan, including the repayment period, interest rate, and any other relevant details. This documentation will provide evidence of the loan transaction and help establish the commercial nature of the loan.</p>\n<img src=\"https://ledgerlogic.ca/wp-content/uploads/2023/11/DALL%C2%B7E-2023-11-22-14.57.43-An-image-focusing-on-a-large-stack-of-assorted-papers-and-documents-symbolizing-documentation-and-record-keeping.-The-stack-includes-various-types-of.png\" alt=\"\" class=\"img-fluid\" />\n<h3 id=\"arm-s-length-principle\">Arm’s Length Principle</h3>\n<p>The CRA applies the arm’s length principle when assessing shareholder loans. This means that the terms and conditions of the loan should be similar to what would be agreed upon between unrelated parties in a normal business transaction. If the loan terms are not consistent with arm’s length dealings, the CRA may challenge the loan and impute interest or deem it as income to the shareholder.</p>\n<h3 id=\"reasonable-repayment-period\">Reasonable Repayment Period</h3>\n<p>In cases where exceptions apply, the repayment period should be reasonable and reflect the circumstances of the loan. While there is no specific definition of what constitutes a reasonable repayment period, it should align with the purpose of the loan and the ability of the shareholder to repay. The CRA may scrutinize loans with lengthy repayment periods or loans that appear to be disguised income distributions.</p>\n<h3 id=\"interest-calculation-and-payment\">Interest Calculation and Payment</h3>\n<p>If interest is charged on the shareholder loan, it should be calculated based on the prescribed interest rate determined by the CRA. This rate is subject to change quarterly. Interest payments should be made within the prescribed timeframes to avoid any deemed taxable benefits related to unpaid interest.</p>\n<img src=\"https://ledgerlogic.ca/wp-content/uploads/2023/11/DALL%C2%B7E-2023-11-22-15.04.40-A-simplistic-image-depicting-a-large-bold-3D-percentage-sign-in-the-center-surrounded-by-unmarked-generic-coins.-These-coins-are-featureless-with-.png\" alt=\"\" class=\"img-fluid\" />\n<h3 id=\"employed-shareholders-and-employee-loans\">Employed Shareholders and Employee Loans</h3>\n<p>Shareholder loans to owners who are also employees of the corporation are subject to additional rules. Loans made to employees in the course of their employment may be treated differently from shareholder loans. It’s important to differentiate between loans made as part of the employment relationship and loans made due to shareholdings.</p>\n<h2 id=\"conclusion\">Conclusion</h2>\n<p>Shareholder loans can be a useful tool for accessing funds from your <a href=\"/blog/tax-benefits-and-disadvantages-of-incorporating-in-canada\">corporation</a> or providing additional capital. However, it’s crucial to understand the tax implications and rules set by the <a href=\"https://www.canada.ca/en/revenue-agency.html\">CRA</a>. This will ensure compliance and avoid any potential tax issues. Adhering to the repayment rule, charging appropriate interest rates, and maintaining proper documentation is important. This way, you can navigate the complexities of shareholder loans while maximizing tax planning opportunities. If you need personalized advice regarding shareholder loans, it’s always recommended to consult with a qualified tax professional or accountant.</p>",
+        "toc": [
+            {
+                "id": "what-is-a-shareholder-loan-",
+                "title": "What is a Shareholder Loan?"
+            },
+            {
+                "id": "how-shareholder-loans-are-used",
+                "title": "How Shareholder Loans are Used"
+            },
+            {
+                "id": "income-tax-implications-of-shareholder-loans",
+                "title": "Income Tax Implications of Shareholder Loans"
+            },
+            {
+                "id": "cra-rules-and-guidelines-for-shareholder-loans",
+                "title": "CRA Rules and Guidelines for Shareholder Loans"
+            },
+            {
+                "id": "conclusion",
+                "title": "Conclusion"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "November 6, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_shareholder_loans.png"
+    },
+    {
+        "id": "treaty-based-return-for-non-resident-corporations-operating-in-canada-schedule-91-and-97",
+        "slug": "treaty-based-return-for-non-resident-corporations-operating-in-canada-schedule-91-and-97",
+--
+                "id": "non-resident-corporations-in-canada",
+                "title": "Non-Resident Corporations in Canada"
+            },
+            {
+                "id": "schedule-91",
+                "title": "Schedule 91"
+            },
+            {
+                "id": "schedule-97",
+                "title": "Schedule 97"
+            },
+            {
+                "id": "canada-s-tax-treaties",
+                "title": "Canada's Tax Treaties"
+            },
+            {
+                "id": "compliance-and-enforcement",
+                "title": "Compliance and Enforcement"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "November 5, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Non Residents"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_treaty_return.png"
+    },
+    {
+        "id": "tax-benefits-and-disadvantages-of-incorporating-in-canada",
+        "slug": "tax-benefits-and-disadvantages-of-incorporating-in-canada",
+--
+                "title": "Introduction"
+            },
+            {
+                "id": "personal-income-tax-deadline-canada",
+                "title": "Personal Income Tax Deadline Canada"
+            },
+            {
+                "id": "corporate-tax-filing-deadline-canada",
+                "title": "Corporate Tax Filing Deadline Canada"
+            },
+            {
+                "id": "gst-hst-filing-deadlines",
+                "title": "GST/HST Filing Deadlines"
+            },
+            {
+                "id": "filing-information-returns-electronically",
+                "title": "Filing Information Returns Electronically"
+            },
+            {
+                "id": "conclusion",
+                "title": "Conclusion"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "November 3, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax",
+            "Personal Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_tax_deadlines.png"
+    },
+    {
+        "id": "what-is-a-holding-company-in-canada",
+        "slug": "what-is-a-holding-company-in-canada",
+--
+                "id": "regulation-102-waiver-application",
+                "title": "Regulation 102 Waiver Application"
+            },
+            {
+                "id": "regulation-105-waiver-application",
+                "title": "Regulation 105 Waiver Application"
+            },
+            {
+                "id": "administrative-guidelines",
+                "title": "Administrative Guidelines"
+            },
+            {
+                "id": "enforcement-and-penalties",
+                "title": "Enforcement and Penalties"
+            },
+            {
+                "id": "regulatory-updates",
+                "title": "Regulatory Updates"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "November 1, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Non Residents"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_reg_102_105.png"
+    },
+    {
+        "id": "non-resident-corporation-doing-business-in-canada-canadian-subsidiary-corporation-vs-branch-tax",
+        "slug": "non-resident-corporation-doing-business-in-canada-canadian-subsidiary-corporation-vs-branch-tax",
+--
+                "id": "setting-up-a-canadian-branch-office",
+                "title": "Setting Up a Canadian Branch Office"
+            },
+            {
+                "id": "comparative-analysis-of-subsidiary-and-branch-operations",
+                "title": "Comparative Analysis of Subsidiary and Branch Operations"
+            },
+            {
+                "id": "tax-implications-for-non-resident-corporations",
+                "title": "Tax Implications for Non-Resident Corporations"
+            },
+            {
+                "id": "reporting-and-compliance",
+                "title": "Reporting and Compliance"
+            },
+            {
+                "id": "strategic-considerations-for-foreign-corporations",
+                "title": "Strategic Considerations for Foreign Corporations"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "October 30, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Non Residents"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_non_resident_corp.png"
+    },
+    {
+        "id": "irap-funding-requirements",
+        "slug": "irap-funding-requirements",
+--
+                "title": "Application Process"
+            },
+            {
+                "id": "funding-types-and-limits",
+                "title": "Funding Types and Limits"
+            },
+            {
+                "id": "use-of-funds",
+                "title": "Use of Funds"
+            },
+            {
+                "id": "compliance-and-reporting",
+                "title": "Compliance and Reporting"
+            },
+            {
+                "id": "legal-and-regulatory-obligations",
+                "title": "Legal and Regulatory Obligations"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "October 28, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax",
+            "Startups"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_irap_funding.png"
+    },
+    {
+        "id": "tax-write-offs-for-small-business-canada",
+        "slug": "tax-write-offs-for-small-business-canada",
+--
+                "id": "integration-of-corporate-and-personal-taxation",
+                "title": "Integration of Corporate and Personal Taxation"
+            },
+            {
+                "id": "foreign-investment-income",
+                "title": "Foreign Investment Income"
+            },
+            {
+                "id": "special-considerations",
+                "title": "Special Considerations"
+            },
+            {
+                "id": "tax-planning-strategies",
+                "title": "Tax Planning Strategies"
+            },
+            {
+                "id": "compliance-and-reporting-requirements",
+                "title": "Compliance and Reporting Requirements"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "October 14, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_investment_income.png"
+    },
+    {
+        "id": "should-i-switch-to-xero",
+        "slug": "should-i-switch-to-xero",
+--
+                "id": "determining-factors-by-cra",
+                "title": "Determining Factors by CRA"
+            },
+            {
+                "id": "personal-services-business-examples",
+                "title": "Personal Services Business Examples"
+            },
+            {
+                "id": "preventive-measures-and-best-practices",
+                "title": "Preventive Measures and Best Practices"
+            },
+            {
+                "id": "cra-audits-and-disputes",
+                "title": "CRA Audits and Disputes"
+            },
+            {
+                "id": "changes-and-updates-in-legislation",
+                "title": "Changes and Updates in Legislation"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "October 11, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_psb_regulations.png"
+    },
+    {
+        "id": "why-is-my-accountant-taking-so-long",
+        "slug": "why-is-my-accountant-taking-so-long",
+--
+            },
+            {
+                "id": "audit-process-and-taxpayer-notifications",
+                "title": "Audit Process and Taxpayer Notifications"
+            },
+            {
+                "id": "common-triggers-for-extended-audits",
+                "title": "Common Triggers for Extended Audits"
+            },
+            {
+                "id": "legal-implications-and-rights",
+                "title": "Legal Implications and Rights"
+            },
+            {
+                "id": "preparation-for-a-cra-audit",
+                "title": "Preparation for a CRA Audit"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "October 4, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax",
+            "Cra",
+            "Personal Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_audit_limit.png"
+    },
+    {
+        "id": "self-employed-home-office-tax-deduction-canada",
+        "slug": "self-employed-home-office-tax-deduction-canada",
+--
+                "title": "Types of Deductible Home Office Expenses"
+            },
+            {
+                "id": "claiming-home-office-expenses-a-step-by-step-guide",
+                "title": "Claiming Home Office Expenses: A Step-by-Step Guide"
+            },
+            {
+                "id": "documentation-and-record-keeping",
+                "title": "Documentation and Record Keeping"
+            },
+            {
+                "id": "impact-on-business-income-and-taxes-payable",
+                "title": "Impact on Business Income and Taxes Payable"
+            },
+            {
+                "id": "common-errors-to-avoid-in-home-office-tax-deduction-claims",
+                "title": "Common Errors to Avoid in Home Office Tax Deduction Claims"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "October 3, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Cra",
+            "Personal Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_home_office_deduction.png"
+    },
+    {
+        "id": "quebec-small-business-tax-rate",
+        "slug": "quebec-small-business-tax-rate",
+--
+                "id": "tax-credits-and-incentives-for-small-businesses",
+                "title": "Tax Credits and Incentives for Small Businesses"
+            },
+            {
+                "id": "calculating-taxable-income",
+                "title": "Calculating Taxable Income"
+            },
+            {
+                "id": "filing-taxes-for-small-businesses",
+                "title": "Filing Taxes for Small Businesses"
+            },
+            {
+                "id": "tax-planning-strategies",
+                "title": "Tax Planning Strategies"
+            },
+            {
+                "id": "audits-and-compliance",
+                "title": "Audits and Compliance"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "October 1, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_quebec_tax_sbd.png"
+    },
+    {
+        "id": "employee-vs-contactor",
+        "slug": "employee-vs-contactor",
+--
+            {
+                "id": "rights-and-protections",
+                "title": "Rights and Protections"
+            },
+            {
+                "id": "tax-implications",
+                "title": "Tax Implications"
+            },
+            {
+                "id": "business-considerations",
+                "title": "Business Considerations"
+            },
+            {
+                "id": "compliance-requirements",
+                "title": "Compliance Requirements"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "September 30, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax",
+            "Cra",
+            "Payroll",
+            "Personal Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_employee_vs_contractor_v2.png"
+    },
+    {
+        "id": "how-does-income-splitting-work-in-canada",
+        "slug": "how-does-income-splitting-work-in-canada",
+--
+            },
+            {
+                "id": "eligibility-criteria",
+                "title": "Eligibility Criteria"
+            },
+            {
+                "id": "income-splitting-strategies",
+                "title": "Income Splitting Strategies"
+            },
+            {
+                "id": "impact-on-retirement-planning",
+                "title": "Impact on Retirement Planning"
+            },
+            {
+                "id": "challenges-and-considerations",
+                "title": "Challenges and Considerations"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "September 28, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax",
+            "Cra",
+            "Personal Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_income_splitting_v2.png"
+    },
+    {
+        "id": "when-and-how-do-i-register-for-gst",
+        "slug": "when-and-how-do-i-register-for-gst",
+--
+        "toc": [
+            {
+                "id": "understanding-gst-registration",
+                "title": "Understanding GST Registration"
+            },
+            {
+                "id": "pre-registration-requirements",
+                "title": "Pre-Registration Requirements"
+            },
+            {
+                "id": "gst-registration-process",
+                "title": "GST Registration Process"
+            },
+            {
+                "id": "after-registration",
+                "title": "After Registration"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "September 24, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax",
+            "Cra",
+            "Sales Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_gst_registration_v2.png"
+    },
+    {
+        "id": "can-you-get-ei-if-you-are-self-employed",
+        "slug": "can-you-get-ei-if-you-are-self-employed",
+--
+            },
+            {
+                "id": "calculation-of-ei-benefits",
+                "title": "Calculation of EI Benefits"
+            },
+            {
+                "id": "responsibilities-while-receiving-ei",
+                "title": "Responsibilities While Receiving EI"
+            },
+            {
+                "id": "implications-of-being-self-employed-on-ei-benefits",
+                "title": "Implications of Being Self-Employed on EI Benefits"
+            },
+            {
+                "id": "appealing-ei-decisions",
+                "title": "Appealing EI Decisions"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "September 21, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Cra",
+            "Payroll",
+            "Personal Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_ei_self_employed_v2.png"
+    },
+    {
+        "id": "does-cra-audit-your-bank-account",
+        "slug": "does-cra-audit-your-bank-account",
+--
+                "id": "the-audit-process",
+                "title": "The Audit Process"
+            },
+            {
+                "id": "bank-account-monitoring",
+                "title": "Bank Account Monitoring"
+            },
+            {
+                "id": "taxpayer-rights-and-obligations",
+                "title": "Taxpayer Rights and Obligations"
+            },
+            {
+                "id": "outcomes-of-cra-audits",
+                "title": "Outcomes of CRA Audits"
+            },
+            {
+                "id": "cra-audit-support",
+                "title": "CRA Audit Support"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "September 18, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Cra"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_cra_bank_audit_v2.png"
+    },
+    {
+        "id": "cra-audit-penalties",
+        "slug": "cra-audit-penalties",
+--
+                "id": "understanding-cra-audit-penalties",
+                "title": "Understanding CRA Audit Penalties"
+            },
+            {
+                "id": "types-of-cra-audit-penalties",
+                "title": "Types of CRA Audit Penalties"
+            },
+            {
+                "id": "calculating-cra-penalties",
+                "title": "Calculating CRA Penalties"
+            },
+            {
+                "id": "consequences-of-cra-penalties",
+                "title": "Consequences of CRA Penalties"
+            },
+            {
+                "id": "avoiding-cra-audit-penalties",
+                "title": "Avoiding CRA Audit Penalties"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "September 16, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Cra"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_audit_penalties_v3.png"
+    },
+    {
+        "id": "chances-of-getting-audited-by-cra",
+        "slug": "chances-of-getting-audited-by-cra",
+--
+                "id": "cra-audit-process",
+                "title": "CRA Audit Process"
+            },
+            {
+                "id": "reducing-the-risk-of-an-audit",
+                "title": "Reducing the Risk of an Audit"
+            },
+            {
+                "id": "consequences-of-a-cra-audit",
+                "title": "Consequences of a CRA Audit"
+            },
+            {
+                "id": "taxpayer-rights-and-responsibilities",
+                "title": "Taxpayer Rights and Responsibilities"
+            },
+            {
+                "id": "audit-trends-and-changes",
+                "title": "Audit Trends and Changes"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "September 13, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Cra"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_audit_chances_v2.png"
+    },
+    {
+        "id": "can-i-use-xero-for-multiple-companies",
+        "slug": "can-i-use-xero-for-multiple-companies",
+--
+                "title": "Preparation for the Audit"
+            },
+            {
+                "id": "during-the-audit",
+                "title": "During the Audit"
+            },
+            {
+                "id": "post-audit-procedures",
+                "title": "Post-Audit Procedures"
+            },
+            {
+                "id": "professional-advice-and-assistance",
+                "title": "Professional Advice and Assistance"
+            },
+            {
+                "id": "maintaining-compliance",
+                "title": "Maintaining Compliance"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "September 9, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax",
+            "Cra"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_cra_audit_v2.png"
+    },
+    {
+        "id": "are-cash-gifts-to-employees-taxable-in-canada",
+        "slug": "are-cash-gifts-to-employees-taxable-in-canada",
+--
+            },
+            {
+                "id": "employer-specific-considerations",
+                "title": "Employer-Specific Considerations"
+            },
+            {
+                "id": "employee-perspective",
+                "title": "Employee Perspective"
+            },
+            {
+                "id": "common-misconceptions-about-cash-gifts-taxation",
+                "title": "Common Misconceptions about Cash Gifts Taxation"
+            },
+            {
+                "id": "year-end-bonuses-vs-cash-gifts",
+                "title": "Year-End Bonuses Vs. Cash Gifts"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "September 6, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax",
+            "Payroll",
+            "Personal Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_cash_gifts_v2.png"
+    },
+    {
+        "id": "small-business-tax-rate-canada",
+        "slug": "small-business-tax-rate-canada",
+--
+                "id": "penalties-and-interest-for-late-filing",
+                "title": "Penalties and Interest for Late Filing"
+            },
+            {
+                "id": "record-keeping-requirements",
+                "title": "Record Keeping Requirements"
+            },
+            {
+                "id": "tax-deductions-and-credits-available",
+                "title": "Tax Deductions and Credits Available"
+            },
+            {
+                "id": "handling-corporate-tax-audits-and-reviews",
+                "title": "Handling Corporate Tax Audits and Reviews"
+            },
+            {
+                "id": "amending-corporate-tax-returns",
+                "title": "Amending Corporate Tax Returns"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "September 1, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Corporate Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_corporate_tax_teal.png"
+    },
+    {
+        "id": "current-gst-hst-rate-canada-and-by-provinces",
+        "slug": "current-gst-hst-rate-canada-and-by-provinces",
+--
+                "id": "gst-hst-registration-requirements",
+                "title": "GST/HST Registration Requirements"
+            },
+            {
+                "id": "gst-hst-rebates-and-credits",
+                "title": "GST/HST Rebates and Credits"
+            },
+            {
+                "id": "reporting-and-remitting-gst-hst",
+                "title": "Reporting and Remitting GST/HST"
+            },
+            {
+                "id": "gst-hst-exemptions-and-zero-rated-goods",
+                "title": "GST/HST Exemptions and Zero-Rated Goods"
+            },
+            {
+                "id": "impact-of-gst-hst-on-business",
+                "title": "Impact of GST/HST on Business"
+            },
+            {
+                "id": "frequently-asked-questions",
+                "title": "Frequently Asked Questions"
+            }
+        ],
+        "author": "Seb Prost, CPA",
+        "date": "August 28, 2023",
+        "readTime": "5 min read",
+        "tags": [
+            "Sales Tax"
+        ],
+        "category": "Tax",
+        "image": "/images/blog-heroes/hero_ledgerlogic_gst_rates_lavender.png"
+    },
+    {
+        "id": "is-xero-easy-to-use",
+        "slug": "is-xero-easy-to-use",

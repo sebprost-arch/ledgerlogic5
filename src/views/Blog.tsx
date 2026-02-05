@@ -27,21 +27,43 @@ const Blog: React.FC = () => {
     const selectedCategory = searchParams?.get('category') || 'All';
     const currentPage = parseInt(searchParams?.get('page') || '1', 10);
 
-    // Update Filter Handlers
-    const updateSearch = (val: string) => {
-        const newParams = new URLSearchParams(searchParams?.toString());
-        if (val) newParams.set('q', val); else newParams.delete('q');
-        newParams.set('page', '1'); // Reset page
-        router.replace(`?${newParams.toString()}`);
-    };
+    // Local state for input to avoid router thrashing
+    const [inputValue, setInputValue] = useState(searchQuery);
+
+    // Sync input value with URL on mount or external change
+    React.useEffect(() => {
+        setInputValue(searchQuery);
+    }, [searchQuery]);
+
+    // Debounced Search Effect
+    React.useEffect(() => {
+        const timer = setTimeout(() => {
+            if (inputValue !== searchQuery) {
+                const newParams = new URLSearchParams(searchParams?.toString());
+                if (inputValue) {
+                    newParams.set('q', inputValue);
+                    newParams.set('page', '1'); // Always reset to page 1 on new search
+                } else {
+                    newParams.delete('q');
+                    // Reset page when clearing search too, for safety
+                    newParams.set('page', '1');
+                }
+                router.replace(`?${newParams.toString()}`);
+            }
+        }, 300); // 300ms debounce
+
+        return () => clearTimeout(timer);
+    }, [inputValue, searchQuery, searchParams, router]);
 
     const updateCategory = (cat: string) => {
         const newParams = new URLSearchParams(searchParams?.toString());
         if (cat !== 'All') newParams.set('category', cat); else newParams.delete('category');
-        newParams.delete('q'); // Optional: clear search on category switch? Or keep it? Keeping it is better combination.
-        // Wait, existing logic kept them independent. I'll keep them independent.
-        // Actually, existing logic:
-        // "Reset page whenever filters change"
+
+        // Keep search active when switching categories? 
+        // Current UX implies filtering *within* category essentially, or independent.
+        // Let's keep it simple: Resetting category shouldn't clear search unless desired.
+        // But the previous code kept them somewhat independent.
+        // However, we MUST reset page.
         newParams.set('page', '1');
         router.replace(`?${newParams.toString()}`);
     };
@@ -207,8 +229,8 @@ const Blog: React.FC = () => {
                             <input
                                 type="text"
                                 placeholder="Search insights..."
-                                value={searchQuery}
-                                onChange={(e) => updateSearch(e.target.value)}
+                                value={inputValue}
+                                onChange={(e) => setInputValue(e.target.value)}
                             />
                         </div>
                     </div>
