@@ -151,10 +151,10 @@ const Home: React.FC = () => {
                         </div>
 
                         <h1 className="hero-title">
-                            The <span className="text-accent">Financial Operating System</span> for Canadian Growth Companies
+                            Fixed-fee accounting that runs on <span className="text-accent">autopilot</span>
                         </h1>
                         <p className="hero-subtitle">
-                            Stop stressing about your books. Get the strategic tax & accounting guidance you deserve from a real team of experts.
+                            We set up Xero + automation, then keep your books clean, your tax handled proactively, and your numbers decision-ready—without surprise bills.
                         </p>
 
                         <div className="hero-cta">
@@ -164,8 +164,11 @@ const Home: React.FC = () => {
                             >
                                 Book a Free Discovery Call
                             </button>
+                            <Link href="/pricing" className="btn btn-secondary btn-lg">
+                                See Pricing
+                            </Link>
                         </div>
-                        <p className="hero-cta-subtext">Speak directly with a CPA • No commitment required</p>
+                        <p className="hero-cta-subtext">CPA-led • Fixed monthly pricing • Cloud-first (Xero/QBO)</p>
                     </motion.div>
 
                     <div className="hero-visual-wrapper">
