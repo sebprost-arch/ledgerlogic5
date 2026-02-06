@@ -16,9 +16,10 @@ const AuthorBox = ({ author }: Props) => {
             <div className="flex-shrink-0">
                 <div className="w-20 h-20 bg-white rounded-full overflow-hidden shadow-sm flex items-center justify-center border-2 border-slate-100">
                     {/* Placeholder for Author Image - would be <Image /> in prod */}
-                    <div className="w-full h-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold text-2xl">
+                    {/* <div className="w-full h-full flex items-center justify-center bg-slate-100 text-slate-400 font-bold text-2xl">
                         {author.charAt(0)}
-                    </div>
+                    </div> */}
+                    <div className="w-full h-full bg-slate-100" />
                 </div>
             </div>
             <div className="text-center sm:text-left flex-1">
@@ -26,7 +27,7 @@ const AuthorBox = ({ author }: Props) => {
                     <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Written By</span>
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-2 font-display">
-                    {author}
+                    {author.replace(', CPA', '')}
                     {author === "Seb Prost, CPA" && (
                         <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-teal-100 text-teal-800 uppercase tracking-wide">
                             CPA, Ex-CRA
