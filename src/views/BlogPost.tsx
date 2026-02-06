@@ -16,12 +16,13 @@ import './BlogPost.css';
 // Map of Support Pages -> Pillar Pages for explicit "Related Reading" callouts
 const PILLAR_MAP: Record<string, { slug: string; title: string; category: string }> = {
     // Cluster A: Xero
-    'should-i-switch-to-xero': { slug: 'is-xero-easy-to-use', title: 'Is Xero Easy to Use? The Ultimate Guide', category: 'Cloud Accounting' },
-    'xero-pricing-for-canadian-businesses-what-you-need-to-know-before-subscribing': { slug: 'is-xero-easy-to-use', title: 'Is Xero Easy to Use? The Ultimate Guide', category: 'Cloud Accounting' },
-    'can-i-use-xero-for-multiple-companies': { slug: 'is-xero-easy-to-use', title: 'Is Xero Easy to Use? The Ultimate Guide', category: 'Cloud Accounting' },
-    'how-long-does-it-take-to-learn-xero': { slug: 'is-xero-easy-to-use', title: 'Is Xero Easy to Use? The Ultimate Guide', category: 'Cloud Accounting' },
-    'streamline-your-invoicing-how-xero-transforms-the-process-for-canadian-companies': { slug: 'is-xero-easy-to-use', title: 'Is Xero Easy to Use? The Ultimate Guide', category: 'Cloud Accounting' },
-    'quickbooks-vs-xero-a-comparative-analysis-for-canadian-smes': { slug: 'is-xero-easy-to-use', title: 'Is Xero Easy to Use? The Ultimate Guide', category: 'Cloud Accounting' },
+    'should-i-switch-to-xero': { slug: '/tools/xero-canada', title: 'Xero for Canadian Businesses (2026)', category: 'Cloud Accounting' },
+    'xero-pricing-for-canadian-businesses-what-you-need-to-know-before-subscribing': { slug: '/tools/xero-canada', title: 'Xero for Canadian Businesses (2026)', category: 'Cloud Accounting' },
+    'can-i-use-xero-for-multiple-companies': { slug: '/tools/xero-canada', title: 'Xero for Canadian Businesses (2026)', category: 'Cloud Accounting' },
+    'how-long-does-it-take-to-learn-xero': { slug: '/tools/xero-canada', title: 'Xero for Canadian Businesses (2026)', category: 'Cloud Accounting' },
+    'streamline-your-invoicing-how-xero-transforms-the-process-for-canadian-companies': { slug: '/tools/xero-canada', title: 'Xero for Canadian Businesses (2026)', category: 'Cloud Accounting' },
+    'quickbooks-vs-xero-a-comparative-analysis-for-canadian-smes': { slug: '/tools/xero-canada', title: 'Xero for Canadian Businesses (2026)', category: 'Cloud Accounting' },
+    'is-xero-easy-to-use': { slug: '/tools/xero-canada', title: 'Xero for Canadian Businesses (2026)', category: 'Cloud Accounting' },
 
     // Cluster B: Incorporation
     'transferring-personal-assets-from-proprietorship-to-a-corporation-in-canada-section-85-rollover': { slug: 'tax-benefits-and-disadvantages-of-incorporating-in-canada', title: 'Tax Benefits & Disadvantages of Incorporating', category: 'Structuring' },
@@ -144,20 +145,35 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, relatedPosts }) => {
         // Affiliate Link (Direct)
         const xeroOfferLink = "https://xero5440.partnerlinks.io/lc4v5f7lmse2";
 
-        // 1. Explicit Override
-        if (post.midContentCta) {
+        // 0. SPECIFIC OVERRIDE for "Can I Use Xero for Multiple Companies"
+        if (post.slug === 'can-i-use-xero-for-multiple-companies') {
             return {
-                ctaContext: post.midContentCta,
+                ctaContext: {
+                    title: "Get 6 Months of Xero at 90% Off",
+                    description: "Managing multiple companies? Save big on subscription costs with our exclusive partner offer.",
+                    buttonText: "Claim Xero Offer",
+                    buttonLink: xeroOfferLink,
+                    secondaryButtonText: "Talk to a CPA about your setup",
+                    secondaryAction: 'modal' as const
+                },
                 exitIntentContext: {
-                    title: "Ready to Level Up?",
-                    description: "Get the expert support your business deserves.",
-                    buttonText: "Book a Discovery Call",
-                    buttonAction: 'modal'
+                    title: "Claim 6 months at 90% off Xero",
+                    description: "For Canadian businesses. New Xero subscriptions only. Eligibility depends on Xero’s terms.",
+                    buttonText: "Get the 90% off offer",
+                    buttonLink: xeroOfferLink,
+                    secondaryButtonText: "Not now",
+                    secondaryAction: 'close' as const, // Custom action identifier
+                    footerDisclaimer: "We may earn a commission at no extra cost to you.",
+                    bottomLinkText: "Need help setting it up? Contact us",
+                    bottomLinkAction: 'modal' as const
                 }
             };
         }
 
-        // 2. Regulation 105 Cluster (Specific)
+        // 1. Determine Base Contexts (Category Defaults)
+        let computedCtaContext;
+        let computedExitIntentContext;
+
         if (postCategory === 'REG105') {
             const context = {
                 title: "Claim Your 15% Withholding Tax Refund",
@@ -165,77 +181,70 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, relatedPosts }) => {
                 buttonText: "Check Refund Eligibility",
                 buttonLink: "/regulation-105-refund"
             };
-            return { ctaContext: context, exitIntentContext: { ...context, title: "Before you go..." } };
-        }
-
-        // 3. Migration Posts
-        if (postCategory === 'MIGRATION') {
-            return {
-                ctaContext: {
-                    title: "Ready to Switch to Xero?",
-                    description: "We handle the entire migration process from QuickBooks or Sage. Zero downtime, zero data loss.",
-                    buttonText: "Book our Migration Service",
-                    secondaryButtonText: "Claim 90% Off Xero",
-                    secondaryButtonLink: xeroOfferLink
-                },
-                exitIntentContext: {
-                    title: "Thinking About Switching?",
-                    description: "Don't struggle with legacy software. Let us handle your migration to Xero.",
-                    buttonText: "Book Migration Call",
-                    buttonAction: 'modal',
-                    secondaryButtonText: "Or claim 90% off Xero",
-                    secondaryButtonLink: xeroOfferLink
-                }
+            computedCtaContext = context;
+            computedExitIntentContext = { ...context, title: "Before you go..." };
+        } else if (postCategory === 'MIGRATION') {
+            computedCtaContext = {
+                title: "Ready to Switch to Xero?",
+                description: "We handle the entire migration process from QuickBooks or Sage. Zero downtime, zero data loss.",
+                buttonText: "Book our Migration Service",
+                secondaryButtonText: "Claim 90% Off Xero",
+                secondaryButtonLink: xeroOfferLink
             };
-        }
-
-        // 4. General Xero Posts
-        if (postCategory === 'GENERAL_XERO') {
-            return {
-                ctaContext: {
-                    title: "Get 6 Months of Xero at 90% Off",
-                    description: "As Xero Partners, we have exclusive access to Canada's best software deal.",
-                    buttonText: "Claim Xero Offer",
-                    buttonLink: xeroOfferLink,
-                    secondaryButtonText: "Talk to a CPA first",
-                    secondaryAction: 'modal' as const
-                },
-                exitIntentContext: {
-                    title: "Don't Miss This Xero Deal",
-                    description: "Get 90% off for 6 months when you switch today. Exclusive partner offer.",
-                    buttonText: "Claim 90% Off Offer",
-                    buttonLink: xeroOfferLink,
-                    secondaryButtonText: "I have questions (Book Call)",
-                    secondaryAction: 'modal' as const
-                }
+            computedExitIntentContext = {
+                title: "Thinking About Switching?",
+                description: "Don't struggle with legacy software. Let us handle your migration to Xero.",
+                buttonText: "Book Migration Call",
+                buttonAction: 'modal',
+                secondaryButtonText: "Or claim 90% off Xero",
+                secondaryButtonLink: xeroOfferLink
             };
-        }
-
-        // 5. Troubleshooting/How-to Posts
-        if (postCategory === 'TROUBLESHOOTING') {
-            return {
-                ctaContext: {
-                    title: "Struggling with this Issue?",
-                    description: "Our CPAs can fix this for you fast. Stop wasting time on DIY accounting.",
-                    buttonText: "Book a Support Call",
-                    secondaryButtonText: "See Xero Hub",
-                    secondaryButtonLink: "/tools/xero-canada"
-                },
-                exitIntentContext: undefined
+        } else if (postCategory === 'GENERAL_XERO') {
+            computedCtaContext = {
+                title: "Get 6 Months of Xero at 90% Off",
+                description: "As Xero Partners, we have exclusive access to Canada's best software deal.",
+                buttonText: "Claim Xero Offer",
+                buttonLink: xeroOfferLink,
+                secondaryButtonText: "Talk to a CPA first",
+                secondaryAction: 'modal' as const
             };
+            computedExitIntentContext = {
+                title: "Don't Miss This Xero Deal",
+                description: "Get 90% off for 6 months when you switch today. Exclusive partner offer.",
+                buttonText: "Claim 90% Off Offer",
+                buttonLink: xeroOfferLink,
+                secondaryButtonText: "I have questions (Book Call)",
+                secondaryAction: 'modal' as const
+            };
+        } else if (postCategory === 'TROUBLESHOOTING') {
+            computedCtaContext = {
+                title: "Struggling with this Issue?",
+                description: "Our CPAs can fix this for you fast. Stop wasting time on DIY accounting.",
+                buttonText: "Book a Support Call",
+                secondaryButtonText: "See Xero Hub",
+                secondaryButtonLink: "/tools/xero-canada"
+            };
+            computedExitIntentContext = undefined;
+        } else {
+            // Default Fallback
+            computedCtaContext = {
+                title: "Ready to Simplify Your Finances?",
+                description: "Stop stressing about your numbers. Let our team handle your accounting so you can focus on leading your business.",
+                buttonText: "Book a Free Consult",
+                buttonLink: undefined,
+                secondaryAction: undefined
+            };
+            computedExitIntentContext = undefined;
         }
 
-        // Default Fallback
-        const defaultContext = {
-            title: "Ready to Simplify Your Finances?",
-            description: "Stop stressing about your numbers. Let our team handle your accounting so you can focus on leading your business.",
-            buttonText: "Book a Free Consult",
-            buttonLink: undefined,
-            secondaryAction: undefined
-        };
+        // 2. Explicit Override from Frontmatter (Applied ONLY to CTA, preserving Exit Intent)
+        if (post.midContentCta) {
+            computedCtaContext = post.midContentCta;
+        }
+
         return {
-            ctaContext: defaultContext,
-            exitIntentContext: undefined // Disable exit intent for default posts
+            ctaContext: computedCtaContext,
+            exitIntentContext: computedExitIntentContext
         };
 
     }, [post, postCategory]);
@@ -513,7 +522,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, relatedPosts }) => {
                             {/* RELATED PILLAR CALLOUT */}
                             {PILLAR_MAP[post.slug] && (
                                 <div className="mb-8 not-prose">
-                                    <Link href={`/blog/${PILLAR_MAP[post.slug].slug}`} className="group block bg-teal-50 border border-teal-100 rounded-xl p-5 hover:border-teal-300 hover:shadow-md transition-all">
+                                    <Link href={PILLAR_MAP[post.slug].slug.startsWith('/') ? PILLAR_MAP[post.slug].slug : `/blog/${PILLAR_MAP[post.slug].slug}`} className="group block bg-teal-50 border border-teal-100 rounded-xl p-5 hover:border-teal-300 hover:shadow-md transition-all">
                                         <div className="flex items-start gap-4">
                                             <div className="bg-teal-100 p-2.5 rounded-lg text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors mt-0.5">
                                                 <BookOpen size={20} />
@@ -686,6 +695,15 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, relatedPosts }) => {
                 secondaryButtonLink={exitIntentContext?.secondaryButtonLink}
                 secondaryButtonAction={
                     exitIntentContext?.secondaryAction === 'modal'
+                        ? () => { setShowExitPopup(false); setIsModalOpen(true); }
+                        : exitIntentContext?.secondaryAction === 'close'
+                            ? () => setShowExitPopup(false)
+                            : undefined
+                }
+                footerDisclaimer={exitIntentContext?.footerDisclaimer}
+                bottomLinkText={exitIntentContext?.bottomLinkText}
+                bottomLinkAction={
+                    exitIntentContext?.bottomLinkAction === 'modal'
                         ? () => { setShowExitPopup(false); setIsModalOpen(true); }
                         : undefined
                 }

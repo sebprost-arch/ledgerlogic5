@@ -14,6 +14,10 @@ interface ExitIntentModalProps {
     secondaryButtonText?: string;
     secondaryButtonLink?: string;
     secondaryButtonAction?: () => void;
+    footerDisclaimer?: string;
+    bottomLinkText?: string;
+    bottomLinkLink?: string;
+    bottomLinkAction?: () => void;
 }
 
 const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
@@ -26,7 +30,11 @@ const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
     onPrimaryClick,
     secondaryButtonText,
     secondaryButtonLink,
-    secondaryButtonAction
+    secondaryButtonAction,
+    footerDisclaimer,
+    bottomLinkText,
+    bottomLinkLink,
+    bottomLinkAction
 }) => {
     if (!isOpen) return null;
 
@@ -104,9 +112,31 @@ const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
                             )}
                         </div>
 
-                        <button onClick={onClose} className="mt-6 text-xs text-slate-400 hover:text-slate-600 font-medium transition-colors">
-                            No thanks, I'm not interested.
-                        </button>
+                        {bottomLinkText && (
+                            <div className="mt-4">
+                                {bottomLinkLink ? (
+                                    <Link href={bottomLinkLink} className="text-sm font-semibold text-teal-600 hover:text-teal-700 hover:underline">
+                                        {bottomLinkText}
+                                    </Link>
+                                ) : bottomLinkAction ? (
+                                    <button onClick={bottomLinkAction} className="text-sm font-semibold text-teal-600 hover:text-teal-700 hover:underline">
+                                        {bottomLinkText}
+                                    </button>
+                                ) : null}
+                            </div>
+                        )}
+
+                        {!secondaryButtonText && (
+                            <button onClick={onClose} className="mt-6 text-xs text-slate-400 hover:text-slate-600 font-medium transition-colors">
+                                No thanks, I'm not interested.
+                            </button>
+                        )}
+
+                        {footerDisclaimer && (
+                            <p className="mt-6 text-[10px] text-slate-400 leading-tight">
+                                {footerDisclaimer}
+                            </p>
+                        )}
                     </div>
                 </motion.div>
             </div>
