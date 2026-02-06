@@ -5,7 +5,7 @@ export default function JsonLd() {
         '@id': 'https://ledgerlogic.ca/#organization',
         name: 'LedgerLogic',
         url: 'https://ledgerlogic.ca',
-        logo: 'https://ledgerlogic.ca/images/logo.png',
+        logo: 'https://ledgerlogic.ca/images/LedgerLogic/ledgerlogic_150x150.png',
         image: 'https://ledgerlogic.ca/images/og-image.png',
         description: 'Modern accounting and Virtual CFO services for Canadian growth companies. Fixed monthly pricing, automated bookkeeping, strategic tax planning.',
 

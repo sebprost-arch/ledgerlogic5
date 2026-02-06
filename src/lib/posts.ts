@@ -3,7 +3,7 @@ import "server-only";
 import path from "node:path";
 import fs from "node:fs";
 
-import { blogPosts as blogData } from "@/src/data/blogData";
+import { blogPosts as blogData } from "@/data/blogData";
 
 export type BlogPostMeta = {
     slug: string;

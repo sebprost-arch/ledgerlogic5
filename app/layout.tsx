@@ -31,7 +31,8 @@ export const metadata: Metadata = {
         telephone: false,
     },
     icons: {
-        icon: '/favicon.ico',
+        icon: '/images/LedgerLogic/ledgerlogic_150x150.png',
+        apple: '/images/LedgerLogic/ledgerlogic_150x150.png',
     },
     openGraph: {
         title: 'LedgerLogic | Modern Accounting & Virtual CFO',
