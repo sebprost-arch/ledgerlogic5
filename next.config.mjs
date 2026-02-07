@@ -23,9 +23,23 @@ const nextConfig = {
     },
     async redirects() {
         return [
+            { source: '/tools/xero-canada', destination: '/xero-accounting-canada', permanent: true },
+            { source: '/home', destination: '/', permanent: true },
+            { source: '/our-services', destination: '/', permanent: true },
+            { source: '/clients', destination: '/', permanent: true },
+            { source: '/bookkeeping', destination: '/', permanent: true },
+            { source: '/speak-with-a-pro', destination: '/pricing', permanent: true },
+            { source: '/chartered-professional-accountant', destination: '/', permanent: true },
+            { source: '/online-accounting-packages', destination: '/pricing', permanent: true },
+            { source: '/nelson-cpa-services', destination: '/', permanent: true },
             {
                 source: '/blog/5653',
                 destination: '/blog/how-to-use-float-credit-cards',
+                permanent: true,
+            },
+            {
+                source: '/blog/quickbooks-vs-xero-a-comparative-analysis-for-canadian-smes',
+                destination: '/blog/xero-vs-quickbooks-canada',
                 permanent: true,
             },
             {
