@@ -30,6 +30,7 @@ const Footer: React.FC = () => {
                         <h3 className="footer-heading">Resources</h3>
                         <Link href="/blog" className="footer-link">Blog</Link>
                         <Link href="/tools" className="footer-link">Tools & Offers</Link>
+                        <Link href="/xero-accounting-canada" className="footer-link">Xero for Canadian Businesses</Link>
                     </div>
 
                     <div className="footer-contact">

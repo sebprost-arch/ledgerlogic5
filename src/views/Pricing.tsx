@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import { Check } from 'lucide-react';
 import Link from 'next/link';
 import OnboardingModal from '../components/OnboardingModal';
+import ServiceSchema from '../components/ServiceSchema';
 
 
 const Pricing: React.FC = () => {
@@ -141,6 +142,31 @@ const Pricing: React.FC = () => {
 
     return (
         <>
+            <ServiceSchema
+                serviceName="Professional Accounting & Bookkeeping Services"
+                description="Comprehensive accounting, bookkeeping, and virtual CFO services for Canadian businesses. Fixed monthly pricing with no lock-in contracts."
+                serviceType="AccountingService"
+                offers={[
+                    {
+                        name: 'Genesis Plan',
+                        price: '350',
+                        priceCurrency: 'CAD',
+                        description: 'Annual or quarterly bookkeeping with tax filing for startups and small businesses.',
+                    },
+                    {
+                        name: 'Momentum Plan',
+                        price: '750',
+                        priceCurrency: 'CAD',
+                        description: 'Monthly bookkeeping with payroll and unlimited CPA support for growing businesses.',
+                    },
+                    {
+                        name: 'Summit Plan',
+                        price: '2000',
+                        priceCurrency: 'CAD',
+                        description: 'Full-service financial management with virtual CFO services for established businesses.',
+                    },
+                ]}
+            />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify([pricingSchema, faqSchema]) }}

@@ -245,7 +245,7 @@ const Home: React.FC = () => {
                             <h3><Check className="icon-check" /> The LedgerLogic Way</h3>
                             <ul>
                                 <li><strong>Fixed Monthly Fees:</strong> One predictable price. Unlimited support included.</li>
-                                <li><strong>Total Automation:</strong> We implement <Link href="/tools">tools like Xero & Dext</Link>. Zero manual data entry.</li>
+                                <li><strong>Total Automation:</strong> We implement <Link href="/xero-accounting-canada">Xero</Link>, <Link href="/tools">Dext, and other best-in-class tools</Link>. Zero manual data entry.</li>
                                 <li><strong>Deadlines Guaranteed:</strong> We manage the calendar. Your filings are always on time.</li>
                                 <li><strong>Easy Collaboration:</strong> We're part of your team. Fast answers via our client management platform Karbon or by email.</li>
                             </ul>

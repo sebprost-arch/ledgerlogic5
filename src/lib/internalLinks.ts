@@ -2,7 +2,7 @@
 // This includes both Service/Tool pages AND other Blog Posts
 export const keywordMap: Record<string, string> = {
     // --- Tools & Services ---
-    'Xero': '/tools/xero-canada',
+    'Xero': '/xero-accounting-canada',
     'QuickBooks': '/tools/quickbooks-vs-xero-canada', // Redirects to /tools/quickbooks-vs-xero-canada? Or is it a separate tool? "quickbooks-vs-xero-canada" exists. Let's use xero-canada and general tools if unsure.
     // I see 'xero-canada' and 'quickbooks-vs-xero-canada' in tools.
     // Let's stick to safe bets.

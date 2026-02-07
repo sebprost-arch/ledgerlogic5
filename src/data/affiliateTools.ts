@@ -164,7 +164,7 @@ export const AFFILIATE_TOOLS: AffiliateTool[] = [
         bestFor: 'Modern Service Businesses',
         summary: 'Beautiful accounting software that keeps your financials clean.',
         affiliateUrl: 'https://referrals.xero.com/qp622xbmjhis-q1e71',
-        learnMoreUrl: '/tools/xero-canada',
+        learnMoreUrl: '/xero-accounting-canada',
         resultHeadline: 'The cleanest financial view for founders.',
         resultBullets: [
             'Get 90% off for 6 months',

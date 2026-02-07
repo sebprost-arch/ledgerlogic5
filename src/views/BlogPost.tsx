@@ -16,13 +16,13 @@ import './BlogPost.css';
 // Map of Support Pages -> Pillar Pages for explicit "Related Reading" callouts
 const PILLAR_MAP: Record<string, { slug: string; title: string; category: string }> = {
     // Cluster A: Xero
-    'should-i-switch-to-xero': { slug: '/tools/xero-canada', title: 'Xero for Canadian Businesses (2026)', category: 'Cloud Accounting' },
-    'xero-pricing-for-canadian-businesses-what-you-need-to-know-before-subscribing': { slug: '/tools/xero-canada', title: 'Xero for Canadian Businesses (2026)', category: 'Cloud Accounting' },
-    'can-i-use-xero-for-multiple-companies': { slug: '/tools/xero-canada', title: 'Xero for Canadian Businesses (2026)', category: 'Cloud Accounting' },
-    'how-long-does-it-take-to-learn-xero': { slug: '/tools/xero-canada', title: 'Xero for Canadian Businesses (2026)', category: 'Cloud Accounting' },
-    'streamline-your-invoicing-how-xero-transforms-the-process-for-canadian-companies': { slug: '/tools/xero-canada', title: 'Xero for Canadian Businesses (2026)', category: 'Cloud Accounting' },
-    'quickbooks-vs-xero-a-comparative-analysis-for-canadian-smes': { slug: '/tools/xero-canada', title: 'Xero for Canadian Businesses (2026)', category: 'Cloud Accounting' },
-    'is-xero-easy-to-use': { slug: '/tools/xero-canada', title: 'Xero for Canadian Businesses (2026)', category: 'Cloud Accounting' },
+    'should-i-switch-to-xero': { slug: '/xero-accounting-canada', title: 'Xero for Canadian Businesses (2026)', category: 'Cloud Accounting' },
+    'xero-pricing-for-canadian-businesses-what-you-need-to-know-before-subscribing': { slug: '/xero-accounting-canada', title: 'Xero for Canadian Businesses (2026)', category: 'Cloud Accounting' },
+    'can-i-use-xero-for-multiple-companies': { slug: '/xero-accounting-canada', title: 'Xero for Canadian Businesses (2026)', category: 'Cloud Accounting' },
+    'how-long-does-it-take-to-learn-xero': { slug: '/xero-accounting-canada', title: 'Xero for Canadian Businesses (2026)', category: 'Cloud Accounting' },
+    'streamline-your-invoicing-how-xero-transforms-the-process-for-canadian-companies': { slug: '/xero-accounting-canada', title: 'Xero for Canadian Businesses (2026)', category: 'Cloud Accounting' },
+    'quickbooks-vs-xero-a-comparative-analysis-for-canadian-smes': { slug: '/xero-accounting-canada', title: 'Xero for Canadian Businesses (2026)', category: 'Cloud Accounting' },
+    'is-xero-easy-to-use': { slug: '/xero-accounting-canada', title: 'Xero for Canadian Businesses (2026)', category: 'Cloud Accounting' },
 
     // Cluster B: Incorporation
     'transferring-personal-assets-from-proprietorship-to-a-corporation-in-canada-section-85-rollover': { slug: 'tax-benefits-and-disadvantages-of-incorporating-in-canada', title: 'Tax Benefits & Disadvantages of Incorporating', category: 'Structuring' },
@@ -222,7 +222,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, relatedPosts }) => {
                 description: "Our CPAs can fix this for you fast. Stop wasting time on DIY accounting.",
                 buttonText: "Book a Support Call",
                 secondaryButtonText: "See Xero Hub",
-                secondaryButtonLink: "/tools/xero-canada"
+                secondaryButtonLink: "/xero-accounting-canada"
             };
             computedExitIntentContext = undefined;
         } else {

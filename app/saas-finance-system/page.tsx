@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import SaasFinanceSystemView from '../../src/views/SaasFinanceSystemView';
+import ServiceSchema from '@/components/ServiceSchema';
 
 export const metadata: Metadata = {
     title: 'Investor-Ready SaaS Accounting (Canada)',
@@ -8,5 +9,14 @@ export const metadata: Metadata = {
 };
 
 export default function SaasFinanceSystemPage() {
-    return <SaasFinanceSystemView />;
+    return (
+        <>
+            <ServiceSchema
+                serviceName="SaaS Finance System"
+                description="Investor-ready SaaS accounting for Canadian software companies. Monthly financial close, SaaS metrics tracking, revenue recognition, and GST/HST compliance."
+                serviceType="FinancialService"
+            />
+            <SaasFinanceSystemView />
+        </>
+    );
 }

@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/tools/stripe-accounting',
         '/tools/synder-review',
         '/tools/venn-canada-review',
-        '/tools/xero-canada',
+        '/xero-accounting-canada',
     ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date().toISOString().split('T')[0],
