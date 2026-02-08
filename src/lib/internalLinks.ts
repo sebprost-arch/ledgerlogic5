@@ -3,10 +3,10 @@
 export const keywordMap: Record<string, string> = {
     // --- Tools & Services ---
     'Xero': '/xero-accounting-canada',
-    'QuickBooks': '/tools/quickbooks-vs-xero-canada', // Redirects to /tools/quickbooks-vs-xero-canada? Or is it a separate tool? "quickbooks-vs-xero-canada" exists. Let's use xero-canada and general tools if unsure.
+    'QuickBooks': '/blog/xero-vs-quickbooks-canada', // Redirects to blog post
     // I see 'xero-canada' and 'quickbooks-vs-xero-canada' in tools.
     // Let's stick to safe bets.
-    'QuickBooks Online': '/tools/quickbooks-vs-xero-canada', // Mapping to comparison as it's a high value page
+    'QuickBooks Online': '/blog/xero-vs-quickbooks-canada', // Mapping to comparison as it's a high value page
     'Tax Planning': '/services/tax-planning', // Assuming standard URL structure or will verify
     'Bookkeeping': '/services/bookkeeping',
     'CFO': '/services/cfo',
@@ -75,7 +75,7 @@ export const keywordMap: Record<string, string> = {
  * - Avoids replacing text inside existing HTML tags (links, headers, attributes).
  * - Sorts keywords by length to prioritize longer, more specific phrases.
  */
-export function injectInternalLinks(content: string): string {
+export function injectInternalLinks(content: string, currentPath?: string): string {
     if (!content) return '';
 
     // 1. Sort keywords by length descending to match longest phrases first
@@ -89,6 +89,9 @@ export function injectInternalLinks(content: string): string {
         if (placedKeywords.has(keyword)) return;
 
         const url = keywordMap[keyword];
+
+        // Skip if the link points to the current page
+        if (currentPath && url === currentPath) return;
 
         // Regex explanation:
         // (?![^<]*>|[^<>]*<\/): Negative lookahead to ensure we are NOT inside a tag

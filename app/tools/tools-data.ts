@@ -218,7 +218,7 @@ export const TOOLS: Tool[] = [
         ],
         integrations: ['Everything'],
         affiliateUrl: '{{AFFILIATE_QBO_URL}}',
-        slug: 'quickbooks-vs-xero-canada',
+        slug: 'xero-vs-quickbooks-canada', // Redirected to blog
         categoryIds: ['accounting'],
         detailAnchor: 'tool-qbo',
         detailContent: {

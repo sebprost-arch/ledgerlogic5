@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/tools/dext-canada',
         '/tools/float-canada-review',
         '/tools/ownr-canada-review',
-        '/tools/quickbooks-vs-xero-canada',
+        '/tools/ownr-canada-review',
         '/tools/ramp-canada-review',
         '/tools/shopify-accounting-apps',
         '/tools/stripe-accounting',

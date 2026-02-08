@@ -74,7 +74,8 @@ export default async function Page({ params }: Props) {
     }
 
     // Inject internal links
-    content = injectInternalLinks(content);
+    const currentPath = `/blog/${params.slug}`;
+    content = injectInternalLinks(content, currentPath);
 
     // Find related posts (same category, excluding current)
     const relatedPosts = blogPosts

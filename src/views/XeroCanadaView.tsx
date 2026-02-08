@@ -312,7 +312,7 @@ export default function XeroCanadaView() {
                     <section id="comparison" className="mb-20">
                         <span className="text-teal-600 font-bold tracking-wider text-sm uppercase mb-2 block">Platform Comparison</span>
                         <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                            Xero vs. QuickBooks Online in Canada: <span className="text-teal-600">An Honest Comparison</span>
+                            <Link href="/blog/xero-vs-quickbooks-canada" className="hover:text-teal-600 transition-colors">Xero vs. QuickBooks Online</Link> in Canada: <span className="text-teal-600">An Honest Comparison</span>
                         </h2>
                         <p className="text-lg text-slate-700 leading-relaxed mb-8">
                             This is the most common question we hear from Canadian business owners evaluating accounting software. Both are strong cloud platforms. Here is how they compare on the features that matter most to Canadian SMEs.
@@ -464,7 +464,7 @@ export default function XeroCanadaView() {
                                     {[
                                         ['E-commerce', 'A2X', 'Automates Shopify and Amazon sales posting with full GST/HST mapping. The gold standard for e-commerce accounting.'],
                                         ['E-commerce', 'Synder', 'Multi-channel sync (Shopify + Amazon + Etsy). Great flexibility for complex setups.'],
-                                        ['Receipt Capture', 'Dext', 'Scans and categorizes receipts, bills, and invoices. Pairs beautifully with Xero bank feed.'],
+                                        ['Receipt Capture', <Link href="/tools/dext-canada" key="dext" className="hover:text-teal-600 hover:underline">Dext</Link>, 'Scans and categorizes receipts, bills, and invoices. Pairs beautifully with Xero bank feed.'],
                                         ['Payroll', 'Wagepoint', 'Canadian payroll with CPP, EI, and income tax deductions. Simple and reliable.'],
                                         ['Payroll', 'Rise People', 'Full HR + payroll platform for growing Canadian teams.'],
                                         ['Payments', 'Stripe', 'Accept online payments and auto-reconcile deposits with Xero.'],
@@ -495,7 +495,7 @@ export default function XeroCanadaView() {
                             <div className="bg-white border-l-4 border-cyan-500 p-6 rounded-r-lg shadow-sm">
                                 <h3 className="text-xl font-bold text-slate-900 mb-3">E-commerce Sellers (Shopify, Amazon, WooCommerce)</h3>
                                 <p className="text-slate-700 leading-relaxed">
-                                    Xero paired with A2X or Synder gives you clean, reconciled books with proper GST/HST mapping — no hours of manual data entry. Multi-currency support is essential if you sell in both CAD and USD.
+                                    Xero paired with A2X or <Link href="/tools/synder-review" className="text-teal-600 hover:text-teal-700 hover:underline font-medium">Synder</Link> gives you clean, reconciled books with proper GST/HST mapping — no hours of manual data entry. Multi-currency support is essential if you sell in both CAD and USD.
                                 </p>
                             </div>
 
